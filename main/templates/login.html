@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Veresiye</title>
+  <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+</head>
+<body class="min-h-screen flex items-center justify-center bg-base-200">
+  <div class="card w-full max-w-md shadow-xl bg-base-100">
+    <div class="card-body">
+      <h2 class="card-title text-center text-2xl mb-6">Veresiye</h2>
+
+      {% if messages %}
+        <div class="alert alert-error mb-4">
+          {% for message in messages %}
+            <span>{{ message }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-control w-full mb-4">
+          <label class="label">
+            <span class="label-text">Kullanıcı Adı</span>
+          </label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Kullanıcı adınızı girin"
+            class="input input-bordered w-full"
+            required
+          />
+        </div>
+
+        <div class="form-control w-full mb-6">
+          <label class="label">
+            <span class="label-text">Şifre</span>
+          </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Şifrenizi girin"
+            class="input input-bordered w-full"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full">Giriş Yap</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

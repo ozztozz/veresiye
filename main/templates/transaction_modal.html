@@ -1,0 +1,152 @@
+<!-- Transaction Add/Edit Modal -->
+<div id="transaction-modal" class="modal modal-open">
+  <div class="modal-box w-full max-w-md">
+    <button onclick="closeModal()" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    <h3 class="font-bold text-lg mb-4">İşlem Ekle</h3>
+    
+    <form 
+      id="transactionForm"
+      method="POST"
+      hx-post="{% url 'main:transaction_create' %}"
+      hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+      class="space-y-4"
+    >
+      {% csrf_token %}
+      
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Daire Numarası</span>
+        </label>
+        <input 
+          type="text" 
+          name="apartment" 
+          placeholder="Daire no." 
+          class="input input-bordered" 
+          required 
+          maxlength="5"
+        />
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Tutar</span>
+        </label>
+        <input 
+          type="number" 
+          name="amount" 
+          placeholder="0.00" 
+          class="input input-bordered" 
+          required 
+          step="0.01"
+          min="0"
+        />
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Ödeme Yöntemi</span>
+        </label>
+        <select name="payment_method" class="select select-bordered">
+          <option value="">Yöntemi Seçin</option>
+          <option value="cash">Nakit</option>
+          <option value="credit_card">Kredi Kartı</option>
+          <option value="bank_transfer">Banka Transferi</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Ödendi</span>
+        </label>
+        <input 
+          type="checkbox" 
+          name="paid" 
+          class="checkbox checkbox-primary"
+        />
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Açıklama</span>
+        </label>
+        <textarea 
+          name="description" 
+          placeholder="Notlar..." 
+          class="textarea textarea-bordered h-24"
+        ></textarea>
+      </div>
+
+      {% if form.non_field_errors %}
+        <div class="alert alert-error">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <div class="modal-action">
+        <button type="button" onclick="closeModal()" class="btn btn-ghost">
+          İptal
+        </button>
+        <button 
+          type="submit" 
+          hx-disabled-elt="this"
+          class="btn btn-primary"
+        >
+          Kaydet
+        </button>
+      </div>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop" onclick="closeModal()"></form>
+</div>
+
+<script>
+  function closeModal() {
+    const modal = document.getElementById('transaction-modal');
+    if (modal) modal.classList.remove('modal-open');
+  }
+  
+  // Initialize form handler when HTMX loads
+  document.body.addEventListener('htmx:load', initializeForm);
+  document.addEventListener('DOMContentLoaded', initializeForm);
+  
+  function initializeForm() {
+    const form = document.getElementById('transactionForm');
+    if (!form) return;
+    
+    // Remove old listener first to avoid duplicates
+    form.removeEventListener('htmx:afterRequest', handleFormResponse);
+    form.addEventListener('htmx:afterRequest', handleFormResponse);
+  }
+  
+  function handleFormResponse(event) {
+    const status = event.detail.xhr.status;
+    const response = event.detail.xhr.responseText;
+    
+    console.log('Form submitted. Status:', status);
+    
+    if (status === 201 && response.trim()) {
+      // Success - insert new row
+      const tbody = document.getElementById('transactions-body');
+      if (tbody) {
+        // Parse response and insert
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = response;
+        const newRow = wrapper.querySelector('tr');
+        
+        if (newRow) {
+          tbody.insertBefore(newRow, tbody.firstChild);
+          // Reprocess HTMX for the new row
+          htmx.process(newRow);
+          console.log('New row inserted');
+        }
+      }
+      
+      // Reset form and close modal
+      document.getElementById('transactionForm').reset();
+      closeModal();
+    } else if (status >= 400) {
+      console.error('Error:', response);
+      alert('Hata: ' + response);
+    }
+  }
+</script>

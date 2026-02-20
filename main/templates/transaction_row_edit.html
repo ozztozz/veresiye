@@ -1,0 +1,92 @@
+<!-- Transaction Row Edit Form (Inline HTMX) -->
+<tr id="transaction-{{ transaction.id }}" class="bg-base-200">
+  <td colspan="6">
+    <form 
+      hx-post="{% url 'main:transaction_update' transaction.id %}"
+      hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+      hx-target="#transaction-{{ transaction.id }}"
+      hx-swap="outerHTML"
+      class="p-4 space-y-3"
+    >
+      {% csrf_token %}
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-xs">Daire Numarası</span>
+          </label>
+          <input 
+            type="text" 
+            name="apartment" 
+            value="{{ transaction.apartment }}"
+            class="input input-sm input-bordered" 
+            required 
+            maxlength="5"
+          />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-xs">Tutar</span>
+          </label>
+          <input 
+            type="number" 
+            name="amount" 
+            value="{{ transaction.amount }}"
+            class="input input-sm input-bordered" 
+            required 
+            step="0.01"
+            min="0"
+          />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text text-xs">Ödeme Yöntemi</span>
+          </label>
+          <select name="payment_method" class="select select-sm select-bordered">
+            <option value="">Yöntemi Seçin</option>
+            <option value="cash" {% if transaction.payment_method == 'cash' %}selected{% endif %}>Nakit</option>
+            <option value="credit_card" {% if transaction.payment_method == 'credit_card' %}selected{% endif %}>Kredi Kartı</option>
+            <option value="bank_transfer" {% if transaction.payment_method == 'bank_transfer' %}selected{% endif %}>Banka Transferi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text text-xs">Açıklama</span>
+        </label>
+        <textarea 
+          name="description" 
+          class="textarea textarea-sm textarea-bordered h-16"
+        >{{ transaction.description }}</textarea>
+      </div>
+
+      <div class="form-control">
+        <label class="label cursor-pointer justify-start gap-3">
+          <input 
+            type="checkbox" 
+            name="paid" 
+            class="checkbox checkbox-sm"
+            {% if transaction.paid %}checked{% endif %}
+          />
+          <span class="label-text">Ödendi</span>
+        </label>
+      </div>
+
+      <div class="flex gap-2">
+        <button type="submit" class="btn btn-sm btn-primary">Kaydet</button>
+        <button 
+          type="button" 
+          hx-get="{% url 'main:transaction_row' transaction.id %}"
+          hx-target="#transaction-{{ transaction.id }}"
+          hx-swap="outerHTML"
+          class="btn btn-sm btn-ghost"
+        >
+          İptal
+        </button>
+      </div>
+    </form>
+  </td>
+</tr>

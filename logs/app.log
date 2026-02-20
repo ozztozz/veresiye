@@ -1,0 +1,281 @@
+INFO 2026-02-18 16:26:29,015 autoreload 18368 23296 Watching for file changes with StatReloader
+INFO 2026-02-18 16:26:34,824 log 18368 16192 "GET / HTTP/1.1" 200 2562
+INFO 2026-02-18 16:26:34,835 log 18368 16192 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 16:28:02,291 autoreload 18368 23296 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:28:02,677 autoreload 8256 25404 Watching for file changes with StatReloader
+INFO 2026-02-18 16:28:05,897 autoreload 8256 25404 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-18 16:28:06,292 autoreload 11188 18776 Watching for file changes with StatReloader
+INFO 2026-02-18 16:28:19,682 autoreload 11188 18776 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:28:20,052 autoreload 17644 3408 Watching for file changes with StatReloader
+INFO 2026-02-18 16:28:25,316 autoreload 17644 3408 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-18 16:28:25,697 autoreload 21672 13356 Watching for file changes with StatReloader
+INFO 2026-02-18 16:28:37,067 autoreload 21672 13356 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:28:37,447 autoreload 20612 14764 Watching for file changes with StatReloader
+INFO 2026-02-18 16:28:42,707 autoreload 20612 14764 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:28:43,089 autoreload 10880 12988 Watching for file changes with StatReloader
+INFO 2026-02-18 16:28:51,408 autoreload 10880 12988 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:28:51,784 autoreload 18396 14364 Watching for file changes with StatReloader
+ERROR 2026-02-18 16:28:54,906 log 18396 11616 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 577, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 33, in home
+    return render(request, 'home.html', {'transactions': transactions})
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 135, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 132, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 110, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 579, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 644, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\base.html, Invalid block tag on line 49: 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-18 16:28:54,909 log 18396 11616 "GET / HTTP/1.1" 500 174627
+ERROR 2026-02-18 16:29:12,259 log 18396 11616 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 577, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 33, in home
+    return render(request, 'home.html', {'transactions': transactions})
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 135, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 132, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 110, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 579, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 644, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\base.html, Invalid block tag on line 49: 'endblock'. Did you forget to register or load this tag?
+ERROR 2026-02-18 16:29:12,261 log 18396 11616 "GET / HTTP/1.1" 500 174627
+INFO 2026-02-18 16:30:54,894 log 18396 11616 "GET / HTTP/1.1" 200 3618
+INFO 2026-02-18 16:30:54,926 log 18396 11616 "GET /static/css/output.css HTTP/1.1" 200 87405
+INFO 2026-02-18 16:30:58,365 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:00,851 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:01,347 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:01,707 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:07,262 log 18396 11616 "GET / HTTP/1.1" 200 3618
+INFO 2026-02-18 16:31:09,203 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:09,803 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:11,243 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:31:35,465 log 18396 11616 "GET /transaction/form/ HTTP/1.1" 200 3044
+INFO 2026-02-18 16:32:15,592 autoreload 18396 14364 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:32:15,976 autoreload 8632 18164 Watching for file changes with StatReloader
+INFO 2026-02-18 16:32:34,474 autoreload 8632 18164 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 16:32:34,849 autoreload 20288 18328 Watching for file changes with StatReloader
+INFO 2026-02-18 16:33:07,316 log 20288 25584 "GET / HTTP/1.1" 200 3658
+INFO 2026-02-18 16:33:07,324 log 20288 25584 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 16:33:09,504 log 20288 25584 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:33:10,191 log 20288 25584 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:33:10,423 log 20288 25584 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:33:10,683 log 20288 25584 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:33:36,752 autoreload 18156 22412 Watching for file changes with StatReloader
+INFO 2026-02-18 16:33:54,138 log 18156 20140 "GET / HTTP/1.1" 200 3658
+INFO 2026-02-18 16:33:54,153 log 18156 20140 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 16:33:55,837 log 18156 20140 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:49:45,624 log 18156 13496 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:49:46,143 log 18156 13496 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:49:46,375 log 18156 13496 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:50:17,303 log 18156 13496 "GET /transaction/form/ HTTP/1.1" 200 2993
+INFO 2026-02-18 16:51:52,836 log 18156 13496 "GET / HTTP/1.1" 200 3658
+INFO 2026-02-18 16:51:52,848 log 18156 13496 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 16:51:57,191 log 18156 13496 "GET /transaction/form/ HTTP/1.1" 200 3007
+INFO 2026-02-18 16:51:57,695 log 18156 13496 "GET /transaction/form/ HTTP/1.1" 200 3007
+INFO 2026-02-18 17:03:54,351 autoreload 16560 24808 Watching for file changes with StatReloader
+INFO 2026-02-18 17:03:58,050 log 16560 15540 "GET / HTTP/1.1" 200 3844
+INFO 2026-02-18 17:03:58,083 log 16560 15540 "GET /static/css/output.css HTTP/1.1" 200 87551
+INFO 2026-02-18 17:04:00,280 log 16560 15540 "GET /transaction/form/ HTTP/1.1" 200 3176
+INFO 2026-02-18 17:04:38,094 log 16560 15540 "POST /transaction/create/ HTTP/1.1" 201 0
+INFO 2026-02-18 17:04:43,076 log 16560 15540 "GET /transaction/form/ HTTP/1.1" 200 3176
+INFO 2026-02-18 17:04:56,712 log 16560 15540 "POST /transaction/create/ HTTP/1.1" 201 0
+INFO 2026-02-18 17:04:59,469 log 16560 15540 "GET / HTTP/1.1" 200 5673
+INFO 2026-02-18 17:05:07,516 log 16560 15540 "GET /transaction/2/edit/ HTTP/1.1" 200 3203
+INFO 2026-02-18 17:05:12,253 log 16560 15540 "POST /transaction/2/update/ HTTP/1.1" 200 0
+INFO 2026-02-18 17:05:19,096 log 16560 15540 "GET / HTTP/1.1" 200 5671
+INFO 2026-02-18 17:05:19,104 log 16560 15540 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 17:06:23,110 autoreload 16560 24808 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 17:06:23,545 autoreload 19248 25388 Watching for file changes with StatReloader
+INFO 2026-02-18 17:06:29,855 autoreload 19248 25388 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 17:06:30,276 autoreload 21824 21224 Watching for file changes with StatReloader
+INFO 2026-02-18 17:06:34,536 autoreload 21824 21224 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 17:06:34,965 autoreload 23256 24612 Watching for file changes with StatReloader
+INFO 2026-02-18 17:06:41,255 autoreload 23256 24612 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-18 17:06:41,683 autoreload 6008 12204 Watching for file changes with StatReloader
+INFO 2026-02-18 17:06:44,693 log 6008 17092 "GET / HTTP/1.1" 200 5208
+INFO 2026-02-18 17:06:44,720 log 6008 17092 "GET /static/css/output.css HTTP/1.1" 200 89391
+INFO 2026-02-18 17:06:48,008 log 6008 17092 "GET /transaction/form/ HTTP/1.1" 200 3176
+INFO 2026-02-18 17:06:58,630 log 6008 17092 "POST /transaction/create/ HTTP/1.1" 201 0
+INFO 2026-02-18 17:08:07,119 autoreload 6008 12204 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 17:08:07,558 autoreload 24320 21300 Watching for file changes with StatReloader
+INFO 2026-02-18 17:08:45,496 autoreload 24320 21300 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 17:08:45,928 autoreload 21280 20452 Watching for file changes with StatReloader
+INFO 2026-02-18 17:08:52,282 autoreload 21280 20452 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-18 17:08:52,695 autoreload 16488 17012 Watching for file changes with StatReloader
+INFO 2026-02-18 17:08:57,042 log 16488 24076 "GET / HTTP/1.1" 200 5982
+INFO 2026-02-18 17:08:57,076 log 16488 24076 "GET /static/css/output.css HTTP/1.1" 200 89727
+INFO 2026-02-18 17:08:59,017 log 16488 24076 "GET /transaction/form/ HTTP/1.1" 200 4232
+INFO 2026-02-18 17:09:07,321 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 755
+INFO 2026-02-18 17:09:10,561 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 755
+INFO 2026-02-18 17:09:11,093 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 755
+INFO 2026-02-18 17:09:11,326 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 755
+INFO 2026-02-18 17:09:11,533 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 755
+INFO 2026-02-18 17:09:17,629 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 755
+INFO 2026-02-18 17:09:18,133 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 760
+INFO 2026-02-18 17:09:18,356 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 760
+INFO 2026-02-18 17:09:18,600 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 760
+INFO 2026-02-18 17:09:18,817 log 16488 24076 "POST /transaction/create/ HTTP/1.1" 201 760
+INFO 2026-02-18 17:11:45,534 log 16488 11140 "GET / HTTP/1.1" 200 13742
+INFO 2026-02-18 17:11:45,544 log 16488 11140 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 17:11:51,845 log 16488 11140 "GET /transaction/form/ HTTP/1.1" 200 4387
+INFO 2026-02-18 17:11:59,524 log 16488 11140 "POST /transaction/create/ HTTP/1.1" 201 760
+INFO 2026-02-18 17:12:07,667 log 16488 11140 "GET /transaction/form/ HTTP/1.1" 200 4387
+INFO 2026-02-18 17:12:16,611 log 16488 11140 "POST /transaction/create/ HTTP/1.1" 201 760
+INFO 2026-02-18 17:12:18,484 log 16488 11140 "GET / HTTP/1.1" 200 15300
+INFO 2026-02-18 17:12:18,494 log 16488 11140 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 17:12:24,478 log 16488 11140 "GET /transaction/15/edit-row/ HTTP/1.1" 200 2719
+INFO 2026-02-18 17:12:31,749 log 16488 11140 "POST /transaction/15/update/ HTTP/1.1" 200 760
+WARNING 2026-02-18 17:12:35,991 log 16488 11140 Forbidden (CSRF token missing.): /transaction/14/delete/
+WARNING 2026-02-18 17:12:35,992 log 16488 11140 "POST /transaction/14/delete/ HTTP/1.1" 403 2491
+WARNING 2026-02-18 17:12:38,771 log 16488 11140 Forbidden (CSRF token missing.): /transaction/12/delete/
+WARNING 2026-02-18 17:12:38,772 log 16488 11140 "POST /transaction/12/delete/ HTTP/1.1" 403 2491
+WARNING 2026-02-18 17:12:41,171 log 16488 11140 Forbidden (CSRF token missing.): /transaction/13/delete/
+WARNING 2026-02-18 17:12:41,172 log 16488 11140 "POST /transaction/13/delete/ HTTP/1.1" 403 2491
+INFO 2026-02-18 17:12:49,988 log 16488 11140 "GET / HTTP/1.1" 200 15297
+INFO 2026-02-18 17:12:50,010 log 16488 11140 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-18 17:12:54,541 log 16488 11140 Forbidden (CSRF token missing.): /transaction/15/delete/
+WARNING 2026-02-18 17:12:54,542 log 16488 11140 "POST /transaction/15/delete/ HTTP/1.1" 403 2491
+WARNING 2026-02-18 17:13:16,386 log 16488 11140 Forbidden (CSRF token missing.): /transaction/14/delete/
+WARNING 2026-02-18 17:13:16,387 log 16488 11140 "POST /transaction/14/delete/ HTTP/1.1" 403 2491
+WARNING 2026-02-18 17:13:19,102 log 16488 11140 Forbidden (CSRF token missing.): /transaction/15/delete/
+WARNING 2026-02-18 17:13:19,102 log 16488 11140 "POST /transaction/15/delete/ HTTP/1.1" 403 2491
+WARNING 2026-02-18 17:13:22,768 log 16488 11140 Forbidden (CSRF token missing.): /transaction/15/delete/
+WARNING 2026-02-18 17:13:22,769 log 16488 11140 "POST /transaction/15/delete/ HTTP/1.1" 403 2491
+INFO 2026-02-18 17:14:40,904 log 16488 11140 "GET / HTTP/1.1" 200 17250
+INFO 2026-02-18 17:14:40,944 log 16488 11140 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-18 17:14:43,780 log 16488 11140 "POST /transaction/15/delete/ HTTP/1.1" 200 0
+INFO 2026-02-18 17:14:46,392 log 16488 11140 "POST /transaction/14/delete/ HTTP/1.1" 200 0
+INFO 2026-02-18 17:14:49,266 log 16488 11140 "POST /transaction/13/delete/ HTTP/1.1" 200 0
+INFO 2026-02-18 17:14:51,300 log 16488 11140 "GET /transaction/form/ HTTP/1.1" 200 4490
+INFO 2026-02-18 17:14:59,174 log 16488 11140 "POST /transaction/create/ HTTP/1.1" 201 863
+INFO 2026-02-18 17:15:04,180 log 16488 11140 "GET / HTTP/1.1" 200 15489
+WARNING 2026-02-18 17:23:54,422 log 16488 25536 Not Found: /transactions
+WARNING 2026-02-18 17:23:54,423 log 16488 25536 "GET /transactions HTTP/1.1" 404 5321

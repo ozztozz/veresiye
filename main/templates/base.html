@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <title>{% block title %}Veresiye{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script>
+    // Configure HTMX to include CSRF token
+    document.body.addEventListener('htmx:configRequest', function(detail) {
+      detail.xhr.setRequestHeader('X-CSRFToken', document.querySelector('[name=csrfmiddlewaretoken]')?.value || document.querySelector('meta[name="csrf-token"]')?.content);
+    });
+    
+    function closeModal() {
+      const modal = document.getElementById('transaction-modal');
+      if (modal) modal.classList.remove('modal-open');
+    }
+  </script>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="min-h-screen bg-base-200 text-base-content">
+  <div class="min-h-screen">
+    <header class="navbar bg-base-100 shadow-sm">
+      <div class="flex-none lg:hidden">
+        <label for="app-drawer" class="btn btn-square btn-ghost" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </label>
+      </div>
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl" href="/">Veresiye</a>
+      </div>
+      <div class="flex-none gap-2">
+        <button class="btn btn-ghost">Bildirimler</button>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="https://placehold.co/80x80" alt="User" />
+            </div>
+          </label>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] w-52 rounded-box bg-base-100 p-2 shadow">
+            <li><a href="/profile">Profil</a></li>
+            <li><a href="/settings">Ayarlar</a></li>
+            <li><a href="{% url 'main:logout' %}">Çıkış Yap</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="drawer lg:drawer-open">
+      <input id="app-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <main class="p-4 lg:p-6">
+          {% block content %}{% endblock %}
+        </main>
+      </div>
+      
+      <!-- HTMX Modal Container -->
+      <div id="modal-container"></div>
+      <div class="drawer-side">
+        <label for="app-drawer" class="drawer-overlay" aria-label="Close menu"></label>
+        <aside class="w-72 bg-base-100 min-h-full border-r border-base-300">
+          <div class="p-4">
+            <h2 class="text-lg font-semibold">Gezinti</h2>
+          </div>
+          <ul class="menu px-4 pb-6">
+            <li><a href="/">Pano</a></li>
+            <li><a href="/accounts">Hesaplar</a></li>
+            <li><a href="/transactions">Işlemler</a></li>
+            <li><a href="/reports">Raporlar</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
