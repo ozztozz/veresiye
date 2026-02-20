@@ -1,0 +1,21 @@
+
+        <table class="table table-zebra">
+            <thead>
+                <tr>
+                    <th>Tarih</th>
+                    <th>Miktar</th>
+                    <th>Tür</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr class="{% if not transaction.is_debt %}bg-green-100{% endif %}">
+                    <td>{{ transaction.updated_at }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}</td>
+                    <td>{{ transaction.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
