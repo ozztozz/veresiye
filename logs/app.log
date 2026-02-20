@@ -279,3 +279,200 @@ INFO 2026-02-18 17:14:59,174 log 16488 11140 "POST /transaction/create/ HTTP/1.1
 INFO 2026-02-18 17:15:04,180 log 16488 11140 "GET / HTTP/1.1" 200 15489
 WARNING 2026-02-18 17:23:54,422 log 16488 25536 Not Found: /transactions
 WARNING 2026-02-18 17:23:54,423 log 16488 25536 "GET /transactions HTTP/1.1" 404 5321
+INFO 2026-02-20 11:59:50,217 autoreload 14768 25568 Watching for file changes with StatReloader
+INFO 2026-02-20 11:59:54,959 log 14768 20464 "GET / HTTP/1.1" 200 15489
+INFO 2026-02-20 11:59:55,000 log 14768 20464 "GET /static/css/output.css HTTP/1.1" 200 74255
+INFO 2026-02-20 12:07:14,554 log 14768 13196 "GET /transaction/form/ HTTP/1.1" 200 4490
+INFO 2026-02-20 12:07:48,533 log 14768 13196 "GET /transaction/form/ HTTP/1.1" 200 4490
+WARNING 2026-02-20 12:08:29,557 log 14768 13196 Method Not Allowed (GET): /logout/
+WARNING 2026-02-20 12:08:29,558 log 14768 13196 "GET /logout/ HTTP/1.1" 405 0
+WARNING 2026-02-20 12:08:33,869 log 14768 13196 Method Not Allowed (GET): /logout/
+WARNING 2026-02-20 12:08:33,870 log 14768 13196 "GET /logout/ HTTP/1.1" 405 0
+INFO 2026-02-20 12:08:38,431 log 14768 13196 "GET / HTTP/1.1" 200 15489
+INFO 2026-02-20 12:08:38,448 log 14768 13196 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-20 12:08:42,258 log 14768 13196 Method Not Allowed (GET): /logout/
+WARNING 2026-02-20 12:08:42,259 log 14768 13196 "GET /logout/ HTTP/1.1" 405 0
+INFO 2026-02-20 12:09:50,961 autoreload 14768 25568 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-20 12:09:51,397 autoreload 16744 17212 Watching for file changes with StatReloader
+WARNING 2026-02-20 12:09:57,895 log 16744 20996 Method Not Allowed (GET): /logout/
+WARNING 2026-02-20 12:09:57,896 log 16744 20996 "GET /logout/ HTTP/1.1" 405 0
+INFO 2026-02-20 12:10:00,821 log 16744 20996 "GET / HTTP/1.1" 200 15489
+INFO 2026-02-20 12:10:00,840 log 16744 20996 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-20 12:10:02,696 log 16744 20996 "GET /transaction/form/ HTTP/1.1" 200 4490
+INFO 2026-02-20 12:10:13,407 autoreload 19420 24400 Watching for file changes with StatReloader
+INFO 2026-02-20 12:10:17,541 log 19420 20052 "GET / HTTP/1.1" 200 15489
+INFO 2026-02-20 12:10:18,109 log 19420 20052 "GET / HTTP/1.1" 200 15489
+INFO 2026-02-20 12:10:24,783 log 19420 20052 "GET /transaction/form/ HTTP/1.1" 200 4490
+INFO 2026-02-20 12:32:07,237 autoreload 14788 16352 Watching for file changes with StatReloader
+ERROR 2026-02-20 12:32:10,615 log 14788 8764 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 8, in home
+    return render(request, 'main/home.html')
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: main/home.html
+ERROR 2026-02-20 12:32:10,616 log 14788 8764 "GET / HTTP/1.1" 500 82448
+INFO 2026-02-20 12:32:40,238 autoreload 14788 16352 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-20 12:32:40,627 autoreload 20188 5756 Watching for file changes with StatReloader
+ERROR 2026-02-20 12:32:42,416 log 20188 20096 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 8, in home
+    return render(request, 'main/home.html')
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: main/home.html
+ERROR 2026-02-20 12:32:42,417 log 20188 20096 "GET / HTTP/1.1" 500 82299
+INFO 2026-02-20 12:33:05,696 autoreload 20188 5756 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-20 12:33:06,075 autoreload 7104 23148 Watching for file changes with StatReloader
+ERROR 2026-02-20 12:33:07,113 log 7104 25048 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'main'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 8, in home
+    return render(request, 'home.html')
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'main' is not a registered namespace
+ERROR 2026-02-20 12:33:07,117 log 7104 25048 "GET / HTTP/1.1" 500 138224
+INFO 2026-02-20 12:34:05,029 autoreload 7104 23148 C:\Users\OZDEN\Desktop\veresiye\veresiye\veresiye\urls.py changed, reloading.
+INFO 2026-02-20 12:34:05,410 autoreload 580 1628 Watching for file changes with StatReloader
+INFO 2026-02-20 12:34:28,015 autoreload 580 1628 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-20 12:34:28,403 autoreload 17300 12572 Watching for file changes with StatReloader
+INFO 2026-02-20 12:34:31,592 autoreload 17300 12572 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-20 12:34:31,940 autoreload 12640 15136 Watching for file changes with StatReloader
+INFO 2026-02-20 12:34:39,204 autoreload 12640 15136 C:\Users\OZDEN\Desktop\veresiye\veresiye\veresiye\urls.py changed, reloading.
+INFO 2026-02-20 12:34:39,551 autoreload 23648 8280 Watching for file changes with StatReloader
+INFO 2026-02-20 12:34:45,337 log 23648 22972 "GET / HTTP/1.1" 200 2617
+INFO 2026-02-20 12:34:45,352 log 23648 22972 "GET /static/css/output.css HTTP/1.1" 304 0
+ERROR 2026-02-20 12:39:39,390 log 23648 18876 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 7, in home
+    return render(request, 'home.html')
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 893, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\home.html, Could not parse the remainder: '[A-F]' from '[A-F]'
+ERROR 2026-02-20 12:39:39,394 log 23648 18876 "GET / HTTP/1.1" 500 175682
+INFO 2026-02-20 12:41:19,520 autoreload 23648 8280 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-20 12:41:19,878 autoreload 12264 24216 Watching for file changes with StatReloader
+INFO 2026-02-20 12:41:44,174 log 12264 11924 "GET / HTTP/1.1" 200 2920
+INFO 2026-02-20 12:41:44,205 log 12264 11924 "GET /static/css/output.css HTTP/1.1" 200 91189
+INFO 2026-02-20 12:42:40,175 log 12264 11924 "GET / HTTP/1.1" 200 2926
+INFO 2026-02-20 12:42:40,188 log 12264 11924 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-20 12:42:41,702 log 12264 11924 "GET / HTTP/1.1" 200 2926
+INFO 2026-02-20 12:42:49,830 log 12264 11924 "GET / HTTP/1.1" 200 2926
+INFO 2026-02-20 12:43:10,799 autoreload 12264 24216 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-20 12:43:11,184 autoreload 20484 17904 Watching for file changes with StatReloader

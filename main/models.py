@@ -3,67 +3,25 @@ from django.contrib.contenttypes.models import ContentType
 import json
 from datetime import datetime
 
-# Create your models here.
+class Apartment(models.Model):
 
-class AuditLog(models.Model):
-    ACTION_CHOICES = (
-        ('create', 'Created'),
-        ('update', 'Updated'),
-        ('delete', 'Deleted'),
-    )
-
-    action = models.CharField(max_length=10, choices=ACTION_CHOICES)
-    model_name = models.CharField(max_length=100)
-    object_id = models.CharField(max_length=255)
-    user = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, blank=True)
-    timestamp = models.DateTimeField(auto_now_add=True)
-    old_values = models.JSONField(default=dict, blank=True)
-    new_values = models.JSONField(default=dict, blank=True)
-    ip_address = models.GenericIPAddressField(null=True, blank=True)
-    changes_description = models.TextField(blank=True)
-
-    class Meta:
-        ordering = ['-timestamp']
-        indexes = [
-            models.Index(fields=['-timestamp']),
-            models.Index(fields=['model_name', 'object_id']),
-            models.Index(fields=['user']),
-        ]
+    number = models.CharField(max_length=3)
+    name = models.CharField(max_length=100)
+    phone= models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.get_action_display()} {self.model_name} #{self.object_id} by {self.user} on {self.timestamp}"
-
-    def get_changes_summary(self):
-        """Generate a human-readable summary of changes."""
-        if self.action == 'create':
-            return f"Created new {self.model_name.lower()}"
-        elif self.action == 'delete':
-            return f"Deleted {self.model_name.lower()}"
-        else:
-            changes = []
-            for key in self.new_values:
-                if key in self.old_values and self.old_values[key] != self.new_values[key]:
-                    old = self.old_values[key]
-                    new = self.new_values[key]
-                    changes.append(f"{key.replace('_', ' ').title()}: {old} → {new}")
-            return "; ".join(changes) if changes else "No changes recorded"
-
-
+        return self.name
+    
 class Transaction(models.Model):
-    PAYMENT_METHOD=(
-        ('cash', 'Nakit'),
-        ('credit_card', 'Kredi Kartı'),
-        ('bank_transfer', 'Banka Transferi'),
-    )
 
-    apartment = models.CharField(max_length=5)
+    apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateTimeField(auto_now_add=True)
-    paid = models.BooleanField(default=False)
+    is_debt = models.BooleanField(default=False)
+    payment_method = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    payment_method = models.CharField(max_length=20, null=True, blank=True,choices=PAYMENT_METHOD)
-    created_by = models.ForeignKey('auth.User', on_delete=models.CASCADE)   
-    changed_by = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='changed_transactions', null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.apartment} - {self.amount}"
+        return f"{self.apartment.name} - {self.amount} - {'Debt' if self.is_debt else 'Payment'}"

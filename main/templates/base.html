@@ -8,17 +8,7 @@
   <title>{% block title %}Veresiye{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  <script>
-    // Configure HTMX to include CSRF token
-    document.body.addEventListener('htmx:configRequest', function(detail) {
-      detail.xhr.setRequestHeader('X-CSRFToken', document.querySelector('[name=csrfmiddlewaretoken]')?.value || document.querySelector('meta[name="csrf-token"]')?.content);
-    });
-    
-    function closeModal() {
-      const modal = document.getElementById('transaction-modal');
-      if (modal) modal.classList.remove('modal-open');
-    }
-  </script>
+
   {% block extra_head %}{% endblock %}
 </head>
 <body class="min-h-screen bg-base-200 text-base-content">
@@ -59,8 +49,7 @@
         </main>
       </div>
       
-      <!-- HTMX Modal Container -->
-      <div id="modal-container"></div>
+
       <div class="drawer-side">
         <label for="app-drawer" class="drawer-overlay" aria-label="Close menu"></label>
         <aside class="w-72 bg-base-100 min-h-full border-r border-base-300">
