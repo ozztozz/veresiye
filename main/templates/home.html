@@ -3,7 +3,10 @@
 
 
 
-
+<div class="flex flex-col items-center justify-center mb-8">
+    <h1 class="text-4xl font-bold mb-8">Blok ve Numaralar</h1>
+    </div>
+    
 {% for blok in blok_list %}
 <details class="collapse bg-base-100 border-base-300 border">
   <summary class="collapse-title font-semibold">
@@ -11,16 +14,19 @@
   </summary>
 
 <div class="grid grid-cols-5 lg:grid-cols-10 m-2 gap-2">
-
     {% for number in number_list %}
+    <a href="{% url 'main:apartment_detail' apartment_number=blok|add:number %}">
     <button class="btn btn-soft btn-info ">{{ blok }}{{ number }}</button>
+    </a>
     {% endfor %}
+    
 </div>
 
 
 </details>
 
 {% endfor %}
+
 
 {% endblock content %}
 

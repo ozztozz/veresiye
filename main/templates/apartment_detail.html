@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex flex-col items-center justify-center mb-8">
+    <div class="flex flex-row gap-4 items-center m-4">
+        <button class="btn btn-info "><h1>{{ apartment.number }}</h1></button>
+        <button class="btn btn-info "><h1>{{ apartment.name }} {{ apartment.phone }}</h1></button>
+    </div>
+    <div id="total_stat">{% include "partials/total.html" %}</div>
+    
+</div>  
+
+<div class="w-full max-w-4xl mx-auto">
+        <h2 class="text-2xl font-semibold mb-4">İşlemler</h2>
+        <button class="btn btn-primary"
+        hx-get="{% url 'main:htmx_transaction_list' apartment_number=apartment.number %}"
+        hx-target="#transaction_table"
+        hx-swap="innerHTML"
+        >
+            Guncelle
+        </button>
+<div id="transaction_table">{% include "partials/transaction_table.html" %}</div>
+
+
+</div>
+
+
+{% endblock content %}
