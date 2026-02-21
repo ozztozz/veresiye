@@ -3,30 +3,19 @@
 
 
 
-<div class="flex flex-col items-center justify-center mb-8">
-    <h1 class="text-4xl font-bold mb-8">Blok ve Numaralar</h1>
-    </div>
-    
-{% for blok in blok_list %}
-<details class="collapse bg-base-100 border-base-300 border">
-  <summary class="collapse-title font-semibold">
-   <button class="btn btn-info ">{{ blok }}</button>
-  </summary>
-
-<div class="grid grid-cols-5 lg:grid-cols-10 m-2 gap-2">
-    {% for number in number_list %}
-    <a href="{% url 'main:apartment_detail' apartment_number=blok|add:number %}">
-    <button class="btn btn-soft btn-info ">{{ blok }}{{ number }}</button>
-    </a>
-    {% endfor %}
-    
+<div class="flex flex-col items-center justify-center mb-4 md:mb-8">
+    <h1 class="text-2xl md:text-4xl font-bold mb-4">Blok ve Numaralar</h1>
 </div>
-
-
-</details>
-
-{% endfor %}
-
+ <div class="grid grid-cols-5  gap-2 md:gap-4"> 
+    {% for blok in blok_list %}
+   <button role="button" class="btn btn-accent w-full text-sm md:text-base min-h-0 h-auto py-3"
+   hx-get="{% url 'main:htmx_apartment_list' blok=blok %}"
+   hx-target="#apartment_list"
+    hx-swap="innerHTML"
+   >{{ blok }}</button>
+    {% endfor %}
+</div>
+<div id="apartment_list"></div>
 
 {% endblock content %}
 

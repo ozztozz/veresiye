@@ -40,6 +40,15 @@ def apartment_detail(request, apartment_number):
     
     return render(request, 'apartment_detail.html', context)
 
+def htmx_apartment_list(request, blok):
+    number_list = [str(i) for i in range(1, 80)]
+    context = {
+        'blok': blok,
+        'number_list': number_list,
+    }
+    return render(request, 'partials/apartment_list.html', context)
+
+
 def htmx_transaction_list(request, apartment_number):
     apartment = get_object_or_404(Apartment, number=apartment_number)
     transactions = Transaction.objects.filter(apartment=apartment).order_by('-updated_at')

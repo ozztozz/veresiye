@@ -2696,3 +2696,553 @@ INFO 2026-02-20 23:35:00,406 log 12092 7660 "GET / HTTP/1.1" 200 76733
 INFO 2026-02-20 23:35:00,545 log 12092 7660 "GET /static/css/output.css HTTP/1.1" 304 0
 WARNING 2026-02-20 23:35:00,776 log 12092 7660 Not Found: /favicon.ico
 WARNING 2026-02-20 23:35:00,777 log 12092 7660 "GET /favicon.ico HTTP/1.1" 404 3323
+ERROR 2026-02-20 23:46:27,430 log 12092 4760 Internal Server Error: /apartment/A5/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 234, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: partials/total.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: partials/total.html
+ERROR 2026-02-20 23:46:27,452 log 12092 4760 "GET /apartment/A5/ HTTP/1.1" 500 159024
+ERROR 2026-02-20 23:46:52,886 log 12092 4760 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 234, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: partials/total.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: partials/total.html
+ERROR 2026-02-20 23:46:52,907 log 12092 4760 "GET /apartment/A1/ HTTP/1.1" 500 161997
+INFO 2026-02-21 00:00:17,887 autoreload 12092 2876 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-21 00:00:18,701 autoreload 4336 6900 Watching for file changes with StatReloader
+INFO 2026-02-21 00:00:27,274 autoreload 4336 6900 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 00:00:27,954 autoreload 2728 10992 Watching for file changes with StatReloader
+INFO 2026-02-21 00:02:35,814 log 2728 1128 "GET / HTTP/1.1" 200 5318
+INFO 2026-02-21 00:02:38,975 log 2728 1128 "GET / HTTP/1.1" 200 5318
+WARNING 2026-02-21 00:02:45,875 log 2728 1128 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:02:45,878 log 2728 1128 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:02:49,070 log 2728 1128 "GET / HTTP/1.1" 200 5318
+WARNING 2026-02-21 00:02:49,207 log 2728 1128 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:02:49,244 log 2728 1128 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:03:46,909 log 2728 1128 "GET / HTTP/1.1" 200 5516
+INFO 2026-02-21 00:03:46,981 log 2728 1128 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 00:03:46,992 log 2728 1128 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:03:46,995 log 2728 1128 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+ERROR 2026-02-21 00:03:48,884 log 2728 1128 Internal Server Error: /blok/A/apartments/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 49, in htmx_apartment_list
+    return render(request, 'partials/apartment_list.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: partials/apartment_list.html
+ERROR 2026-02-21 00:03:48,892 log 2728 1128 "GET /blok/A/apartments/ HTTP/1.1" 500 96145
+INFO 2026-02-21 00:04:36,649 log 2728 1128 "GET / HTTP/1.1" 200 5516
+WARNING 2026-02-21 00:04:36,732 log 2728 1128 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:04:36,734 log 2728 1128 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:04:38,103 log 2728 1128 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:04:47,283 log 2728 1128 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:06:12,630 log 2728 6060 "GET / HTTP/1.1" 200 4643
+WARNING 2026-02-21 00:06:12,698 log 2728 6060 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:06:12,700 log 2728 6060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:06:57,452 log 2728 6060 "GET / HTTP/1.1" 200 4639
+WARNING 2026-02-21 00:06:57,522 log 2728 6060 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:06:57,523 log 2728 6060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:07:01,770 log 2728 6060 "GET / HTTP/1.1" 200 4639
+INFO 2026-02-21 00:07:26,488 log 2728 6060 "GET / HTTP/1.1" 200 4101
+INFO 2026-02-21 00:07:29,602 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:07:49,190 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:07:50,382 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:07:51,831 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+WARNING 2026-02-21 00:07:56,639 log 2728 6060 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:07:56,640 log 2728 6060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:08:24,148 log 2728 6060 "GET / HTTP/1.1" 200 4093
+INFO 2026-02-21 00:08:26,047 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:08:27,658 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:08:28,974 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:08:29,446 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:08:29,933 log 2728 6060 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:08:36,545 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:08:41,487 log 2728 6060 "GET /apartment/A1/ HTTP/1.1" 200 5086
+INFO 2026-02-21 00:08:44,745 log 2728 6060 "GET /blok/B/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:09:02,566 log 2728 6060 "GET / HTTP/1.1" 200 4082
+INFO 2026-02-21 00:09:16,562 log 2728 6060 "GET / HTTP/1.1" 200 4113
+INFO 2026-02-21 00:09:21,255 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:09:22,425 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:09:22,927 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:09:23,910 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:09:24,310 log 2728 6060 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:09:25,439 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:10:01,108 log 2728 6060 "GET / HTTP/1.1" 200 4275
+INFO 2026-02-21 00:10:02,771 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:10:34,585 log 2728 6060 "GET / HTTP/1.1" 200 4275
+INFO 2026-02-21 00:10:36,196 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:10:38,497 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:11:55,518 log 2728 6060 "GET / HTTP/1.1" 200 4311
+INFO 2026-02-21 00:11:57,140 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:15:26,053 log 2728 6060 "GET / HTTP/1.1" 200 4338
+INFO 2026-02-21 00:15:29,023 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:15:31,259 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:15:32,808 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:15:33,723 log 2728 6060 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:15:34,658 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:16:00,266 log 2728 6060 "GET / HTTP/1.1" 200 4329
+INFO 2026-02-21 00:16:02,099 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:18:36,961 log 2728 6060 "GET / HTTP/1.1" 200 4428
+INFO 2026-02-21 00:18:38,619 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:18:40,440 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:18:41,322 log 2728 6060 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:18:42,789 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:20:33,110 log 2728 6060 "GET / HTTP/1.1" 200 4338
+INFO 2026-02-21 00:20:34,711 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:20:36,155 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:20:36,953 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:20:37,403 log 2728 6060 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:21:16,821 log 2728 6060 "GET / HTTP/1.1" 200 4464
+INFO 2026-02-21 00:21:18,311 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:21:19,716 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:21:20,460 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:21:42,244 log 2728 6060 "GET / HTTP/1.1" 200 4410
+INFO 2026-02-21 00:21:43,519 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:21:44,450 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:21:45,183 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:24:32,049 log 2728 6060 "GET / HTTP/1.1" 200 4887
+INFO 2026-02-21 00:24:33,482 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:24:34,864 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:24:35,456 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:24:36,301 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:32,191 log 2728 6060 "GET / HTTP/1.1" 200 5004
+INFO 2026-02-21 00:25:33,589 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:34,531 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:34,963 log 2728 6060 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:35,312 log 2728 6060 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:36,856 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:47,597 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:48,865 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:25:49,593 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:09,551 log 2728 6060 "GET / HTTP/1.1" 200 5019
+INFO 2026-02-21 00:26:11,553 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:12,866 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:13,442 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:14,556 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:18,697 log 2728 6060 "GET /apartment/A6/ HTTP/1.1" 200 4171
+INFO 2026-02-21 00:26:21,171 log 2728 6060 "GET / HTTP/1.1" 200 5019
+INFO 2026-02-21 00:26:24,613 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:25,647 log 2728 6060 "GET /blok/B/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:26,130 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:26,761 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:27,179 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:27,622 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:28,265 log 2728 6060 "GET /apartment/F6/ HTTP/1.1" 200 4171
+INFO 2026-02-21 00:26:30,611 log 2728 6060 "GET / HTTP/1.1" 200 5019
+INFO 2026-02-21 00:26:33,244 log 2728 6060 "GET /blok/B/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:26:41,929 log 2728 6060 "GET /apartment/B5/ HTTP/1.1" 200 4171
+INFO 2026-02-21 00:27:34,256 log 2728 6060 "GET / HTTP/1.1" 200 4281
+INFO 2026-02-21 00:28:23,631 log 2728 6060 "GET / HTTP/1.1" 200 4272
+INFO 2026-02-21 00:28:24,282 log 2728 6060 "GET / HTTP/1.1" 200 4272
+INFO 2026-02-21 00:28:24,495 log 2728 6060 "GET / HTTP/1.1" 200 4272
+INFO 2026-02-21 00:28:31,779 log 2728 6060 "GET / HTTP/1.1" 200 4272
+INFO 2026-02-21 00:28:33,347 log 2728 6060 "GET / HTTP/1.1" 200 4272
+INFO 2026-02-21 00:28:33,587 log 2728 6060 "GET / HTTP/1.1" 200 4272
+INFO 2026-02-21 00:28:35,241 log 2728 6060 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:28:36,193 log 2728 6060 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:28:36,611 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:29:38,806 log 2728 6060 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 00:29:39,884 log 2728 6060 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 00:29:40,130 log 2728 6060 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 00:29:52,003 log 2728 6060 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 00:29:52,094 log 2728 6060 "GET /static/css/output.css HTTP/1.1" 200 87662
+WARNING 2026-02-21 00:29:52,176 log 2728 6060 Not Found: /favicon.ico
+WARNING 2026-02-21 00:29:52,176 log 2728 6060 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 00:29:54,362 log 2728 6060 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:29:56,020 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:29:56,825 log 2728 6060 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:30:00,136 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:30:04,903 log 2728 6060 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 00:30:05,004 log 2728 6060 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:30:05,016 log 2728 6060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:30:20,199 log 2728 6060 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:30:21,437 log 2728 6060 "GET /apartment/F4/ HTTP/1.1" 200 4171
+WARNING 2026-02-21 00:30:21,502 log 2728 6060 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 00:30:21,503 log 2728 7276 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 00:30:21,514 log 2728 6060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:30:25,505 log 2728 6060 "GET / HTTP/1.1" 200 4335
+WARNING 2026-02-21 00:30:25,566 log 2728 6060 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 00:30:25,569 log 2728 6060 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 00:30:33,684 log 2728 6060 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 00:30:34,701 log 2728 6060 "GET /apartment/A1/ HTTP/1.1" 200 5086
+INFO 2026-02-21 00:30:34,727 log 2728 6060 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 12:47:30,167 autoreload 6916 6612 Watching for file changes with StatReloader
+INFO 2026-02-21 12:47:34,895 log 6916 7892 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 12:47:35,108 log 6916 7892 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 12:47:35,256 log 6916 7892 Not Found: /favicon.ico
+WARNING 2026-02-21 12:47:35,257 log 6916 7892 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 12:47:37,624 log 6916 12588 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:47:38,913 log 6916 12588 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:47:39,863 log 6916 12588 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:47:40,964 log 6916 12588 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:47:42,053 log 6916 12588 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:47:44,624 log 6916 12588 "GET /apartment/A35/ HTTP/1.1" 200 4173
+INFO 2026-02-21 12:47:47,963 log 6916 12588 "GET /apartment/A35/transactions/ HTTP/1.1" 200 924
+INFO 2026-02-21 12:47:49,248 log 6916 12588 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 12:47:50,381 log 6916 12588 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:47:51,239 log 6916 12588 "GET /apartment/A1/ HTTP/1.1" 200 5086
+INFO 2026-02-21 12:47:52,516 log 6916 12588 "GET /apartment/A1/transactions/ HTTP/1.1" 200 1615
+INFO 2026-02-21 12:50:02,240 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5144
+INFO 2026-02-21 12:50:42,706 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4954
+INFO 2026-02-21 12:51:37,275 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4919
+INFO 2026-02-21 12:52:33,665 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4969
+INFO 2026-02-21 12:53:27,666 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4963
+INFO 2026-02-21 12:53:45,961 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4969
+INFO 2026-02-21 12:53:59,005 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4984
+INFO 2026-02-21 12:54:20,547 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4969
+INFO 2026-02-21 12:54:42,560 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4987
+INFO 2026-02-21 12:55:10,352 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4989
+INFO 2026-02-21 12:55:44,945 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4989
+INFO 2026-02-21 12:55:46,008 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4989
+INFO 2026-02-21 12:56:14,227 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4997
+INFO 2026-02-21 12:56:23,884 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 4990
+INFO 2026-02-21 12:56:40,935 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5003
+INFO 2026-02-21 12:56:41,632 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5003
+INFO 2026-02-21 12:56:41,830 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5003
+INFO 2026-02-21 12:56:45,481 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5003
+INFO 2026-02-21 12:56:45,624 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86058
+WARNING 2026-02-21 12:56:45,977 log 6916 9792 Not Found: /favicon.ico
+WARNING 2026-02-21 12:56:45,979 log 6916 9792 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 12:56:45,984 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5003
+INFO 2026-02-21 12:56:46,020 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86058
+INFO 2026-02-21 12:56:46,068 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5003
+INFO 2026-02-21 12:56:46,103 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86058
+WARNING 2026-02-21 12:56:46,415 log 6916 2656 Not Found: /favicon.ico
+WARNING 2026-02-21 12:56:46,416 log 6916 2656 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 12:57:11,100 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5002
+INFO 2026-02-21 12:57:11,134 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86282
+INFO 2026-02-21 12:57:27,455 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5017
+INFO 2026-02-21 12:57:27,489 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86405
+INFO 2026-02-21 12:57:44,051 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5030
+INFO 2026-02-21 12:57:44,083 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 12:58:04,033 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5030
+INFO 2026-02-21 12:58:04,068 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86462
+INFO 2026-02-21 12:58:18,185 log 6916 2656 "GET /apartment/A1/ HTTP/1.1" 200 5030
+INFO 2026-02-21 12:58:18,218 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86578
+INFO 2026-02-21 12:58:40,179 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 12:58:40,257 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 12:58:40,258 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 12:58:52,742 log 6916 2656 "GET / HTTP/1.1" 200 4335
+WARNING 2026-02-21 12:58:52,790 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 12:58:52,792 log 6916 9792 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 12:58:52,793 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 12:58:54,689 log 6916 2656 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 12:59:42,737 log 6916 2656 "GET / HTTP/1.1" 200 4341
+WARNING 2026-02-21 12:59:42,791 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 12:59:42,795 log 6916 9792 "GET /static/css/output.css HTTP/1.1" 200 86625
+WARNING 2026-02-21 12:59:42,802 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:00:06,193 log 6916 2656 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 13:00:06,237 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:00:06,275 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:00:06,276 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:00:25,158 log 6916 2656 "GET / HTTP/1.1" 200 4331
+INFO 2026-02-21 13:00:25,206 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:00:25,239 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:00:25,240 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:00:41,693 log 6916 2656 "GET / HTTP/1.1" 200 4331
+INFO 2026-02-21 13:00:41,744 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:00:41,783 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:00:41,784 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:00:59,345 log 6916 2656 "GET / HTTP/1.1" 200 4323
+INFO 2026-02-21 13:00:59,395 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:00:59,428 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:00:59,430 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:01:03,182 log 6916 2656 "GET / HTTP/1.1" 200 4323
+INFO 2026-02-21 13:01:03,255 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86625
+WARNING 2026-02-21 13:01:03,282 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:01:03,283 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:01:03,518 log 6916 2656 "GET / HTTP/1.1" 200 4323
+INFO 2026-02-21 13:01:03,560 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86625
+WARNING 2026-02-21 13:01:03,579 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:01:03,581 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+WARNING 2026-02-21 13:01:04,011 log 6916 2656 Not Found: /favicon.ico
+WARNING 2026-02-21 13:01:04,013 log 6916 2656 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 13:02:37,715 log 6916 2656 "GET / HTTP/1.1" 200 4334
+INFO 2026-02-21 13:02:37,758 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:02:37,780 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:02:37,828 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:02:49,172 log 6916 2656 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:02:50,624 log 6916 2656 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:02:51,796 log 6916 2656 "GET /blok/F/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:02:58,556 log 6916 2656 "GET /blok/A/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:03:04,373 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:03:05,711 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:03:06,227 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:03:06,984 log 6916 2656 "GET /blok/E/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:03:07,791 log 6916 2656 "GET /blok/I/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:03:21,585 log 6916 2656 "GET /blok/D/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:04:05,563 log 6916 2656 "GET / HTTP/1.1" 200 4280
+INFO 2026-02-21 13:04:05,596 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:04:10,534 log 6916 2656 "GET /blok/G/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:04:31,226 log 6916 2656 "GET / HTTP/1.1" 200 4388
+INFO 2026-02-21 13:05:42,795 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:05:42,826 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:05:48,071 log 6916 2656 "GET /blok/H/apartments/ HTTP/1.1" 200 8034
+INFO 2026-02-21 13:06:15,026 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:06:16,139 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 7402
+INFO 2026-02-21 13:07:25,918 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:07:25,950 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86769
+INFO 2026-02-21 13:07:27,310 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 7639
+INFO 2026-02-21 13:07:53,029 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:07:53,064 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86913
+INFO 2026-02-21 13:07:54,346 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 7639
+INFO 2026-02-21 13:08:50,637 log 6916 2656 "GET /blok/A/apartments/ HTTP/1.1" 200 7639
+INFO 2026-02-21 13:09:24,794 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:09:24,825 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 86989
+INFO 2026-02-21 13:09:25,582 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:09:36,403 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:09:36,441 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 87039
+INFO 2026-02-21 13:09:37,261 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 7955
+INFO 2026-02-21 13:09:50,499 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:09:50,530 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:09:51,635 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:10:27,007 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:10:27,041 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:10:28,156 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8824
+INFO 2026-02-21 13:10:40,699 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:10:40,737 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:10:41,191 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:10:44,242 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:10:45,581 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:11:41,418 log 6916 2656 "GET / HTTP/1.1" 200 4333
+INFO 2026-02-21 13:11:41,448 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 87098
+INFO 2026-02-21 13:11:43,645 log 6916 2656 "GET / HTTP/1.1" 200 4333
+INFO 2026-02-21 13:11:43,676 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:11:55,031 log 6916 2656 "GET / HTTP/1.1" 200 4333
+INFO 2026-02-21 13:11:55,066 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 87156
+INFO 2026-02-21 13:12:10,047 log 6916 2656 "GET / HTTP/1.1" 200 4335
+INFO 2026-02-21 13:12:10,080 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 87240
+INFO 2026-02-21 13:12:12,124 log 6916 2656 "GET /blok/D/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:12:13,074 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:12:13,511 log 6916 2656 "GET /blok/H/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:12:14,342 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:12:34,407 log 6916 2656 "GET / HTTP/1.1" 200 4325
+INFO 2026-02-21 13:12:34,440 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:12:35,813 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:12:39,859 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:12:39,895 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:12:39,896 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:13:48,404 log 6916 2656 "GET / HTTP/1.1" 200 4353
+INFO 2026-02-21 13:13:48,453 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:13:48,484 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:13:48,486 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:14:27,928 log 6916 2656 "GET / HTTP/1.1" 200 4301
+INFO 2026-02-21 13:14:28,006 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 87240
+WARNING 2026-02-21 13:14:28,042 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:14:28,043 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+WARNING 2026-02-21 13:14:28,515 log 6916 2656 Not Found: /favicon.ico
+WARNING 2026-02-21 13:14:28,519 log 6916 2656 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 13:14:28,609 log 6916 2656 "GET / HTTP/1.1" 200 4301
+INFO 2026-02-21 13:14:28,652 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 200 87240
+WARNING 2026-02-21 13:14:28,705 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:14:28,707 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+WARNING 2026-02-21 13:14:29,057 log 6916 2656 Not Found: /favicon.ico
+WARNING 2026-02-21 13:14:29,058 log 6916 2656 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 13:14:48,800 log 6916 2656 "GET / HTTP/1.1" 200 4290
+INFO 2026-02-21 13:14:48,862 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:14:48,905 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:14:48,912 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:14:49,658 log 6916 2656 "GET / HTTP/1.1" 200 4290
+WARNING 2026-02-21 13:14:49,717 log 6916 2656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:14:49,718 log 6916 2656 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:14:55,996 log 6916 2656 "GET / HTTP/1.1" 200 4290
+INFO 2026-02-21 13:15:05,995 log 6916 2656 "GET / HTTP/1.1" 200 4353
+INFO 2026-02-21 13:15:06,030 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:15:15,968 log 6916 2656 "GET / HTTP/1.1" 200 4353
+INFO 2026-02-21 13:15:21,808 log 6916 2656 "GET /blok/B/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:15:58,809 log 6916 2656 "GET / HTTP/1.1" 200 4353
+INFO 2026-02-21 13:15:58,843 log 6916 2656 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:16:00,319 log 6916 2656 "GET /blok/C/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:16:03,041 log 6916 2656 "GET /blok/D/apartments/ HTTP/1.1" 200 8113
+INFO 2026-02-21 13:17:44,588 log 6916 828 "GET / HTTP/1.1" 200 4353
+INFO 2026-02-21 13:17:44,618 log 6916 828 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:17:48,507 log 6916 828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:17:48,509 log 6916 828 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:18:26,145 log 6916 828 "GET / HTTP/1.1" 200 4223
+WARNING 2026-02-21 13:18:26,208 log 6916 828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 13:18:26,209 log 6916 10140 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:18:26,210 log 6916 828 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:20:02,184 log 6916 828 "GET / HTTP/1.1" 200 4215
+WARNING 2026-02-21 13:20:02,255 log 6916 828 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 13:20:02,257 log 6916 10140 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:20:02,269 log 6916 828 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:20:38,508 log 6916 8576 "GET / HTTP/1.1" 200 4215
+INFO 2026-02-21 13:20:38,718 log 6916 8576 "GET /static/css/output.css HTTP/1.1" 200 87240
+WARNING 2026-02-21 13:20:38,944 log 6916 8576 Not Found: /favicon.ico
+WARNING 2026-02-21 13:20:38,945 log 6916 8576 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 13:22:01,628 log 6916 5676 "GET / HTTP/1.1" 200 4210
+INFO 2026-02-21 13:22:01,669 log 6916 5676 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:22:02,424 log 6916 5676 "GET / HTTP/1.1" 200 4210
+INFO 2026-02-21 13:22:08,503 log 6916 5676 "GET / HTTP/1.1" 200 4210
+INFO 2026-02-21 13:22:08,562 log 6916 5676 "GET /static/css/output.css HTTP/1.1" 200 87240
+INFO 2026-02-21 13:22:08,655 log 6916 5676 "GET / HTTP/1.1" 200 4210
+INFO 2026-02-21 13:22:08,704 log 6916 5676 "GET /static/css/output.css HTTP/1.1" 200 87240
+INFO 2026-02-21 13:22:08,823 log 6916 5676 "GET / HTTP/1.1" 200 4210
+INFO 2026-02-21 13:22:08,886 log 6916 5676 "GET /static/css/output.css HTTP/1.1" 200 87240
+WARNING 2026-02-21 13:22:09,577 log 6916 5676 Not Found: /favicon.ico
+WARNING 2026-02-21 13:22:09,583 log 6916 5676 "GET /favicon.ico HTTP/1.1" 404 3617
+INFO 2026-02-21 13:22:54,168 log 6916 5676 "GET / HTTP/1.1" 200 2958
+INFO 2026-02-21 13:23:17,652 log 6916 5676 "GET / HTTP/1.1" 200 4185
+INFO 2026-02-21 13:23:17,699 log 6916 5676 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:23:40,663 log 6916 5676 "GET / HTTP/1.1" 200 4217
+INFO 2026-02-21 13:23:41,384 log 6916 5676 "GET / HTTP/1.1" 200 4217
+INFO 2026-02-21 13:24:49,537 log 6916 5676 "GET / HTTP/1.1" 200 4338
+INFO 2026-02-21 13:24:49,619 log 6916 5676 "GET /static/css/output.css HTTP/1.1" 200 87332
+INFO 2026-02-21 13:27:56,365 log 6916 5772 "GET / HTTP/1.1" 200 4977
+INFO 2026-02-21 13:27:56,401 log 6916 5772 "GET /static/css/output.css HTTP/1.1" 200 91340
+INFO 2026-02-21 13:27:59,374 log 6916 5772 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:27:59,409 log 6916 5772 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:27:59,412 log 6916 5772 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:28:07,492 log 6916 5772 "GET /blok/B/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:28:09,254 log 6916 5772 "GET /blok/A/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:28:09,750 log 6916 5772 "GET /blok/C/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:28:10,181 log 6916 5772 "GET /blok/D/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:29:15,815 log 6916 5772 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-21 13:29:15,849 log 6916 5772 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:29:18,871 log 6916 5772 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:29:18,874 log 6916 5772 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:29:22,924 log 6916 5772 "GET /blok/D/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:29:24,096 log 6916 5772 "GET /blok/E/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:29:24,815 log 6916 5772 "GET /blok/I/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:29:25,298 log 6916 5772 "GET /blok/H/apartments/ HTTP/1.1" 200 13358
+INFO 2026-02-21 13:29:49,081 log 6916 5772 "GET / HTTP/1.1" 200 4933
+WARNING 2026-02-21 13:29:49,154 log 6916 5772 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 13:29:49,156 log 6916 5812 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:29:49,159 log 6916 5772 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:29:51,112 log 6916 5772 "GET /blok/C/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:04,696 log 6916 5772 "GET /blok/D/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:05,707 log 6916 5772 "GET /blok/I/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:13,079 log 6916 5772 "GET /blok/C/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:13,856 log 6916 5772 "GET /blok/D/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:14,503 log 6916 5772 "GET /blok/E/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:20,948 log 6916 5772 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-21 13:30:20,984 log 6916 5772 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:30:22,331 log 6916 5772 "GET /blok/H/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:34,375 log 6916 5772 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-21 13:30:35,061 log 6916 5772 "GET /apartment/A1/ HTTP/1.1" 200 5504
+INFO 2026-02-21 13:31:32,739 autoreload 6916 6612 C:\Users\USER\Desktop\veresiye\veresiye\veresiye\settings.py changed, reloading.
+INFO 2026-02-21 13:31:34,004 autoreload 2908 796 Watching for file changes with StatReloader

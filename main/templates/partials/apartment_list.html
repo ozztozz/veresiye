@@ -1,0 +1,8 @@
+<div class="grid grid-cols-5  lg:grid-cols-10 my-2 gap-2">
+    {% for number in number_list %}
+    <a href="{% url 'main:apartment_detail' apartment_number=blok|add:number %}" class="w-full">
+    <button class="btn w-full btn-warning text-xs sm:text-sm md:text-base min-h-0 h-auto py-2">{{ blok }}{{ number }}</button>
+    </a>
+    {% endfor %}
+    
+</div>

@@ -1,19 +1,21 @@
-    <div class="stats shadow">
-        <div class="stat place-items-center">
-            <div class="stat-title">Bakiye</div>
-            <div class="stat-value text-amber-400">{{ apartment.total_balance }}</div>
+    <div class="stats shadow flex-col sm:flex-row w-full">
+        <div class="stat place-items-center bg-blue-100">
+            
+            <div class="stat-value text-blue-500">{{ apartment }}</div>
         
         </div>
 
-        <div class="stat place-items-center">
-            <div class="stat-title">Odenen</div>
-            <div class="stat-value text-emerald-400">{{ apartment.total_payment }}</div>
+        <div class="stat place-items-center bg-emerald-100">
+            <div class="stat-title">Odenecek</div>
+            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-emerald-600">{{ apartment.total_balance }}</div>
 
         </div>
 
-        <div class="stat place-items-center">
+        <div class="stat place-items-center bg-amber-100">
             <div class="stat-title">Borc</div>
-            <div class="stat-value text-red-400">{{ apartment.total_debt }}</div>
+            <div class="stat-value text-xl sm:text-2xl text-amber-400">{{ apartment.total_debt }}</div>
+            <div class="stat-title">Ödenen</div>
+            <div class="stat-value text-xl sm:text-2xl text-red-400">{{ apartment.total_payment }}</div>
 
         </div>
     </div>
