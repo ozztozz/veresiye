@@ -1,3 +1,4 @@
+{% load humanize %}
 <!-- Main response for transaction table -->
 <table class="table table-zebra">
     <thead>
@@ -12,7 +13,7 @@
         {% for transaction in transactions %}
         <tr class="{% if not transaction.is_debt %}bg-green-100{% endif %}">
             <td>{{ transaction.updated_at }}</td>
-            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.amount|floatformat:2|intcomma }}</td>
             <td>{% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}</td>
             <td>{{ transaction.description }}</td>
         </tr>
@@ -25,15 +26,15 @@
     <div class="stats shadow">
         <div class="stat place-items-center">
             <div class="stat-title">Bakiye</div>
-            <div class="stat-value text-amber-400">{{ apartment.total_balance }}</div>
+            <div class="stat-value text-amber-400">{{ apartment.total_balance|floatformat:2|intcomma }}</div>
         </div>
         <div class="stat place-items-center">
             <div class="stat-title">Odenen</div>
-            <div class="stat-value text-emerald-400">{{ apartment.total_payment }}</div>
+            <div class="stat-value text-emerald-400">{{ apartment.total_payment|floatformat:2|intcomma }}</div>
         </div>
         <div class="stat place-items-center">
             <div class="stat-title">Borc</div>
-            <div class="stat-value text-red-400">{{ apartment.total_debt }}</div>
+            <div class="stat-value text-red-400">{{ apartment.total_debt|floatformat:2|intcomma }}</div>
         </div>
     </div>
 </div>

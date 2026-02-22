@@ -4762,3 +4762,430 @@ INFO 2026-02-22 22:55:19,842 log 6148 11080 "POST /apartment/A1/add_transaction/
 INFO 2026-02-22 22:55:19,866 log 6148 11080 "GET /apartment/A1/transactions/ HTTP/1.1" 200 3349
 INFO 2026-02-22 22:55:52,260 autoreload 6148 1364 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
 INFO 2026-02-22 22:55:53,051 autoreload 10452 7344 Watching for file changes with StatReloader
+INFO 2026-02-22 22:56:00,163 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 8191
+INFO 2026-02-22 22:56:39,855 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7970
+INFO 2026-02-22 22:57:14,465 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7986
+INFO 2026-02-22 22:57:15,147 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7986
+INFO 2026-02-22 22:57:15,353 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7986
+INFO 2026-02-22 22:57:26,937 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7977
+INFO 2026-02-22 22:57:27,832 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7977
+INFO 2026-02-22 22:57:28,349 log 10452 4284 "GET /apartment/A1/ HTTP/1.1" 200 7977
+INFO 2026-02-22 22:57:47,428 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7976
+INFO 2026-02-22 22:57:47,946 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7976
+INFO 2026-02-22 22:57:59,189 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7982
+INFO 2026-02-22 22:57:59,292 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90390
+INFO 2026-02-22 22:57:59,930 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7982
+INFO 2026-02-22 22:58:00,187 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7982
+INFO 2026-02-22 22:58:10,082 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7982
+INFO 2026-02-22 22:58:10,115 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:58:48,080 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:48,112 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:58:48,876 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:48,902 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:58:49,103 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:49,128 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:58:50,097 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:50,124 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:58:52,921 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:52,960 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:58:53,053 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:53,099 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:58:53,246 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:53,278 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:58:53,347 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:53,382 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:58:53,533 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 22:58:53,534 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:58:54,636 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:54,668 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:58:54,751 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7966
+INFO 2026-02-22 22:58:54,791 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:58:54,977 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 22:58:54,978 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:59:08,148 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:08,179 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:59:08,726 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:08,916 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:10,408 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:10,441 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:59:10,590 log 10452 11328 Not Found: /favicon.ico
+WARNING 2026-02-22 22:59:10,593 log 10452 11328 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:59:10,597 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:10,637 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:59:10,767 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+WARNING 2026-02-22 22:59:10,778 log 10452 11328 Not Found: /favicon.ico
+INFO 2026-02-22 22:59:10,783 basehttp 10452 11328 - Broken pipe from ('127.0.0.1', 51494)
+INFO 2026-02-22 22:59:10,803 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:59:10,933 log 10452 11288 Not Found: /favicon.ico
+WARNING 2026-02-22 22:59:10,933 log 10452 11288 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:59:10,937 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:10,969 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:59:11,098 log 10452 11288 Not Found: /favicon.ico
+WARNING 2026-02-22 22:59:11,099 log 10452 11288 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:59:11,103 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:11,139 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 22:59:12,020 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:12,058 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:59:12,177 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 22:59:12,178 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:59:12,216 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7959
+INFO 2026-02-22 22:59:12,246 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 22:59:12,397 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 22:59:12,398 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 22:59:40,142 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7954
+INFO 2026-02-22 22:59:40,174 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:59:40,541 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7954
+INFO 2026-02-22 23:00:06,673 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7970
+INFO 2026-02-22 23:00:06,706 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:00:07,136 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7970
+INFO 2026-02-22 23:00:08,832 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7970
+INFO 2026-02-22 23:00:08,864 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 23:00:08,984 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:00:08,985 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:00:09,046 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7970
+INFO 2026-02-22 23:00:09,083 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+WARNING 2026-02-22 23:00:09,192 log 10452 11288 Not Found: /favicon.ico
+WARNING 2026-02-22 23:00:09,194 log 10452 11288 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:00:09,202 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7970
+INFO 2026-02-22 23:00:09,243 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90448
+INFO 2026-02-22 23:00:42,947 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7978
+INFO 2026-02-22 23:00:42,976 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90494
+INFO 2026-02-22 23:00:43,461 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7978
+INFO 2026-02-22 23:00:43,490 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:00:43,640 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7978
+INFO 2026-02-22 23:00:43,665 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:00:51,941 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:51,975 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+INFO 2026-02-22 23:00:52,396 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:52,425 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:00:52,563 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:52,592 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:00:54,131 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:54,169 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:00:54,303 log 10452 11288 Not Found: /favicon.ico
+WARNING 2026-02-22 23:00:54,308 log 10452 11288 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:00:54,315 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:54,344 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:00:54,476 log 10452 11288 Not Found: /favicon.ico
+WARNING 2026-02-22 23:00:54,478 log 10452 11288 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:00:54,487 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:54,516 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+INFO 2026-02-22 23:00:54,581 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:00:54,614 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:00:54,735 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:00:54,739 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:01:19,011 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7980
+INFO 2026-02-22 23:01:19,039 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:01:19,914 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7980
+INFO 2026-02-22 23:01:20,468 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7980
+INFO 2026-02-22 23:01:22,799 log 10452 9244 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 23:01:22,838 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:01:24,847 log 10452 9244 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 23:01:25,813 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7980
+INFO 2026-02-22 23:01:25,849 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:01:50,096 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 7974
+INFO 2026-02-22 23:01:50,130 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:02:42,701 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:42,736 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:02:43,287 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:43,488 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:45,275 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:45,308 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:02:45,461 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:02:45,462 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:02:45,730 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:45,768 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+INFO 2026-02-22 23:02:45,892 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:45,920 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:02:46,048 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:02:46,049 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:02:46,065 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:46,096 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+INFO 2026-02-22 23:02:47,133 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8045
+INFO 2026-02-22 23:02:47,171 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:02:47,307 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:02:47,308 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:03:06,395 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8053
+INFO 2026-02-22 23:03:06,423 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:03:06,971 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8053
+INFO 2026-02-22 23:03:07,188 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8053
+INFO 2026-02-22 23:03:08,777 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8053
+INFO 2026-02-22 23:03:08,808 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:03:08,938 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:03:08,939 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:03:09,340 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8053
+INFO 2026-02-22 23:03:09,373 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:03:09,498 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:03:09,499 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:03:09,879 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8053
+INFO 2026-02-22 23:03:09,920 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90546
+WARNING 2026-02-22 23:03:10,041 log 10452 9244 Not Found: /favicon.ico
+WARNING 2026-02-22 23:03:10,042 log 10452 9244 "GET /favicon.ico HTTP/1.1" 404 3966
+INFO 2026-02-22 23:03:29,746 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:03:29,774 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:03:31,304 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:03:36,332 log 10452 9244 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:03:36,333 log 10452 9244 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:03:51,908 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1416
+INFO 2026-02-22 23:03:58,207 log 10452 9244 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1412
+INFO 2026-02-22 23:05:17,214 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:05:17,247 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:05:17,637 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:05:18,389 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1416
+INFO 2026-02-22 23:08:01,939 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:08:01,968 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90731
+INFO 2026-02-22 23:08:02,170 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:08:02,194 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+ERROR 2026-02-22 23:08:03,573 log 10452 9244 Internal Server Error: /apartment/A1/add_transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 89, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 1008, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 590, in parse
+    self.unclosed_block_tag(parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 657, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\USER\Desktop\veresiye\veresiye\main\templates\partials\modal_transaction.html, Unclosed tag on line 3: 'if'. Looking for one of: endif.
+ERROR 2026-02-22 23:08:03,586 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 500 157903
+ERROR 2026-02-22 23:08:04,729 log 10452 9244 Internal Server Error: /apartment/A1/add_transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 89, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 1008, in do_if
+    nodelist = parser.parse(("endif",))
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 590, in parse
+    self.unclosed_block_tag(parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 657, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\USER\Desktop\veresiye\veresiye\main\templates\partials\modal_transaction.html, Unclosed tag on line 3: 'if'. Looking for one of: endif.
+ERROR 2026-02-22 23:08:04,741 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 500 157903
+INFO 2026-02-22 23:08:16,225 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:08:16,259 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:08:17,278 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:08:21,374 log 10452 9244 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1517
+INFO 2026-02-22 23:08:35,184 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:08:35,217 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:08:36,170 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:08:38,352 log 10452 9244 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1439
+INFO 2026-02-22 23:09:28,719 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:09:28,751 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:09:29,586 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:09:50,559 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:09:50,590 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:09:51,706 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1430
+INFO 2026-02-22 23:10:14,020 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:10:14,055 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:10:17,335 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:10:18,123 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:10:50,965 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:10:50,992 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:10:51,703 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:10:51,893 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:10:52,692 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:11:06,800 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:11:21,035 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:11:21,072 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:11:21,955 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1446
+INFO 2026-02-22 23:11:33,594 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:11:34,152 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1442
+INFO 2026-02-22 23:11:52,418 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:11:52,448 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 90846
+INFO 2026-02-22 23:11:53,422 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:12:10,753 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:12:10,783 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:12:12,066 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1442
+INFO 2026-02-22 23:15:28,067 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:15:28,100 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 200 91504
+INFO 2026-02-22 23:15:28,598 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:15:28,632 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:15:29,677 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1650
+INFO 2026-02-22 23:16:43,495 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:16:43,530 log 10452 9244 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 23:16:43,887 log 10452 9244 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:16:44,816 log 10452 9244 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1494
+INFO 2026-02-22 23:17:52,089 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:17:52,127 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 200 91623
+INFO 2026-02-22 23:17:53,366 log 10452 11840 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1438
+INFO 2026-02-22 23:18:20,352 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:18:20,386 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 200 91739
+INFO 2026-02-22 23:18:21,469 log 10452 11840 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1440
+INFO 2026-02-22 23:18:45,130 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:18:45,161 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 200 91857
+INFO 2026-02-22 23:18:45,895 log 10452 11840 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1441
+INFO 2026-02-22 23:18:49,964 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:18:50,002 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:18:50,004 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:19:06,553 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:19:06,597 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 200 91919
+WARNING 2026-02-22 23:19:06,628 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:19:06,630 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:19:06,831 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:19:07,092 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 23:19:07,097 log 10452 4176 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:19:07,101 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:19:07,703 log 10452 11840 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1438
+INFO 2026-02-22 23:20:06,162 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:20:06,214 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 23:20:06,216 log 10452 4176 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:20:06,217 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:20:07,116 log 10452 11840 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1443
+INFO 2026-02-22 23:20:20,313 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:20:20,369 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 200 91983
+WARNING 2026-02-22 23:20:20,432 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:20:20,433 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:20:21,350 log 10452 11840 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1444
+INFO 2026-02-22 23:20:23,865 log 10452 11840 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1446
+INFO 2026-02-22 23:20:43,312 log 10452 11840 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1444
+INFO 2026-02-22 23:20:53,715 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:20:53,767 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 200 92047
+WARNING 2026-02-22 23:20:53,814 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:20:53,815 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:20:54,145 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:20:54,234 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:20:54,235 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:20:55,064 log 10452 11840 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1444
+INFO 2026-02-22 23:20:59,174 log 10452 11840 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1444
+INFO 2026-02-22 23:21:01,102 log 10452 11840 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1446
+INFO 2026-02-22 23:21:43,711 log 10452 11840 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:21:43,763 log 10452 11840 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 23:21:43,765 log 10452 4176 "GET /static/css/output.css HTTP/1.1" 200 92123
+WARNING 2026-02-22 23:21:43,766 log 10452 11840 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:21:44,146 log 10452 4176 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:21:44,339 log 10452 4176 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:21:44,400 log 10452 4176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:21:44,403 log 10452 4176 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:21:45,344 log 10452 4176 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1464
+INFO 2026-02-22 23:21:50,480 log 10452 4176 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1466
+INFO 2026-02-22 23:21:53,231 log 10452 4176 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1464
+INFO 2026-02-22 23:22:41,241 log 10452 4176 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:22:41,304 log 10452 4176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 23:22:41,305 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:22:41,306 log 10452 4176 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:22:43,181 log 10452 4176 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1322
+INFO 2026-02-22 23:22:53,834 log 10452 4176 "GET /apartment/A1/ HTTP/1.1" 200 8059
+INFO 2026-02-22 23:22:53,888 log 10452 4176 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:22:53,950 log 10452 4176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:22:53,951 log 10452 4176 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:22:54,848 log 10452 4176 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1466
+INFO 2026-02-22 23:23:37,340 log 10452 4176 "GET /apartment/A1/ HTTP/1.1" 200 8059
+WARNING 2026-02-22 23:23:37,400 log 10452 4176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 23:23:37,403 log 10452 11840 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:23:37,404 log 10452 4176 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:23:38,292 log 10452 4176 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1495
+INFO 2026-02-22 23:35:58,099 autoreload 10452 7344 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 23:35:59,513 autoreload 7960 9700 Watching for file changes with StatReloader
+INFO 2026-02-22 23:36:09,468 autoreload 7960 9700 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 23:36:10,264 autoreload 1828 10312 Watching for file changes with StatReloader
+INFO 2026-02-22 23:37:33,065 log 1828 8600 "GET /apartment/A1/ HTTP/1.1" 200 9072
+WARNING 2026-02-22 23:37:33,120 log 1828 8600 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:37:33,123 log 1828 8600 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:37:33,201 log 1828 2620 "GET /static/css/output.css HTTP/1.1" 200 92336
+INFO 2026-02-22 23:38:43,202 log 1828 2620 "GET /apartment/A1/ HTTP/1.1" 200 8960
+INFO 2026-02-22 23:38:43,254 log 1828 2620 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:38:43,309 log 1828 2620 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:38:43,310 log 1828 2620 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:39:15,671 log 1828 2620 "GET /apartment/A1/ HTTP/1.1" 200 8960
+INFO 2026-02-22 23:39:15,722 log 1828 2620 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:39:15,776 log 1828 2620 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:39:15,777 log 1828 2620 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:39:44,192 log 1828 2620 "GET /apartment/A1/ HTTP/1.1" 200 8534
+INFO 2026-02-22 23:39:44,243 log 1828 2620 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:39:44,296 log 1828 2620 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:39:44,297 log 1828 2620 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:40:28,872 log 1828 4556 "GET /apartment/A1/ HTTP/1.1" 200 8534
+INFO 2026-02-22 23:40:28,924 log 1828 4556 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:40:28,975 log 1828 4556 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:40:28,975 log 1828 4556 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:40:48,837 log 1828 4556 "GET /apartment/A1/ HTTP/1.1" 200 8537
+WARNING 2026-02-22 23:40:48,945 log 1828 4556 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:40:48,947 log 1828 4556 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:41:35,919 log 1828 4556 "GET /apartment/A1/ HTTP/1.1" 200 8705
+INFO 2026-02-22 23:41:35,966 log 1828 4556 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 23:41:36,029 log 1828 4556 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:41:36,030 log 1828 4556 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:41:36,804 log 1828 4556 "GET /apartment/A1/ HTTP/1.1" 200 8705
+WARNING 2026-02-22 23:41:37,012 log 1828 4556 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:41:37,030 log 1828 4556 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:41:51,869 log 1828 4556 "GET /apartment/A1/ HTTP/1.1" 200 8607
+WARNING 2026-02-22 23:41:51,922 log 1828 4556 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:41:51,928 log 1828 4556 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:41:52,571 log 1828 4556 "GET /apartment/A1/ HTTP/1.1" 200 8607
+WARNING 2026-02-22 23:41:53,247 log 1828 4556 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 23:41:53,282 log 1828 4556 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 23:43:01,161 autoreload 1828 10312 C:\Users\USER\Desktop\veresiye\veresiye\veresiye\settings.py changed, reloading.
+INFO 2026-02-22 23:43:02,162 autoreload 9188 6548 Watching for file changes with StatReloader

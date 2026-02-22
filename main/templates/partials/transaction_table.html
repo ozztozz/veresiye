@@ -1,3 +1,4 @@
+{% load humanize %}
 <div class="overflow-x-auto w-full">
         <table class="table table-zebra w-full text-xs sm:text-sm md:text-base">
             <thead>
@@ -5,16 +6,18 @@
                     <th>Tarih</th>
                     <th>Miktar</th>
                     <th>Tür</th>
-                    <th>Açıklama</th>
+                   
+                    <th>Bakiye</th>
                 </tr>
             </thead>
             <tbody>
                 {% for transaction in transactions %}
                 <tr class="{% if not transaction.is_debt %}bg-green-100{% endif %}">
-                    <td>{{ transaction.updated_at }}</td>
-                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.updated_at|date:"d.m.Y H:i" }}</td>
+                    <td>{{ transaction.amount|floatformat:2|intcomma }}</td>
                     <td>{% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}</td>
-                    <td>{{ transaction.description }}</td>
+
+                    <td class="font-semibold {% if transaction.running_balance > 0 %}text-red-600{% elif transaction.running_balance < 0 %}text-green-600{% endif %}">{{ transaction.running_balance|floatformat:2|intcomma }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -27,7 +27,18 @@ def apartment_detail(request, apartment_number):
     apartment = Apartment.objects.filter(number=apartment_number).first()
     if not apartment:
         apartment=Apartment.objects.create(number=apartment_number)
-    transactions = Transaction.objects.filter(apartment=apartment).order_by('-updated_at')
+    transactions = list(Transaction.objects.filter(apartment=apartment).order_by('-updated_at'))
+    
+    # Calculate running balance (from newest to oldest)
+    running_balance = apartment.total_balance()
+    for transaction in transactions:
+        transaction.running_balance = running_balance
+        # Subtract this transaction's effect to get previous balance
+        if transaction.is_debt:
+            running_balance -= transaction.amount
+        else:
+            running_balance += transaction.amount
+    
     apartment.total_debt = apartment.total_debt()
     apartment.total_payment = apartment.total_payment()
     apartment.total_balance = apartment.total_balance()
@@ -51,7 +62,17 @@ def htmx_apartment_list(request, blok):
 
 def htmx_transaction_list(request, apartment_number):
     apartment = get_object_or_404(Apartment, number=apartment_number)
-    transactions = Transaction.objects.filter(apartment=apartment).order_by('-updated_at')
+    transactions = list(Transaction.objects.filter(apartment=apartment).order_by('-updated_at'))
+    
+    # Calculate running balance (from newest to oldest)
+    running_balance = apartment.total_balance()
+    for transaction in transactions:
+        transaction.running_balance = running_balance
+        # Subtract this transaction's effect to get previous balance
+        if transaction.is_debt:
+            running_balance -= transaction.amount
+        else:
+            running_balance += transaction.amount
     
     # Calculate totals
     apartment.total_debt = apartment.total_debt()
