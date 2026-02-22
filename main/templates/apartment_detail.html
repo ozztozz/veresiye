@@ -6,19 +6,23 @@
     
 </div>  
 
-<div class="w-full max-w-4xl mx-auto px-2">
+<div class="w-full items-end px-2">
         <h2 class="text-xl md:text-2xl font-semibold mb-4">İşlemler</h2>
-        <button class="btn btn-primary btn-sm md:btn-md mb-4"
-        hx-get="{% url 'main:htmx_transaction_list' apartment_number=apartment.number %}"
-        hx-target="#transaction_table"
-        hx-swap="innerHTML"
-        >
-            Guncelle
-        </button>
+        <div class=" w-full justify-between flex">
+            <button class="btn btn-accent btn-sm md:btn-md mb-4" 
+            hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='debt' %}" 
+            hx-target="body" 
+            hx-swap="beforeend">Yeni Borç</button>
+            <button class="btn btn-primary btn-sm md:btn-md mb-4" 
+            hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='payment' %}" 
+            hx-target="body" 
+            hx-swap="beforeend">Yeni Ödeme</button>
+        </div>
+ </div>       
 <div id="transaction_table">{% include "partials/transaction_table.html" %}</div>
 
 
-</div>
+
 
 
 {% endblock content %}

@@ -3246,3 +3246,1519 @@ INFO 2026-02-21 13:30:34,375 log 6916 5772 "GET /blok/A/apartments/ HTTP/1.1" 20
 INFO 2026-02-21 13:30:35,061 log 6916 5772 "GET /apartment/A1/ HTTP/1.1" 200 5504
 INFO 2026-02-21 13:31:32,739 autoreload 6916 6612 C:\Users\USER\Desktop\veresiye\veresiye\veresiye\settings.py changed, reloading.
 INFO 2026-02-21 13:31:34,004 autoreload 2908 796 Watching for file changes with StatReloader
+INFO 2026-02-21 13:31:35,944 log 2908 9680 "GET /apartment/A1/ HTTP/1.1" 200 5504
+INFO 2026-02-21 13:31:35,973 log 2908 9680 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:31:45,101 log 2908 9680 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:31:45,105 log 2908 9680 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3728
+INFO 2026-02-21 13:38:56,647 log 2908 3424 "GET /apartment/A1/ HTTP/1.1" 200 6032
+INFO 2026-02-21 13:38:56,746 log 2908 3424 "GET /static/css/output.css HTTP/1.1" 200 92984
+INFO 2026-02-21 13:41:09,308 autoreload 2908 796 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 13:41:10,471 autoreload 4704 5272 Watching for file changes with StatReloader
+INFO 2026-02-21 13:41:31,118 autoreload 4704 5272 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-21 13:41:32,458 autoreload 7156 12372 Watching for file changes with StatReloader
+INFO 2026-02-21 13:42:03,933 autoreload 7156 12372 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-21 13:42:04,929 autoreload 7596 9288 Watching for file changes with StatReloader
+INFO 2026-02-21 13:42:09,726 log 7596 11996 "GET /apartment/A1/ HTTP/1.1" 200 5624
+INFO 2026-02-21 13:42:09,751 log 7596 11996 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 13:42:11,123 log 7596 11996 "GET /modal HTTP/1.1" 301 0
+ERROR 2026-02-21 13:42:11,302 log 7596 11996 Internal Server Error: /modal/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 69, in htmx_transaction_modal
+    return render(request, 'partials/transaction_modal.html', )
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: partials/transaction_modal.html
+ERROR 2026-02-21 13:42:11,306 log 7596 11996 "GET /modal/ HTTP/1.1" 500 85575
+ERROR 2026-02-21 13:42:12,001 log 7596 11996 Internal Server Error: /modal/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 69, in htmx_transaction_modal
+    return render(request, 'partials/transaction_modal.html', )
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: partials/transaction_modal.html
+ERROR 2026-02-21 13:42:12,004 log 7596 11996 "GET /modal/ HTTP/1.1" 500 85575
+WARNING 2026-02-21 13:42:15,279 log 7596 11996 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:42:15,281 log 7596 11996 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3998
+INFO 2026-02-21 13:42:17,425 log 7596 11996 "GET /apartment/A1/ HTTP/1.1" 200 5624
+WARNING 2026-02-21 13:42:17,526 log 7596 11996 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:42:17,528 log 7596 11996 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3998
+ERROR 2026-02-21 13:42:18,758 log 7596 11996 Internal Server Error: /modal/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 69, in htmx_transaction_modal
+    return render(request, 'partials/transaction_modal.html', )
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: partials/transaction_modal.html
+ERROR 2026-02-21 13:42:18,767 log 7596 11996 "GET /modal/ HTTP/1.1" 500 85595
+INFO 2026-02-21 13:42:47,148 autoreload 7596 9288 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 13:42:48,458 autoreload 2160 4036 Watching for file changes with StatReloader
+INFO 2026-02-21 13:42:49,935 log 2160 4616 "GET /apartment/A1/ HTTP/1.1" 200 5624
+WARNING 2026-02-21 13:42:50,010 log 2160 4616 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 13:42:50,010 log 2160 12212 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:42:50,021 log 2160 4616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3998
+INFO 2026-02-21 13:42:50,851 log 2160 4616 "GET /modal/ HTTP/1.1" 200 0
+INFO 2026-02-21 13:42:56,923 log 2160 4616 "GET /modal/ HTTP/1.1" 200 0
+INFO 2026-02-21 13:43:31,010 log 2160 4616 "GET /apartment/A1/ HTTP/1.1" 200 5624
+WARNING 2026-02-21 13:43:31,088 log 2160 4616 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 13:43:31,099 log 2160 12212 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 13:43:31,107 log 2160 4616 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3998
+INFO 2026-02-21 13:43:32,070 log 2160 4616 "GET /modal/ HTTP/1.1" 200 408
+INFO 2026-02-21 13:52:07,556 log 2160 1844 "GET /apartment/A1/ HTTP/1.1" 200 5677
+WARNING 2026-02-21 13:52:07,628 log 2160 7208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 13:52:07,629 log 2160 7208 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3998
+INFO 2026-02-21 13:52:07,753 log 2160 1844 "GET /static/css/output.css HTTP/1.1" 200 94706
+INFO 2026-02-21 13:52:09,320 log 2160 1844 "GET /modal/ HTTP/1.1" 200 1307
+INFO 2026-02-21 13:53:15,985 log 2160 1844 "GET /modal/ HTTP/1.1" 200 1307
+INFO 2026-02-21 13:53:31,468 log 2160 1844 "GET /modal/ HTTP/1.1" 200 1307
+INFO 2026-02-21 13:55:43,753 autoreload 2160 4036 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 13:55:44,705 autoreload 1816 12108 Watching for file changes with StatReloader
+INFO 2026-02-21 14:03:52,831 autoreload 1816 12108 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 14:03:54,202 autoreload 2700 12952 Watching for file changes with StatReloader
+INFO 2026-02-21 14:04:59,574 autoreload 2700 12952 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-21 14:05:00,419 autoreload 2460 6648 Watching for file changes with StatReloader
+INFO 2026-02-21 14:05:16,775 autoreload 2460 6648 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-21 14:05:17,582 autoreload 12716 2888 Watching for file changes with StatReloader
+INFO 2026-02-21 14:05:20,171 log 12716 12764 "GET /apartment/A1/ HTTP/1.1" 200 5677
+WARNING 2026-02-21 14:05:20,225 log 12716 12764 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-21 14:05:20,226 log 12716 7656 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-21 14:05:20,228 log 12716 12764 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4318
+ERROR 2026-02-21 14:05:21,653 log 12716 12764 Internal Server Error: /modal/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() missing 1 required positional argument: 'apartment_number'
+ERROR 2026-02-21 14:05:21,655 log 12716 12764 "GET /modal/ HTTP/1.1" 500 67532
+ERROR 2026-02-21 14:06:01,823 log 12716 12764 Internal Server Error: /modal/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() missing 1 required positional argument: 'apartment_number'
+ERROR 2026-02-21 14:06:01,829 log 12716 12764 "GET /modal/ HTTP/1.1" 500 67532
+ERROR 2026-02-21 14:07:12,346 log 12716 12764 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_modal' with keyword arguments '{'apartment_number': 'A1'}' not found. 1 pattern(s) tried: ['modal/\\Z']
+ERROR 2026-02-21 14:07:12,373 log 12716 12764 "GET /apartment/A1/ HTTP/1.1" 500 163174
+WARNING 2026-02-21 14:07:12,444 log 12716 12764 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:07:12,445 log 12716 12764 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4318
+INFO 2026-02-21 14:08:23,639 autoreload 12716 2888 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-21 14:08:24,900 autoreload 11068 12700 Watching for file changes with StatReloader
+INFO 2026-02-21 14:08:30,805 autoreload 11068 12700 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 14:08:31,748 autoreload 12840 7248 Watching for file changes with StatReloader
+INFO 2026-02-21 14:08:33,387 log 12840 2780 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-21 14:08:33,419 log 12840 2780 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-21 14:08:34,982 log 12840 2780 "GET /modal/A1/ HTTP/1.1" 200 1307
+WARNING 2026-02-21 14:08:48,999 log 12840 2780 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:08:49,000 log 12840 2780 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4347
+INFO 2026-02-21 14:08:51,566 log 12840 2780 "GET /apartment/A1/ HTTP/1.1" 200 5680
+WARNING 2026-02-21 14:08:51,694 log 12840 2780 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:08:51,695 log 12840 2780 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4347
+INFO 2026-02-21 14:08:53,077 log 12840 2780 "GET /modal/A1/ HTTP/1.1" 200 1307
+INFO 2026-02-21 14:09:10,690 log 12840 2780 "GET /apartment/A1/ HTTP/1.1" 200 5680
+WARNING 2026-02-21 14:09:10,793 log 12840 2780 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:09:10,797 log 12840 2780 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4347
+INFO 2026-02-21 14:09:11,243 log 12840 2780 "GET /apartment/A1/ HTTP/1.1" 200 5680
+WARNING 2026-02-21 14:09:11,332 log 12840 2780 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:09:11,333 log 12840 2780 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4347
+INFO 2026-02-21 14:09:12,611 log 12840 2780 "GET /modal/A1/ HTTP/1.1" 200 1379
+INFO 2026-02-21 14:09:57,661 log 12840 2780 "GET /apartment/A1/ HTTP/1.1" 200 5680
+WARNING 2026-02-21 14:09:57,745 log 12840 2780 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:09:57,750 log 12840 2780 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4347
+INFO 2026-02-21 14:09:59,555 log 12840 2780 "GET /modal/A1/ HTTP/1.1" 200 1379
+ERROR 2026-02-21 14:10:03,517 log 12840 2780 Internal Server Error: /apartment/A1/add_transaction/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_create() got an unexpected keyword argument 'apartment_number'
+ERROR 2026-02-21 14:10:03,520 log 12840 2780 "POST /apartment/A1/add_transaction/ HTTP/1.1" 500 68854
+WARNING 2026-02-21 14:10:03,591 log 12840 2780 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-21 14:10:03,592 log 12840 2780 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4347
+INFO 2026-02-21 14:10:36,772 autoreload 12840 7248 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-21 14:10:37,957 autoreload 8660 10420 Watching for file changes with StatReloader
+ERROR 2026-02-21 14:10:42,053 log 8660 11204 Internal Server Error: /apartment/A1/add_transaction/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 89, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_create' with keyword arguments '{'apartment_number': ''}' not found. 1 pattern(s) tried: ['apartment/(?P<apartment_number>[^/]+)/add_transaction/\\Z']
+ERROR 2026-02-21 14:10:42,066 log 8660 11204 "POST /apartment/A1/add_transaction/ HTTP/1.1" 500 128407
+INFO 2026-02-22 21:56:54,901 autoreload 3616 5480 Watching for file changes with StatReloader
+INFO 2026-02-22 21:57:29,519 log 3616 7300 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 21:57:29,744 log 3616 7300 "GET /static/css/output.css HTTP/1.1" 200 68502
+WARNING 2026-02-22 21:57:29,897 log 3616 7300 Not Found: /favicon.ico
+WARNING 2026-02-22 21:57:29,899 log 3616 7300 "GET /favicon.ico HTTP/1.1" 404 4236
+INFO 2026-02-22 21:57:31,627 log 3616 7300 "GET /blok/B/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 21:57:32,652 log 3616 7312 "GET /blok/C/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 21:57:33,182 log 3616 7312 "GET /blok/D/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 21:57:33,678 log 3616 7312 "GET /blok/E/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 21:57:35,051 log 3616 7312 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 21:57:36,477 log 3616 7312 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 21:57:36,506 log 3616 7312 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 21:57:38,038 log 3616 7312 "GET /modal/A1/ HTTP/1.1" 200 1379
+ERROR 2026-02-22 21:57:44,170 log 3616 7312 Internal Server Error: /apartment/A1/add_transaction/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 89, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_create' with keyword arguments '{'apartment_number': ''}' not found. 1 pattern(s) tried: ['apartment/(?P<apartment_number>[^/]+)/add_transaction/\\Z']
+ERROR 2026-02-22 21:57:44,179 log 3616 7312 "POST /apartment/A1/add_transaction/ HTTP/1.1" 500 128407
+INFO 2026-02-22 21:59:12,837 autoreload 3616 5480 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-22 21:59:13,661 autoreload 984 912 Watching for file changes with StatReloader
+ERROR 2026-02-22 21:59:18,154 log 984 6328 Internal Server Error: /apartment/A1/add_transaction/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 89, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_create' with keyword arguments '{'apartment_number': ''}' not found. 1 pattern(s) tried: ['apartment/(?P<apartment_number>[^/]+)/add_transaction/\\Z']
+ERROR 2026-02-22 21:59:18,165 log 984 6328 "POST /apartment/A1/add_transaction/ HTTP/1.1" 500 128407
+INFO 2026-02-22 22:01:42,112 autoreload 984 912 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:01:43,005 autoreload 1164 7736 Watching for file changes with StatReloader
+INFO 2026-02-22 22:02:41,380 autoreload 1164 7736 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:02:42,219 autoreload 9564 3044 Watching for file changes with StatReloader
+INFO 2026-02-22 22:02:49,984 log 9564 11416 "GET /modal/A1/ HTTP/1.1" 200 1315
+INFO 2026-02-22 22:04:21,350 log 9564 11416 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 22:04:21,391 log 9564 11416 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:04:22,257 log 9564 11416 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 22:04:22,513 log 9564 11416 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 22:04:23,642 log 9564 11416 "GET /modal/A1/ HTTP/1.1" 200 1315
+INFO 2026-02-22 22:04:58,039 log 9564 11416 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 22:04:59,272 log 9564 11416 "GET /modal/A1/ HTTP/1.1" 200 1379
+INFO 2026-02-22 22:05:43,470 log 9564 9372 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 22:05:43,503 log 9564 9372 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:05:44,149 log 9564 9372 "GET /apartment/A1/ HTTP/1.1" 200 5680
+INFO 2026-02-22 22:05:45,455 log 9564 9372 "GET /modal/A1/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:05:50,429 log 9564 9372 "POST /apartment/A1/add_transaction/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:05:50,448 log 9564 9372 "GET /apartment/A1/ HTTP/1.1" 200 5904
+INFO 2026-02-22 22:05:53,038 log 9564 9372 "GET /modal/A1/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:05:56,232 log 9564 9372 "POST /apartment/A1/add_transaction/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:05:56,253 log 9564 9372 "GET /apartment/A1/ HTTP/1.1" 200 6129
+INFO 2026-02-22 22:06:49,309 log 9564 9372 "GET /apartment/A1/ HTTP/1.1" 200 6129
+INFO 2026-02-22 22:06:49,341 log 9564 9372 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:06:51,076 log 9564 9372 "GET /modal/A1/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:07:02,856 log 9564 9372 "GET /modal/A1/ HTTP/1.1" 200 1411
+ERROR 2026-02-22 22:11:51,375 log 9564 9372 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_modal' with keyword arguments '{'apartment_number': 'A1', 'transaction_type': 'debt'}' not found. 1 pattern(s) tried: ['modal/(?P<apartment_number>[^/]+)/\\Z']
+ERROR 2026-02-22 22:11:51,403 log 9564 9372 "GET /apartment/A1/ HTTP/1.1" 500 167922
+INFO 2026-02-22 22:12:05,428 autoreload 9564 3044 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-22 22:12:06,267 autoreload 3140 32 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:12:07,982 log 3140 11472 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_modal' with keyword arguments '{'apartment_number': 'A1', 'transaction_type': 'debt'}' not found. 1 pattern(s) tried: ['modal/(?P<apartment_number>[^/]+)/\\Z']
+ERROR 2026-02-22 22:12:08,001 log 3140 11472 "GET /apartment/A1/ HTTP/1.1" 500 167922
+ERROR 2026-02-22 22:12:08,770 log 3140 11472 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_modal' with keyword arguments '{'apartment_number': 'A1', 'transaction_type': 'debt'}' not found. 1 pattern(s) tried: ['modal/(?P<apartment_number>[^/]+)/\\Z']
+ERROR 2026-02-22 22:12:08,885 log 3140 11472 "GET /apartment/A1/ HTTP/1.1" 500 167922
+INFO 2026-02-22 22:12:23,193 log 3140 11472 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 22:12:23,233 log 3140 11472 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:12:23,451 log 3140 11472 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 22:12:23,642 log 3140 11472 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 22:12:24,290 log 3140 11472 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+ERROR 2026-02-22 22:12:25,322 log 3140 11472 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 41, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_modal' with keyword arguments '{'apartment_number': 'A1', 'transaction_type': 'debt'}' not found. 1 pattern(s) tried: ['modal/(?P<apartment_number>[^/]+)/\\Z']
+ERROR 2026-02-22 22:12:25,357 log 3140 11472 "GET /apartment/A1/ HTTP/1.1" 500 167772
+INFO 2026-02-22 22:14:28,502 autoreload 3140 32 C:\Users\USER\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-22 22:14:29,293 autoreload 1724 3052 Watching for file changes with StatReloader
+INFO 2026-02-22 22:14:32,533 log 1724 11080 "GET /apartment/A1/ HTTP/1.1" 200 6330
+INFO 2026-02-22 22:14:32,558 log 1724 11080 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:14:36,544 log 1724 11080 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 22:14:37,684 log 1724 11080 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 22:14:38,637 log 1724 11080 "GET /apartment/A1/ HTTP/1.1" 200 6330
+ERROR 2026-02-22 22:14:40,166 log 1724 11080 Internal Server Error: /modal/A1/transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:40,169 log 1724 11080 "GET /modal/A1/transaction/debt/ HTTP/1.1" 500 67764
+ERROR 2026-02-22 22:14:41,561 log 1724 11080 Internal Server Error: /modal/A1/transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:41,563 log 1724 11080 "GET /modal/A1/transaction/debt/ HTTP/1.1" 500 67764
+ERROR 2026-02-22 22:14:41,834 log 1724 11080 Internal Server Error: /modal/A1/transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:41,836 log 1724 11080 "GET /modal/A1/transaction/debt/ HTTP/1.1" 500 67764
+ERROR 2026-02-22 22:14:42,344 log 1724 11080 Internal Server Error: /modal/A1/transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:42,346 log 1724 11080 "GET /modal/A1/transaction/payment/ HTTP/1.1" 500 67794
+ERROR 2026-02-22 22:14:42,604 log 1724 11080 Internal Server Error: /modal/A1/transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:42,606 log 1724 11080 "GET /modal/A1/transaction/payment/ HTTP/1.1" 500 67794
+ERROR 2026-02-22 22:14:43,139 log 1724 11080 Internal Server Error: /modal/A1/transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:43,146 log 1724 11080 "GET /modal/A1/transaction/debt/ HTTP/1.1" 500 67764
+WARNING 2026-02-22 22:14:49,481 log 1724 11080 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:14:49,483 log 1724 11080 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4417
+INFO 2026-02-22 22:14:53,524 log 1724 11080 "GET /apartment/A1/ HTTP/1.1" 200 6330
+WARNING 2026-02-22 22:14:53,640 log 1724 11080 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:14:53,643 log 1724 11080 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4417
+ERROR 2026-02-22 22:14:55,216 log 1724 11080 Internal Server Error: /modal/A1/transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: htmx_transaction_modal() got an unexpected keyword argument 'transaction_type'
+ERROR 2026-02-22 22:14:55,219 log 1724 11080 "GET /modal/A1/transaction/debt/ HTTP/1.1" 500 67784
+INFO 2026-02-22 22:15:29,999 autoreload 1724 3052 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:15:30,995 autoreload 776 8212 Watching for file changes with StatReloader
+INFO 2026-02-22 22:15:32,101 log 776 10328 "GET /apartment/A1/ HTTP/1.1" 200 6330
+WARNING 2026-02-22 22:15:32,155 log 776 10328 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:15:32,159 log 776 10328 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4417
+INFO 2026-02-22 22:15:32,604 log 776 10328 "GET /apartment/A1/ HTTP/1.1" 200 6330
+WARNING 2026-02-22 22:15:32,679 log 776 10328 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:15:32,680 log 776 10328 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4417
+INFO 2026-02-22 22:15:32,960 log 776 10328 "GET /apartment/A1/ HTTP/1.1" 200 6330
+WARNING 2026-02-22 22:15:33,037 log 776 10328 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:15:33,041 log 776 10328 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4417
+ERROR 2026-02-22 22:15:35,188 log 776 10328 Internal Server Error: /modal/A1/transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 74, in htmx_transaction_modal
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_create' with keyword arguments '{'apartment_number': 'A1'}' not found. 1 pattern(s) tried: ['apartment/(?P<apartment_number>[^/]+)/add_transaction/(?P<transaction_type>[^/]+)/\\Z']
+ERROR 2026-02-22 22:15:35,199 log 776 10328 "GET /modal/A1/transaction/debt/ HTTP/1.1" 500 127738
+INFO 2026-02-22 22:17:47,375 autoreload 776 8212 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:17:48,168 autoreload 10008 2580 Watching for file changes with StatReloader
+INFO 2026-02-22 22:17:49,808 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6346
+WARNING 2026-02-22 22:17:49,875 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 22:17:49,875 log 10008 1892 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:17:49,877 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:17:50,216 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6346
+WARNING 2026-02-22 22:17:50,296 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:17:50,301 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:17:52,248 log 10008 1380 Internal Server Error: /apartment/A1/add_transaction/debt/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'htmx_transaction_create' with keyword arguments '{'apartment_number': 'A1'}' not found. 1 pattern(s) tried: ['apartment/(?P<apartment_number>[^/]+)/add_transaction/(?P<transaction_type>[^/]+)/\\Z']
+ERROR 2026-02-22 22:17:52,262 log 10008 1380 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 500 127909
+INFO 2026-02-22 22:20:53,989 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6346
+INFO 2026-02-22 22:20:54,049 log 10008 1380 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:20:54,084 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:20:54,148 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:20:54,482 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6346
+WARNING 2026-02-22 22:20:54,545 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:20:54,546 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:20:56,145 log 10008 1380 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1408
+INFO 2026-02-22 22:21:04,449 log 10008 1380 "POST /apartment/A1/add_transaction/debt/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:21:04,478 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6570
+WARNING 2026-02-22 22:21:04,563 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:21:04,565 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:21:06,407 log 10008 1380 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1412
+INFO 2026-02-22 22:21:10,789 log 10008 1380 "POST /apartment/A1/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:21:10,845 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6795
+WARNING 2026-02-22 22:21:10,937 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:21:10,939 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:22:03,100 log 10008 1380 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1408
+INFO 2026-02-22 22:23:28,754 log 10008 1380 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1412
+INFO 2026-02-22 22:25:24,302 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6795
+WARNING 2026-02-22 22:25:24,353 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 22:25:24,355 log 10008 5456 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:25:24,356 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:25:24,588 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 6795
+WARNING 2026-02-22 22:25:24,633 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:25:24,634 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:25:25,861 log 10008 1380 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:25:31,273 log 10008 1380 "POST /apartment/A1/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:25:31,292 log 10008 1380 "GET /apartment/A1/ HTTP/1.1" 200 7032
+WARNING 2026-02-22 22:25:31,383 log 10008 1380 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:25:31,392 log 10008 1380 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:25:35,951 log 10008 1380 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:25:40,729 log 10008 8124 "POST /apartment/A1/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:25:40,752 log 10008 8124 "GET /apartment/A1/ HTTP/1.1" 200 7268
+WARNING 2026-02-22 22:25:40,814 log 10008 8124 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:25:40,821 log 10008 8124 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:25:43,163 log 10008 8124 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1407
+INFO 2026-02-22 22:25:47,597 log 10008 8124 "POST /apartment/A1/add_transaction/debt/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:25:47,620 log 10008 8124 "GET /apartment/A1/ HTTP/1.1" 200 7493
+WARNING 2026-02-22 22:25:47,726 log 10008 8124 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:25:47,740 log 10008 8124 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:25:49,037 log 10008 8124 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:25:53,618 log 10008 8124 "POST /apartment/A1/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:25:53,640 log 10008 8124 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:25:53,704 log 10008 8124 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:25:53,708 log 10008 8124 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:27:24,733 log 10008 8124 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:27:24,792 log 10008 8124 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:27:24,793 log 10008 8124 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:27:25,144 log 10008 8124 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:27:25,303 log 10008 8124 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:27:25,304 log 10008 8124 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:27:26,316 log 10008 8124 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1403
+INFO 2026-02-22 22:30:21,115 log 10008 6048 "GET /apartment/A1/ HTTP/1.1" 200 7729
+INFO 2026-02-22 22:30:21,175 log 10008 6048 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:30:21,191 log 10008 6048 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:30:21,194 log 10008 6048 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:30:22,924 log 10008 6048 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1416
+ERROR 2026-02-22 22:30:26,056 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:26,074 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+ERROR 2026-02-22 22:30:27,450 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:27,459 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+ERROR 2026-02-22 22:30:27,702 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:27,716 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+ERROR 2026-02-22 22:30:27,953 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:27,968 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+ERROR 2026-02-22 22:30:50,908 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:50,924 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+ERROR 2026-02-22 22:30:51,576 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:51,587 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+ERROR 2026-02-22 22:30:52,120 log 10008 6048 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 85, in htmx_transaction_create
+    return render(request, 'partials/modal_transaction.html', context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1000, in _resolve_lookup
+    current = current()
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:30:52,133 log 10008 6048 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 142835
+INFO 2026-02-22 22:31:01,809 log 10008 6048 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1416
+INFO 2026-02-22 22:33:06,780 autoreload 10008 2580 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:33:07,580 autoreload 1076 2116 Watching for file changes with StatReloader
+INFO 2026-02-22 22:33:16,421 autoreload 1076 2116 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:33:17,224 autoreload 5356 3536 Watching for file changes with StatReloader
+INFO 2026-02-22 22:33:32,256 log 5356 6960 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:33:32,314 log 5356 6960 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:33:32,315 log 5356 6960 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:33:33,639 log 5356 6960 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 84, in htmx_transaction_create
+    'total_balance': apartment.total_balance(),
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:33:33,647 log 5356 6960 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 75471
+INFO 2026-02-22 22:35:05,015 log 5356 6960 "GET /apartment/A1/ HTTP/1.1" 200 7729
+INFO 2026-02-22 22:35:05,069 log 5356 6960 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:35:05,102 log 5356 6960 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:35:05,116 log 5356 6960 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:35:06,021 log 5356 6960 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 84, in htmx_transaction_create
+    'total_balance': apartment.total_balance(),
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:35:06,028 log 5356 6960 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 75471
+INFO 2026-02-22 22:35:40,027 autoreload 5356 3536 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:35:40,994 autoreload 2364 6292 Watching for file changes with StatReloader
+INFO 2026-02-22 22:36:16,165 autoreload 2364 6292 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:36:16,971 autoreload 7200 10652 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:36:19,254 log 7200 2552 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt() - self.total_payment()
+           ~~~~~~~~~~~~~~~^^
+TypeError: 'decimal.Decimal' object is not callable
+ERROR 2026-02-22 22:36:19,261 log 7200 2552 "GET /apartment/A1/ HTTP/1.1" 500 76163
+WARNING 2026-02-22 22:36:19,341 log 7200 2552 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:36:19,342 log 7200 2552 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:37:06,058 autoreload 7200 10652 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:37:06,861 autoreload 4824 4816 Watching for file changes with StatReloader
+INFO 2026-02-22 22:37:09,998 log 4824 9224 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:37:10,053 log 4824 9224 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:37:10,054 log 4824 9224 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:38:25,297 autoreload 4824 4816 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:38:26,179 autoreload 2180 8012 Watching for file changes with StatReloader
+INFO 2026-02-22 22:38:27,724 log 2180 2560 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:38:27,809 log 2180 2560 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:38:27,822 log 2180 2560 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:38:28,570 log 2180 2560 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 84, in htmx_transaction_create
+    'total_balance': apartment.total_balance(),
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:38:28,589 log 2180 2560 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 75471
+INFO 2026-02-22 22:39:33,206 autoreload 2180 8012 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:39:34,056 autoreload 11076 9296 Watching for file changes with StatReloader
+INFO 2026-02-22 22:39:35,817 log 11076 8956 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:39:35,918 log 11076 8956 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-02-22 22:39:35,920 log 11076 7252 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:39:35,990 log 11076 8956 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:39:37,300 log 11076 8956 Internal Server Error: /apartment/A1/add_transaction/payment/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 80, in htmx_transaction_create
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt - self.total_payment
+           ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'method' and 'method'
+ERROR 2026-02-22 22:39:37,315 log 11076 8956 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 500 76023
+INFO 2026-02-22 22:39:57,847 autoreload 11076 9296 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:39:58,721 autoreload 2632 2556 Watching for file changes with StatReloader
+INFO 2026-02-22 22:40:01,160 log 2632 11832 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:40:01,237 log 2632 11832 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:40:01,239 log 2632 11832 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:40:01,616 log 2632 11832 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:40:01,739 log 2632 11832 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:40:01,740 log 2632 11832 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:40:02,446 log 2632 11832 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:41:09,206 autoreload 2632 2556 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:41:10,044 autoreload 7912 2044 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:41:13,185 log 7912 1124 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    return self.total_debt() - self.total_payment()
+           ~~~~~~~~~~~~~~~^^
+TypeError: 'decimal.Decimal' object is not callable
+ERROR 2026-02-22 22:41:13,192 log 7912 1124 "GET /apartment/A1/ HTTP/1.1" 500 76214
+WARNING 2026-02-22 22:41:13,263 log 7912 1124 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:41:13,264 log 7912 1124 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:44:33,368 autoreload 7912 2044 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:44:34,196 autoreload 9156 1568 Watching for file changes with StatReloader
+INFO 2026-02-22 22:44:37,652 log 9156 12260 "GET /apartment/A1/ HTTP/1.1" 200 7731
+INFO 2026-02-22 22:44:37,731 log 9156 12260 "GET /static/css/output.css HTTP/1.1" 304 0
+WARNING 2026-02-22 22:44:37,801 log 9156 12260 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:44:37,912 log 9156 12260 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:44:48,678 autoreload 9156 1568 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:44:49,492 autoreload 11144 4372 Watching for file changes with StatReloader
+INFO 2026-02-22 22:44:51,979 log 11144 11864 "GET /apartment/A1/ HTTP/1.1" 200 7731
+WARNING 2026-02-22 22:44:52,069 log 11144 11864 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:44:52,080 log 11144 11864 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:44:52,482 log 11144 11864 "GET /apartment/A1/ HTTP/1.1" 200 7731
+WARNING 2026-02-22 22:44:52,575 log 11144 11864 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:44:52,577 log 11144 11864 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:44:53,484 log 11144 11864 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1416
+INFO 2026-02-22 22:44:55,006 log 11144 11864 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1413
+INFO 2026-02-22 22:46:56,803 autoreload 11144 4372 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:46:57,632 autoreload 564 520 Watching for file changes with StatReloader
+INFO 2026-02-22 22:47:00,142 log 564 10988 "GET /apartment/A1/ HTTP/1.1" 200 7731
+WARNING 2026-02-22 22:47:00,207 log 564 10988 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:47:00,212 log 564 10988 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:47:00,948 log 564 10988 "GET /apartment/A1/ HTTP/1.1" 200 7731
+WARNING 2026-02-22 22:47:01,023 log 564 10988 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:47:01,023 log 564 10988 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:47:09,388 log 564 10988 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1413
+INFO 2026-02-22 22:48:29,028 autoreload 564 520 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:48:29,849 autoreload 5584 7524 Watching for file changes with StatReloader
+INFO 2026-02-22 22:48:32,375 log 5584 4928 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:48:32,440 log 5584 4928 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:48:32,442 log 5584 4928 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:48:32,875 log 5584 4928 "GET /apartment/A1/ HTTP/1.1" 200 7729
+WARNING 2026-02-22 22:48:32,945 log 5584 4928 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:48:32,946 log 5584 4928 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:48:36,172 log 5584 4928 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:48:39,024 log 5584 4928 "GET / HTTP/1.1" 200 4933
+WARNING 2026-02-22 22:48:39,132 log 5584 4928 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:48:39,133 log 5584 4928 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:48:40,613 log 5584 4928 "GET /blok/B/apartments/ HTTP/1.1" 200 13329
+ERROR 2026-02-22 22:48:42,202 log 5584 4928 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:48:42,207 log 5584 4928 "GET /apartment/B1/ HTTP/1.1" 500 76350
+WARNING 2026-02-22 22:48:42,290 log 5584 4928 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:48:42,294 log 5584 4928 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:49:06,130 autoreload 5584 7524 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:49:06,936 autoreload 10688 1816 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:49:09,057 log 10688 2756 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum'] or 0
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:49:09,061 log 10688 2756 "GET /apartment/B1/ HTTP/1.1" 500 76496
+WARNING 2026-02-22 22:49:09,128 log 10688 2756 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:49:09,129 log 10688 2756 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:49:25,393 autoreload 10688 1816 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:49:26,208 autoreload 9144 10180 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:49:28,759 log 9144 3204 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=(self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']) or 0
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:49:28,768 log 9144 3204 "GET /apartment/B1/ HTTP/1.1" 500 76502
+WARNING 2026-02-22 22:49:28,835 log 9144 3204 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:49:28,839 log 9144 3204 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:49:29,532 log 9144 3204 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=(self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']) or 0
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:49:29,536 log 9144 3204 "GET /apartment/B1/ HTTP/1.1" 500 76502
+WARNING 2026-02-22 22:49:29,610 log 9144 3204 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:49:29,610 log 9144 3204 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:50:23,823 autoreload 9144 10180 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:50:24,694 autoreload 2584 9268 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:50:26,945 log 2584 1308 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:50:26,951 log 2584 1308 "GET /apartment/B1/ HTTP/1.1" 500 76552
+WARNING 2026-02-22 22:50:27,009 log 2584 1308 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:50:27,010 log 2584 1308 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:50:27,805 log 2584 1308 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:50:27,809 log 2584 1308 "GET /apartment/B1/ HTTP/1.1" 500 76552
+WARNING 2026-02-22 22:50:27,869 log 2584 1308 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:50:27,870 log 2584 1308 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:50:53,541 autoreload 2584 9268 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:50:54,377 autoreload 1720 11140 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:50:57,138 log 1720 2148 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:50:57,143 log 1720 2148 "GET /apartment/B1/ HTTP/1.1" 500 76518
+WARNING 2026-02-22 22:50:57,193 log 1720 2148 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:50:57,195 log 1720 2148 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:50:57,899 log 1720 2148 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:50:57,903 log 1720 2148 "GET /apartment/B1/ HTTP/1.1" 500 76518
+WARNING 2026-02-22 22:50:57,958 log 1720 2148 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:50:57,963 log 1720 2148 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:51:10,976 autoreload 1720 11140 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:51:11,873 autoreload 10336 1528 Watching for file changes with StatReloader
+ERROR 2026-02-22 22:51:13,307 log 10336 844 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:51:13,313 log 10336 844 "GET /apartment/B1/ HTTP/1.1" 500 76475
+WARNING 2026-02-22 22:51:13,386 log 10336 844 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:51:13,403 log 10336 844 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+ERROR 2026-02-22 22:51:14,099 log 10336 844 Internal Server Error: /apartment/B1/
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    apartment.total_balance = apartment.total_balance()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\USER\Desktop\veresiye\veresiye\main\models.py", line 21, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+ERROR 2026-02-22 22:51:14,102 log 10336 844 "GET /apartment/B1/ HTTP/1.1" 500 76475
+WARNING 2026-02-22 22:51:14,167 log 10336 844 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-02-22 22:51:14,168 log 10336 844 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
+INFO 2026-02-22 22:52:23,392 autoreload 10336 1528 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-22 22:52:24,251 autoreload 4556 3976 Watching for file changes with StatReloader
+INFO 2026-02-22 22:52:26,874 log 4556 10036 "GET /apartment/B1/ HTTP/1.1" 200 4982
+INFO 2026-02-22 22:52:26,905 log 4556 10036 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-22 22:52:31,605 log 4556 10036 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-22 22:52:32,887 log 4556 10036 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-22 22:52:33,614 log 4556 10036 "GET /apartment/A1/ HTTP/1.1" 200 7729
+INFO 2026-02-22 22:52:35,830 log 4556 10036 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1411
+INFO 2026-02-22 22:52:43,106 log 4556 10036 "POST /apartment/A1/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:52:43,133 log 4556 10036 "GET /apartment/A1/ HTTP/1.1" 200 7967
+INFO 2026-02-22 22:52:50,613 log 4556 10036 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1412
+INFO 2026-02-22 22:55:01,150 autoreload 4556 3976 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:55:02,067 autoreload 6148 1364 Watching for file changes with StatReloader
+INFO 2026-02-22 22:55:12,917 log 6148 11080 "GET /apartment/A1/ HTTP/1.1" 200 7967
+INFO 2026-02-22 22:55:13,380 log 6148 11080 "GET /apartment/A1/ HTTP/1.1" 200 7967
+INFO 2026-02-22 22:55:15,336 log 6148 11080 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1416
+INFO 2026-02-22 22:55:19,842 log 6148 11080 "POST /apartment/A1/add_transaction/debt/ HTTP/1.1" 302 0
+INFO 2026-02-22 22:55:19,866 log 6148 11080 "GET /apartment/A1/transactions/ HTTP/1.1" 200 3349
+INFO 2026-02-22 22:55:52,260 autoreload 6148 1364 C:\Users\USER\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-22 22:55:53,051 autoreload 10452 7344 Watching for file changes with StatReloader

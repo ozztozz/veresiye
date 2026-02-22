@@ -1,0 +1,45 @@
+<div id="transaction_modal" class="modal modal-open">
+	<div class="modal-box w-11/12 max-w-2xl">
+		{% if transaction_type == 'debt' %}
+			<div class="card bg-accent rounded-box text-2xl text-white grid h-20 place-items-center">
+				Yeni Borc</div>
+	
+		{% else %}
+			<div class="card bg-primary text-2xl text-white rounded-box grid h-20 place-items-center">
+			Yeni Ödeme</div>
+	
+		{% endif %}
+		
+		<form  class="space-y-4" method="post" action="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type=transaction_type %}">
+            {% csrf_token %}
+            <input type="text" name="apartment_number" value="{{ apartment.number }}" hidden>
+
+			<input type="text" name="is_debt" value="{% if transaction_type == 'payment' %}False{%else%}True{% endif %}" hidden>
+
+			
+			<div class="form-control w-full">
+				<label class="label">
+					<span class="label-text">Miktar</span>
+				</label>
+			<input type="number" name="amount" step="0.01" 
+			{% if transaction_type == 'payment' %}value='{{apartment.total_balance}}' {% else %} placeholder="0.00" {% endif %}
+			class="input input-bordered w-full" required />
+		</div>
+		
+		<div class="form-control w-full">
+			<label class="label">
+				<span class="label-text">Açıklama</span>
+			</label>
+			<textarea name="description" class="textarea textarea-bordered" placeholder="İşlem açıklaması"></textarea>
+					</div>
+					<div class="justify-between flex">	
+						<button type="button" class="btn" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
+						<button type="submit" class="btn btn-primary">Ekle</button>
+
+					</div>
+			</form>
+	</div>
+	<form method="dialog" class="modal-backdrop">
+		<button onclick="document.getElementById('transaction_modal').remove()">close</button>
+	</form>
+</div>

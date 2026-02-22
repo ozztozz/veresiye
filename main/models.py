@@ -18,8 +18,10 @@ class Apartment(models.Model):
         total_payment = self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum'] or 0
         return total_payment
     def total_balance(self):
-        return self.total_debt - self.total_payment
-
+        if self.transactions.exists():
+            total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum']
+            return total_balance
+        return 0 
     def __str__(self):
         return self.number
     

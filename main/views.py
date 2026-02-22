@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from.models import Apartment, Transaction
-
+from .forms import TransactionForm
 
 def home(request):
     blok_list= ['A', 'B', 'C', 'D', 'E', 'F','G','H','I']
@@ -63,3 +63,27 @@ def htmx_transaction_list(request, apartment_number):
         'transactions': transactions,
     }
     return render(request, 'partials/transaction_list_with_total.html', context)
+
+
+
+def htmx_transaction_create(request, apartment_number,transaction_type):
+    apartment = get_object_or_404(Apartment, number=apartment_number)
+    if request.method == 'POST':
+        form = TransactionForm(request.POST)
+        if form.is_valid():
+            transaction = form.save(commit=False)
+            transaction.apartment = apartment
+            transaction.save()
+            return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
+    else:
+        form = TransactionForm()
+
+        apartment.total_balance = apartment.total_balance()
+
+    context = {
+        'form': form,
+        'apartment': apartment,
+        'transaction_type': transaction_type,
+        
+    }
+    return render(request, 'partials/modal_transaction.html', context)
