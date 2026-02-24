@@ -33,7 +33,7 @@ class Transaction(models.Model):
     payment_method = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=True, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_by_name = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_transactions')
     updated_by_name = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='updated_transactions')
