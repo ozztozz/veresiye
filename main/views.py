@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.db.models import Sum, Q, Value, DecimalField
+from django.db.models.functions import Coalesce
 from.models import Apartment, Transaction
 from .forms import TransactionForm
 
@@ -50,6 +52,26 @@ def apartment_detail(request, apartment_number):
     }
     
     return render(request, 'apartment_detail.html', context)
+
+
+def payment_waiting(request):
+    # Burada ödeme bekleyen daireleri çekebilirsiniz
+    apartments = Apartment.objects.annotate(
+        calc_balance=Coalesce(
+            Sum('transactions__amount', filter=Q(transactions__is_debt=True, transactions__active=True)),
+            Value(0, output_field=DecimalField())
+        ) - Coalesce(
+            Sum('transactions__amount', filter=Q(transactions__is_debt=False, transactions__active=True)),
+            Value(0, output_field=DecimalField())
+        )
+    ).filter(calc_balance__gt=0)
+    
+    context = {
+        'apartments': apartments,
+    }
+    
+    return render(request, 'payment_waiting.html', context)
+
 
 def htmx_apartment_list(request, blok):
     number_list = [str(i) for i in range(1, 80)]

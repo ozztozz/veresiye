@@ -5982,3 +5982,249 @@ INFO 2026-02-24 11:23:14,426 log 9004 16948 "POST /transaction/13/edit/delete/ H
 INFO 2026-02-24 11:23:14,469 log 9004 16948 "GET /apartment/A1/transactions/ HTTP/1.1" 200 2832
 INFO 2026-02-24 11:23:27,547 autoreload 9004 18468 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
 INFO 2026-02-24 11:23:27,904 autoreload 8776 10072 Watching for file changes with StatReloader
+INFO 2026-02-24 11:23:34,906 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 15007
+INFO 2026-02-24 11:23:36,223 log 8776 10036 "GET /transaction/12/edit/delete/ HTTP/1.1" 200 1403
+INFO 2026-02-24 11:23:37,256 log 8776 10036 "POST /transaction/12/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:23:37,279 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 14099
+INFO 2026-02-24 11:23:44,476 log 8776 10036 "GET /transaction/11/edit/delete/ HTTP/1.1" 200 1402
+INFO 2026-02-24 11:23:45,505 log 8776 10036 "POST /transaction/11/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:23:45,531 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 13181
+INFO 2026-02-24 11:23:46,157 log 8776 10036 "GET /transaction/10/edit/delete/ HTTP/1.1" 200 1404
+INFO 2026-02-24 11:23:46,869 log 8776 10036 "POST /transaction/10/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:23:46,893 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 12261
+INFO 2026-02-24 11:23:47,636 log 8776 10036 "GET /transaction/9/edit/delete/ HTTP/1.1" 200 1401
+INFO 2026-02-24 11:23:48,478 log 8776 10036 "POST /transaction/9/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:23:48,504 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 11352
+INFO 2026-02-24 11:23:49,268 log 8776 10036 "GET /transaction/8/edit/delete/ HTTP/1.1" 200 1401
+INFO 2026-02-24 11:23:53,904 log 8776 10036 "POST /transaction/8/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:23:53,928 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 10447
+INFO 2026-02-24 11:23:55,316 log 8776 10036 "GET /transaction/7/edit/delete/ HTTP/1.1" 200 1401
+INFO 2026-02-24 11:24:01,062 log 8776 10036 "POST /transaction/7/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:24:01,085 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 9540
+INFO 2026-02-24 11:24:01,868 log 8776 10036 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:24:08,754 log 8776 10036 "GET /apartment/A1/ HTTP/1.1" 200 9540
+INFO 2026-02-24 11:24:16,258 log 8776 10036 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1493
+INFO 2026-02-24 11:24:27,473 log 8776 10036 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1493
+INFO 2026-02-24 11:25:00,742 log 8776 10036 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:27:00,686 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 9540
+INFO 2026-02-24 11:27:02,309 log 8776 14668 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:27:31,634 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 8560
+INFO 2026-02-24 11:27:33,781 log 8776 14668 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:27:49,577 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 8560
+INFO 2026-02-24 11:29:21,766 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 8580
+INFO 2026-02-24 11:29:22,383 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 8580
+INFO 2026-02-24 11:29:23,417 log 8776 14668 "GET /transaction/6/edit/delete/ HTTP/1.1" 200 1401
+INFO 2026-02-24 11:30:03,032 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 9335
+INFO 2026-02-24 11:30:04,382 log 8776 14668 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:30:25,968 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 9205
+INFO 2026-02-24 11:30:38,992 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 9195
+INFO 2026-02-24 11:30:40,109 log 8776 14668 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:32:18,712 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 9160
+INFO 2026-02-24 11:32:20,887 log 8776 14668 "GET /transaction/6/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:32:23,907 log 8776 14668 "GET /transaction/5/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:32:26,998 log 8776 14668 "GET /transaction/6/edit/delete/ HTTP/1.1" 200 1401
+INFO 2026-02-24 11:32:28,224 log 8776 14668 "POST /transaction/6/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:32:28,250 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 8331
+INFO 2026-02-24 11:32:34,151 log 8776 14668 "GET /transaction/5/edit/delete/ HTTP/1.1" 200 1401
+INFO 2026-02-24 11:32:35,122 log 8776 14668 "POST /transaction/5/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:32:35,143 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 7500
+INFO 2026-02-24 11:32:37,165 log 8776 14668 "GET /transaction/4/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:32:42,455 log 8776 14668 "POST /transaction/4/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:32:42,500 log 8776 14668 "GET /apartment/A1/ HTTP/1.1" 200 7520
+INFO 2026-02-24 11:48:46,713 autoreload 8776 10072 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:48:47,083 autoreload 17660 3688 Watching for file changes with StatReloader
+INFO 2026-02-24 11:52:09,154 autoreload 17660 3688 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-24 11:52:09,544 autoreload 17028 20104 Watching for file changes with StatReloader
+INFO 2026-02-24 11:52:14,470 log 17028 8848 "GET /apartment/A1/ HTTP/1.1" 200 7539
+INFO 2026-02-24 11:52:17,359 log 17028 8848 "GET / HTTP/1.1" 200 4952
+INFO 2026-02-24 11:52:39,214 autoreload 17028 20104 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-24 11:52:39,571 autoreload 10756 17756 Watching for file changes with StatReloader
+INFO 2026-02-24 11:53:00,256 log 10756 11200 "GET / HTTP/1.1" 200 4968
+WARNING 2026-02-24 11:53:02,109 log 10756 11200 Not Found: /waiting-payments
+WARNING 2026-02-24 11:53:02,110 log 10756 11200 "GET /waiting-payments HTTP/1.1" 404 4592
+INFO 2026-02-24 11:53:24,397 autoreload 10756 17756 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-24 11:53:24,735 autoreload 364 15548 Watching for file changes with StatReloader
+INFO 2026-02-24 11:53:25,861 autoreload 364 15548 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\urls.py changed, reloading.
+INFO 2026-02-24 11:53:26,191 autoreload 21288 8476 Watching for file changes with StatReloader
+WARNING 2026-02-24 11:54:03,808 log 21288 11368 Not Found: /waiting-payments
+WARNING 2026-02-24 11:54:03,809 log 21288 11368 "GET /waiting-payments HTTP/1.1" 404 4592
+INFO 2026-02-24 11:54:40,788 log 21288 11368 "GET / HTTP/1.1" 200 4967
+INFO 2026-02-24 11:54:42,781 log 21288 11368 "GET /payment_waiting HTTP/1.1" 301 0
+ERROR 2026-02-24 11:54:42,992 log 21288 11368 Internal Server Error: /payment_waiting/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 58, in payment_waiting
+    apartments = Apartment.objects.filter(total_balance__gt=0 )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1542, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1560, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1570, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1676, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1708, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1556, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1363, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1842, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'total_balance' into field. Choices are: id, name, number, phone, transactions
+ERROR 2026-02-24 11:54:42,997 log 21288 11368 "GET /payment_waiting/ HTTP/1.1" 500 115732
+INFO 2026-02-24 11:56:28,135 autoreload 21288 8476 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:56:28,500 autoreload 10780 11672 Watching for file changes with StatReloader
+INFO 2026-02-24 11:56:45,822 autoreload 10780 11672 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:56:46,191 autoreload 16524 9492 Watching for file changes with StatReloader
+INFO 2026-02-24 11:56:49,340 autoreload 16524 9492 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:56:49,736 autoreload 19496 11488 Watching for file changes with StatReloader
+ERROR 2026-02-24 11:56:51,991 log 19496 8276 Internal Server Error: /payment_waiting/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 67, in payment_waiting
+    ).filter(calc_balance__gt=0)
+      ~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1542, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1560, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1570, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1676, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1708, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1574, in build_filter
+    condition = self.build_lookup(lookups, reffed_expression, value)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1435, in build_lookup
+    lookup_class = lhs.get_lookup(lookup_name)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 404, in get_lookup
+    return self.output_field.get_lookup(lookup)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 328, in output_field
+    output_field = self._resolve_output_field()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 748, in _resolve_output_field
+    type(self.lhs._output_field_or_none),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 342, in _output_field_or_none
+    return self.output_field
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 328, in output_field
+    output_field = self._resolve_output_field()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 366, in _resolve_output_field
+    raise FieldError(
+    ...<6 lines>...
+    )
+django.core.exceptions.FieldError: Expression contains mixed types: DecimalField, IntegerField. You must set output_field.
+ERROR 2026-02-24 11:56:51,995 log 19496 8276 "GET /payment_waiting/ HTTP/1.1" 500 140481
+INFO 2026-02-24 11:56:54,773 log 19496 8276 "GET /payment_waiting HTTP/1.1" 301 0
+ERROR 2026-02-24 11:56:54,821 log 19496 8276 Internal Server Error: /payment_waiting/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 67, in payment_waiting
+    ).filter(calc_balance__gt=0)
+      ~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1542, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1560, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 1570, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1676, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1708, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1574, in build_filter
+    condition = self.build_lookup(lookups, reffed_expression, value)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\sql\query.py", line 1435, in build_lookup
+    lookup_class = lhs.get_lookup(lookup_name)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 404, in get_lookup
+    return self.output_field.get_lookup(lookup)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 328, in output_field
+    output_field = self._resolve_output_field()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 748, in _resolve_output_field
+    type(self.lhs._output_field_or_none),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 342, in _output_field_or_none
+    return self.output_field
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 328, in output_field
+    output_field = self._resolve_output_field()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\expressions.py", line 366, in _resolve_output_field
+    raise FieldError(
+    ...<6 lines>...
+    )
+django.core.exceptions.FieldError: Expression contains mixed types: DecimalField, IntegerField. You must set output_field.
+ERROR 2026-02-24 11:56:54,826 log 19496 8276 "GET /payment_waiting/ HTTP/1.1" 500 140481
+INFO 2026-02-24 11:57:20,435 autoreload 19496 11488 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:57:20,832 autoreload 6520 19960 Watching for file changes with StatReloader
+INFO 2026-02-24 11:57:25,064 autoreload 6520 19960 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:57:25,791 autoreload 19636 19920 Watching for file changes with StatReloader
+INFO 2026-02-24 11:57:26,964 autoreload 19636 19920 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:57:27,996 autoreload 19508 19976 Watching for file changes with StatReloader

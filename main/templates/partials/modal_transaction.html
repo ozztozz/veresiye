@@ -13,7 +13,6 @@
 		<form  class="space-y-4" method="post" action="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type=transaction_type %}">
             {% csrf_token %}
             <input type="text" name="apartment_number" value="{{ apartment.number }}" hidden>
-
 			<input type="text" name="is_debt" value="{% if transaction_type == 'payment' %}False{%else%}True{% endif %}" hidden>
 
 			
