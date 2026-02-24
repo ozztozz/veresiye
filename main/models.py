@@ -11,15 +11,15 @@ class Apartment(models.Model):
     phone= models.CharField(max_length=20, blank=True, null=True)
 
     def total_debt(self):
-        total_debt = self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] or 0
+        total_debt = self.transactions.filter(is_debt=True,active=True).aggregate(models.Sum('amount', default=0))['amount__sum'] or 0
         return total_debt
 
     def total_payment(self):
-        total_payment = self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum'] or 0
+        total_payment = self.transactions.filter(is_debt=False,active=True).aggregate(models.Sum('amount', default=0))['amount__sum'] or 0
         return total_payment
     def total_balance(self):
         if self.transactions.exists():
-            total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'))['amount__sum'] or 0 - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'))['amount__sum'] or 0
+            total_balance=self.transactions.filter(is_debt=True,active=True).aggregate(models.Sum('amount', default=0))['amount__sum'] - self.transactions.filter(is_debt=False,active=True).aggregate(models.Sum('amount', default=0))['amount__sum']
             return total_balance
         return 0 
     def __str__(self):
@@ -33,7 +33,7 @@ class Transaction(models.Model):
     payment_method = models.CharField(max_length=50, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
+    active = models.BooleanField(default=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_by_name = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_transactions')
     updated_by_name = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='updated_transactions')

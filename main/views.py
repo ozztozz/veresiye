@@ -27,7 +27,7 @@ def apartment_detail(request, apartment_number):
     apartment = Apartment.objects.filter(number=apartment_number).first()
     if not apartment:
         apartment=Apartment.objects.create(number=apartment_number)
-    transactions = list(Transaction.objects.filter(apartment=apartment).order_by('-updated_at'))
+    transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-updated_at'))
     
     # Calculate running balance (from newest to oldest)
     running_balance = apartment.total_balance()
@@ -62,7 +62,7 @@ def htmx_apartment_list(request, blok):
 
 def htmx_transaction_list(request, apartment_number):
     apartment = get_object_or_404(Apartment, number=apartment_number)
-    transactions = list(Transaction.objects.filter(apartment=apartment).order_by('-updated_at'))
+    transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-updated_at'))
     
     # Calculate running balance (from newest to oldest)
     running_balance = apartment.total_balance()
@@ -108,3 +108,26 @@ def htmx_transaction_create(request, apartment_number,transaction_type):
         
     }
     return render(request, 'partials/modal_transaction.html', context)
+
+
+
+def htmx_transaction_update(request, transaction_id,transaction_type):
+    transaction = get_object_or_404(Transaction, id=transaction_id)
+    if request.method == 'POST':
+        if transaction_type == 'delete':
+            transaction.active = False
+            transaction.save()
+            return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
+        form = TransactionForm(request.POST, instance=transaction)
+        if form.is_valid():
+            form.save()
+            return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
+    else:
+        form = TransactionForm(instance=transaction)
+
+    context = {
+        'form': form,
+        'transaction': transaction,
+        'transaction_type': transaction_type,
+    }
+    return render(request, 'partials/modal_transaction_update.html', context)

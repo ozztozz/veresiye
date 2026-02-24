@@ -5201,3 +5201,784 @@ WARNING 2026-02-22 23:44:26,212 log 9188 3808 Not Found: /.well-known/appspecifi
 WARNING 2026-02-22 23:44:26,220 log 9188 3808 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4077
 INFO 2026-02-22 23:47:57,630 autoreload 9188 6548 C:\Users\USER\Desktop\veresiye\veresiye\main\models.py changed, reloading.
 INFO 2026-02-22 23:47:59,214 autoreload 6432 10028 Watching for file changes with StatReloader
+INFO 2026-02-23 10:31:03,815 autoreload 15380 8928 Watching for file changes with StatReloader
+INFO 2026-02-23 10:31:09,728 log 15380 6324 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-23 10:31:09,914 log 15380 6324 "GET /static/css/output.css HTTP/1.1" 200 95465
+INFO 2026-02-23 10:31:12,226 log 15380 6324 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-23 10:31:13,168 log 15380 6324 "GET /apartment/A1/ HTTP/1.1" 200 8595
+INFO 2026-02-23 11:01:33,023 autoreload 15380 8928 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-23 11:01:33,482 autoreload 2468 4456 Watching for file changes with StatReloader
+ERROR 2026-02-23 11:01:39,046 log 2468 17804 Internal Server Error: /apartment/A1/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 33, in apartment_detail
+    running_balance = apartment.total_balance()
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py", line 22, in total_balance
+    total_balance=self.transactions.filter(is_debt=True).aggregate(models.Sum('amount'),default=0)['amount__sum'] - self.transactions.filter(is_debt=False).aggregate(models.Sum('amount'),default=0)['amount__sum']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 581, in aggregate
+    self._validate_values_are_expressions(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        (*args, *kwargs.values()), method_name="aggregate"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\db\models\query.py", line 2065, in _validate_values_are_expressions
+    raise TypeError(
+    ...<5 lines>...
+    )
+TypeError: QuerySet.aggregate() received non-expression(s): 0.
+ERROR 2026-02-23 11:01:39,048 log 2468 17804 "GET /apartment/A1/ HTTP/1.1" 500 83546
+INFO 2026-02-23 11:05:14,450 autoreload 2468 4456 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-23 11:05:14,861 autoreload 7708 16864 Watching for file changes with StatReloader
+INFO 2026-02-23 11:05:21,358 log 7708 16548 "GET /apartment/A1/ HTTP/1.1" 200 8552
+INFO 2026-02-23 11:05:21,368 log 7708 16548 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:17:59,334 log 7708 9952 "GET /apartment/A1/ HTTP/1.1" 200 8734
+INFO 2026-02-23 11:17:59,350 log 7708 9952 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:18:00,198 log 7708 9952 "GET /apartment/A1/ HTTP/1.1" 200 8734
+INFO 2026-02-23 11:18:30,796 log 7708 9952 "GET /apartment/A1/ HTTP/1.1" 200 8734
+INFO 2026-02-23 11:18:31,725 log 7708 9952 "GET /apartment/A1/ HTTP/1.1" 200 8734
+INFO 2026-02-23 11:32:49,089 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 8972
+INFO 2026-02-23 11:32:49,235 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 200 69022
+INFO 2026-02-23 11:33:38,629 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 8991
+INFO 2026-02-23 11:33:38,638 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:34:53,895 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 9991
+INFO 2026-02-23 11:34:53,905 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 200 90766
+INFO 2026-02-23 11:34:54,938 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 9991
+INFO 2026-02-23 11:34:54,947 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:35:16,769 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 9901
+INFO 2026-02-23 11:35:16,776 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:36:19,415 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 10036
+INFO 2026-02-23 11:36:19,425 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:36:20,802 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 10036
+INFO 2026-02-23 11:37:39,341 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 10050
+INFO 2026-02-23 11:37:39,370 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 200 90893
+INFO 2026-02-23 11:38:18,119 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 9721
+INFO 2026-02-23 11:38:18,132 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:38:33,635 log 7708 16856 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1495
+INFO 2026-02-23 11:38:36,597 log 7708 16856 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1493
+INFO 2026-02-23 11:38:46,729 log 7708 16856 "POST /apartment/A1/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-23 11:38:46,755 log 7708 16856 "GET /apartment/A1/ HTTP/1.1" 200 10054
+INFO 2026-02-23 11:38:46,782 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:38:57,121 log 7708 16856 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-23 11:38:57,169 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:38:58,300 log 7708 16856 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-23 11:38:59,276 log 7708 16856 "GET /apartment/A2/ HTTP/1.1" 200 5294
+INFO 2026-02-23 11:39:01,435 log 7708 16856 "GET /apartment/A2/add_transaction/payment/ HTTP/1.1" 200 1493
+INFO 2026-02-23 11:39:08,314 log 7708 16856 "GET /apartment/A2/add_transaction/payment/ HTTP/1.1" 200 1493
+INFO 2026-02-23 11:39:10,156 log 7708 16856 "POST /apartment/A2/add_transaction/payment/ HTTP/1.1" 302 0
+INFO 2026-02-23 11:39:10,180 log 7708 16856 "GET /apartment/A2/ HTTP/1.1" 200 5629
+INFO 2026-02-23 11:39:10,217 log 7708 16856 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 11:40:41,583 autoreload 7708 16864 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-23 11:40:42,000 autoreload 5148 13860 Watching for file changes with StatReloader
+INFO 2026-02-23 11:41:46,710 autoreload 5148 13860 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-23 11:41:47,242 autoreload 11724 956 Watching for file changes with StatReloader
+INFO 2026-02-23 12:16:07,145 autoreload 17056 5360 Watching for file changes with StatReloader
+ERROR 2026-02-23 12:16:09,832 log 17056 17964 Internal Server Error: /apartment/A2/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 52, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\urls\resolvers.py", line 757, in _reverse_with_prefix
+    raise ValueError("Don't mix *args and **kwargs in call to reverse()!")
+ValueError: Don't mix *args and **kwargs in call to reverse()!
+ERROR 2026-02-23 12:16:09,837 log 17056 17964 "GET /apartment/A2/ HTTP/1.1" 500 193486
+INFO 2026-02-23 12:18:08,908 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6297
+INFO 2026-02-23 12:18:08,984 log 17056 18088 "GET /static/css/output.css HTTP/1.1" 200 91143
+WARNING 2026-02-23 12:18:17,208 log 17056 18088 Forbidden (CSRF token missing.): /transaction/18/edit/delete/
+WARNING 2026-02-23 12:18:17,208 log 17056 18088 "POST /transaction/18/edit/delete/ HTTP/1.1" 403 2491
+WARNING 2026-02-23 12:18:18,921 log 17056 18088 Forbidden (CSRF token missing.): /transaction/18/edit/delete/
+WARNING 2026-02-23 12:18:18,922 log 17056 18088 "POST /transaction/18/edit/delete/ HTTP/1.1" 403 2491
+INFO 2026-02-23 12:18:25,994 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6297
+WARNING 2026-02-23 12:18:28,266 log 17056 18088 Forbidden (CSRF token missing.): /transaction/18/edit/delete/
+WARNING 2026-02-23 12:18:28,267 log 17056 18088 "POST /transaction/18/edit/delete/ HTTP/1.1" 403 2491
+INFO 2026-02-23 12:19:58,231 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6295
+INFO 2026-02-23 12:19:58,251 log 17056 18088 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 12:19:58,496 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6295
+ERROR 2026-02-23 12:20:00,087 log 17056 18088 Internal Server Error: /transaction/18/edit/delete/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\smartif.py", line 181, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "transaction_type='delete'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 129, in htmx_transaction_update
+    return render(request, 'partials/modal_transaction_update.html', context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 993, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 926, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\smartif.py", line 172, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\smartif.py", line 183, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 929, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\partials\modal_transaction_update.html, Could not parse the remainder: '='delete'' from 'transaction_type='delete''
+ERROR 2026-02-23 12:20:00,095 log 17056 18088 "GET /transaction/18/edit/delete/ HTTP/1.1" 500 188649
+ERROR 2026-02-23 12:20:28,293 log 17056 18088 Internal Server Error: /apartment/A2/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 52, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 228, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 894, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 1582, in url
+    args.append(parser.compile_filter(value))
+                ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\partials\transaction_table.html, Could not parse the remainder: '='delete'' from '='delete''
+ERROR 2026-02-23 12:20:28,301 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 500 236726
+ERROR 2026-02-23 12:20:41,080 log 17056 18088 Internal Server Error: /apartment/A2/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 52, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 228, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 894, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 1582, in url
+    args.append(parser.compile_filter(value))
+                ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\partials\transaction_table.html, Could not parse the remainder: '=' from '='
+ERROR 2026-02-23 12:20:41,086 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 500 236384
+ERROR 2026-02-23 12:20:41,778 log 17056 18088 Internal Server Error: /apartment/A2/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 52, in apartment_detail
+    return render(request, 'apartment_detail.html', context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 66, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader_tags.py", line 200, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 228, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 894, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 1582, in url
+    args.append(parser.compile_filter(value))
+                ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\partials\transaction_table.html, Could not parse the remainder: '=' from '='
+ERROR 2026-02-23 12:20:41,786 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 500 236384
+INFO 2026-02-23 12:20:57,303 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6295
+ERROR 2026-02-23 12:20:59,364 log 17056 18088 Internal Server Error: /transaction/18/edit/delete/
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\smartif.py", line 181, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "transaction_type='delete'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py", line 129, in htmx_transaction_update
+    return render(request, 'partials/modal_transaction_update.html', context)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 993, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 926, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\smartif.py", line 172, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\smartif.py", line 183, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\defaulttags.py", line 929, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\OZDEN\Desktop\veresiye\my_env\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: C:\Users\OZDEN\Desktop\veresiye\veresiye\main\templates\partials\modal_transaction_update.html, Could not parse the remainder: '='delete'' from 'transaction_type='delete''
+ERROR 2026-02-23 12:20:59,371 log 17056 18088 "GET /transaction/18/edit/delete/ HTTP/1.1" 500 188649
+INFO 2026-02-23 12:22:02,085 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6295
+INFO 2026-02-23 12:22:02,109 log 17056 18088 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 12:22:03,261 log 17056 18088 "GET /transaction/18/edit/delete/ HTTP/1.1" 200 1611
+INFO 2026-02-23 12:22:49,465 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6295
+INFO 2026-02-23 12:22:50,039 log 17056 18088 "GET /apartment/A2/ HTTP/1.1" 200 6295
+INFO 2026-02-23 12:22:51,358 log 17056 18088 "GET /transaction/18/edit/delete/ HTTP/1.1" 200 817
+INFO 2026-02-23 12:22:58,477 log 17056 18088 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-23 12:22:59,475 log 17056 18088 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-23 12:23:00,711 log 17056 18088 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-23 12:23:03,693 log 17056 18088 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 817
+INFO 2026-02-23 12:23:09,084 log 17056 18088 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-23 12:23:13,736 log 17056 18088 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 817
+INFO 2026-02-23 12:23:17,948 log 17056 18088 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-23 12:23:21,483 log 17056 18088 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 817
+INFO 2026-02-23 12:23:36,771 log 17056 18088 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-23 12:23:36,789 log 17056 18088 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-23 12:23:45,099 log 17056 18088 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1491
+INFO 2026-02-24 10:43:33,040 log 17056 9316 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-24 10:43:33,074 log 17056 9316 "GET /static/css/output.css HTTP/1.1" 304 0
+INFO 2026-02-24 10:43:50,220 autoreload 17056 5360 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-24 10:43:51,197 autoreload 10992 5720 Watching for file changes with StatReloader
+INFO 2026-02-24 10:47:55,422 log 10992 20848 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-24 10:47:56,673 log 10992 20848 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:48:01,299 log 10992 20848 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 817
+INFO 2026-02-24 10:48:06,713 log 10992 20848 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:49:14,158 log 10992 20848 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:49:15,741 log 10992 20848 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 1220
+INFO 2026-02-24 10:49:21,006 log 10992 20848 "POST /transaction/17/edit/delete/ HTTP/1.1" 200 1220
+INFO 2026-02-24 10:49:26,982 log 10992 20848 "POST /transaction/17/edit/delete/ HTTP/1.1" 200 1220
+INFO 2026-02-24 10:49:32,348 log 10992 20848 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-24 10:49:33,252 log 10992 20848 "GET /blok/A/apartments/ HTTP/1.1" 200 13329
+INFO 2026-02-24 10:49:33,870 log 10992 20848 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:54:53,702 log 10992 20692 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:54:54,980 log 10992 20692 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 1089
+INFO 2026-02-24 10:56:30,275 log 10992 20692 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:56:31,924 log 10992 20692 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 1148
+INFO 2026-02-24 10:56:35,284 log 10992 20692 "POST /transaction/17/edit/delete/ HTTP/1.1" 200 1148
+INFO 2026-02-24 10:56:42,829 log 10992 20692 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:57:20,856 autoreload 10992 5720 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 10:57:21,250 autoreload 19512 2532 Watching for file changes with StatReloader
+INFO 2026-02-24 10:57:26,311 log 19512 6116 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:59:24,204 autoreload 19512 2532 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 10:59:24,546 autoreload 12256 16208 Watching for file changes with StatReloader
+INFO 2026-02-24 10:59:32,934 log 12256 10652 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:59:36,646 log 12256 10652 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 1148
+INFO 2026-02-24 10:59:38,176 log 12256 10652 "POST /transaction/17/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 10:59:38,202 log 12256 10652 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:59:40,932 log 12256 10652 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 10:59:44,716 log 12256 10652 "GET /transaction/17/edit/delete/ HTTP/1.1" 200 1148
+INFO 2026-02-24 10:59:47,158 log 12256 10652 "POST /transaction/17/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 10:59:47,186 log 12256 10652 "GET /apartment/A1/ HTTP/1.1" 200 14677
+INFO 2026-02-24 11:00:15,487 autoreload 12256 16208 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:00:15,850 autoreload 5336 2680 Watching for file changes with StatReloader
+INFO 2026-02-24 11:00:18,962 log 5336 20932 "GET /apartment/A1/ HTTP/1.1" 200 14040
+INFO 2026-02-24 11:00:19,953 log 5336 20932 "GET /apartment/A1/ HTTP/1.1" 200 14040
+INFO 2026-02-24 11:00:25,920 log 5336 20932 "GET / HTTP/1.1" 200 4933
+INFO 2026-02-24 11:00:29,992 log 5336 20932 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:00:30,169 log 5336 20932 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4080
+INFO 2026-02-24 11:00:30,190 log 5336 20932 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:30,192 log 5336 20628 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:30,193 log 5336 10476 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:30,194 log 5336 19584 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:30,194 log 5336 20932 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:30,196 log 5336 10832 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:30,196 log 5336 18984 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:35,426 log 5336 20932 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:00:35,483 log 5336 20932 "GET /admin/ HTTP/1.1" 200 9851
+INFO 2026-02-24 11:00:35,502 log 5336 20628 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:35,663 log 5336 19584 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+INFO 2026-02-24 11:00:35,667 log 5336 10476 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+INFO 2026-02-24 11:00:35,670 log 5336 10832 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+INFO 2026-02-24 11:00:39,164 log 5336 20932 "GET /admin/main/transaction/ HTTP/1.1" 200 14874
+INFO 2026-02-24 11:00:39,186 log 5336 18984 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,186 log 5336 10832 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,188 log 5336 20628 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,189 log 5336 18984 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,189 log 5336 19584 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,191 log 5336 20932 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,192 log 5336 20628 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,191 log 5336 10832 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,192 log 5336 18984 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,194 log 5336 19584 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:39,236 log 5336 10476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-24 11:00:39,263 log 5336 10476 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+INFO 2026-02-24 11:00:40,936 log 5336 20932 "GET /admin/main/transaction/18/change/ HTTP/1.1" 200 18524
+INFO 2026-02-24 11:00:40,956 log 5336 10476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-24 11:00:40,956 log 5336 19584 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:40,959 log 5336 10832 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:40,959 log 5336 19584 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:40,962 log 5336 19584 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-02-24 11:00:40,969 log 5336 10476 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+INFO 2026-02-24 11:00:42,847 log 5336 20932 "GET /admin/main/transaction/ HTTP/1.1" 200 14874
+INFO 2026-02-24 11:00:45,550 log 5336 20932 "GET /admin/main/transaction/17/change/ HTTP/1.1" 200 18516
+INFO 2026-02-24 11:00:45,565 log 5336 10476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-02-24 11:01:50,641 autoreload 5336 2680 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-24 11:01:50,988 autoreload 20072 18240 Watching for file changes with StatReloader
+INFO 2026-02-24 11:02:07,255 autoreload 20072 18240 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\models.py changed, reloading.
+INFO 2026-02-24 11:02:07,633 autoreload 21476 20556 Watching for file changes with StatReloader
+INFO 2026-02-24 11:02:13,954 log 21476 16628 "GET /apartment/A1/ HTTP/1.1" 200 14039
+INFO 2026-02-24 11:02:16,517 log 21476 16628 "GET /apartment/A1/ HTTP/1.1" 200 14039
+INFO 2026-02-24 11:02:18,445 log 21476 16628 "GET /transaction/15/edit/delete/ HTTP/1.1" 200 1148
+INFO 2026-02-24 11:02:19,708 log 21476 16628 "POST /transaction/15/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:02:19,734 log 21476 16628 "GET /apartment/A1/ HTTP/1.1" 200 13398
+INFO 2026-02-24 11:02:40,364 log 21476 16628 "GET /apartment/A1/add_transaction/payment/ HTTP/1.1" 200 1493
+INFO 2026-02-24 11:02:44,413 log 21476 16628 "GET /apartment/A1/add_transaction/debt/ HTTP/1.1" 200 1495
+INFO 2026-02-24 11:04:31,499 log 21476 16628 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:04:33,372 log 21476 16628 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1466
+INFO 2026-02-24 11:04:38,331 log 21476 16628 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:06:37,813 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:06:39,988 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1453
+INFO 2026-02-24 11:06:42,463 log 21476 15848 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:06:42,486 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:06:47,046 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1453
+INFO 2026-02-24 11:06:50,740 log 21476 15848 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:06:50,764 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:06:54,164 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1453
+INFO 2026-02-24 11:06:58,369 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:07:00,704 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1453
+INFO 2026-02-24 11:07:04,836 log 21476 15848 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:07:04,866 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16856
+INFO 2026-02-24 11:07:17,510 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1454
+INFO 2026-02-24 11:07:24,501 log 21476 15848 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:07:24,527 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16848
+INFO 2026-02-24 11:07:28,012 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1453
+INFO 2026-02-24 11:07:34,578 log 21476 15848 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:07:34,605 log 21476 15848 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:07:46,188 log 21476 15848 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1452
+INFO 2026-02-24 11:09:54,924 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:09:56,686 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1693
+INFO 2026-02-24 11:10:29,905 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:10:31,486 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1669
+INFO 2026-02-24 11:12:09,189 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:12:10,733 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1795
+INFO 2026-02-24 11:13:07,210 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:13:08,541 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1801
+INFO 2026-02-24 11:13:33,468 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:13:34,647 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1840
+INFO 2026-02-24 11:14:04,180 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:14:05,589 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1708
+INFO 2026-02-24 11:14:24,279 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:14:25,317 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1719
+INFO 2026-02-24 11:14:31,965 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:14:32,950 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1699
+INFO 2026-02-24 11:14:54,084 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:14:54,717 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:14:55,597 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1690
+INFO 2026-02-24 11:15:12,743 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:15:13,307 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:15:14,366 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1720
+INFO 2026-02-24 11:16:21,650 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:16:22,918 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1772
+INFO 2026-02-24 11:17:26,285 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:17:27,341 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1740
+INFO 2026-02-24 11:17:38,600 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:17:39,390 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1749
+INFO 2026-02-24 11:18:13,701 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:18:15,055 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:18:23,442 log 21476 17872 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:18:23,465 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16843
+INFO 2026-02-24 11:18:24,644 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1704
+INFO 2026-02-24 11:18:28,651 log 21476 17872 "POST /transaction/14/edit/update/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:18:28,675 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16850
+INFO 2026-02-24 11:18:32,167 log 21476 17872 "GET /transaction/14/edit/update/ HTTP/1.1" 200 1706
+INFO 2026-02-24 11:18:39,190 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 16850
+INFO 2026-02-24 11:18:40,804 log 21476 17872 "GET /transaction/14/edit/delete/ HTTP/1.1" 200 1403
+INFO 2026-02-24 11:18:42,359 log 21476 17872 "POST /transaction/14/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:18:42,384 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:18:44,405 log 21476 17872 "GET /transaction/13/edit/delete/ HTTP/1.1" 200 1403
+INFO 2026-02-24 11:18:47,545 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:19:47,183 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:19:48,100 log 21476 17872 "GET /transaction/13/edit/update/ HTTP/1.1" 200 1706
+INFO 2026-02-24 11:20:26,454 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:20:29,249 log 21476 17872 "GET /transaction/13/edit/update/ HTTP/1.1" 200 1706
+INFO 2026-02-24 11:21:11,934 log 21476 17872 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:21:15,222 log 21476 17872 "GET /transaction/13/edit/update/ HTTP/1.1" 200 1706
+INFO 2026-02-24 11:22:47,440 autoreload 21476 20556 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:22:47,784 autoreload 9004 18468 Watching for file changes with StatReloader
+INFO 2026-02-24 11:22:49,707 log 9004 16948 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:22:53,232 log 9004 16948 "GET /transaction/13/edit/update/ HTTP/1.1" 200 1706
+INFO 2026-02-24 11:23:10,984 log 9004 16948 "GET /apartment/A1/ HTTP/1.1" 200 15925
+INFO 2026-02-24 11:23:12,989 log 9004 16948 "GET /transaction/13/edit/delete/ HTTP/1.1" 200 1403
+INFO 2026-02-24 11:23:14,426 log 9004 16948 "POST /transaction/13/edit/delete/ HTTP/1.1" 302 0
+INFO 2026-02-24 11:23:14,469 log 9004 16948 "GET /apartment/A1/transactions/ HTTP/1.1" 200 2832
+INFO 2026-02-24 11:23:27,547 autoreload 9004 18468 C:\Users\OZDEN\Desktop\veresiye\veresiye\main\views.py changed, reloading.
+INFO 2026-02-24 11:23:27,904 autoreload 8776 10072 Watching for file changes with StatReloader
