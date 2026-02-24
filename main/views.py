@@ -29,7 +29,7 @@ def apartment_detail(request, apartment_number):
     apartment = Apartment.objects.filter(number=apartment_number).first()
     if not apartment:
         apartment=Apartment.objects.create(number=apartment_number)
-    transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-updated_at'))
+    transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-date'))
     
     # Calculate running balance (from newest to oldest)
     running_balance = apartment.total_balance()
@@ -84,7 +84,7 @@ def htmx_apartment_list(request, blok):
 
 def htmx_transaction_list(request, apartment_number):
     apartment = get_object_or_404(Apartment, number=apartment_number)
-    transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-updated_at'))
+    transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-date'))
     
     # Calculate running balance (from newest to oldest)
     running_balance = apartment.total_balance()
