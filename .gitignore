@@ -1,2 +1,9 @@
 *.pyc
 *.exe
+*.log
+logs/
+__pycache__/
+*.py[cod]
+*$py.class
+db.sqlite3
+*.sqlite3
