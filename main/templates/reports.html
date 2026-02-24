@@ -2,24 +2,76 @@
 {% load humanize %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1>Günlük Raporlar {{ today|date:"d.m.Y" }}</h1>
+<div class="max-w-7xl mx-auto space-y-6">
+    
+    <!-- Page Header with Date Badge -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <h1 class="text-2xl md:text-3xl font-bold text-base-content">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Günlük Raporlar
+        </h1>
+        <div class="badge badge-primary badge-lg gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {{ today|date:"d.m.Y" }}
+        </div>
+    </div>
 
-    <div class="stats shadow flex-col sm:flex-row w-full border border-base-300">
-        <div class="stat place-items-center bg-error/10">
-            <div class="stat-title">Toplam Borç</div>
-            <div class="stat-value text-error">{{ total_debt|floatformat:2|intcomma }}</div>     
+    <!-- Financial Stats Card -->
+    <div class="card bg-base-100 shadow-xl border border-base-300">
+        <div class="card-body p-4">
+            <h2 class="card-title text-lg mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+                Finansal Özet
+            </h2>
+            <div class="divider my-2"></div>
+            <div class="stats shadow-sm flex-col sm:flex-row w-full">
+                <div class="stat place-items-center bg-error/10">
+                    <div class="stat-figure text-error">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+                        </svg>
+                    </div>
+                    <div class="stat-title">Toplam Borç</div>
+                    <div class="stat-value text-error">{{ total_debt|floatformat:2|intcomma }}</div>
+                    <div class="stat-desc text-error">Giderler</div>
+                </div>
+                <div class="stat place-items-center bg-success/10">
+                    <div class="stat-figure text-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
+                        </svg>
+                    </div>
+                    <div class="stat-title">Toplam Ödeme</div>
+                    <div class="stat-value text-success">{{ total_payment|floatformat:2|intcomma }}</div>
+                    <div class="stat-desc text-success">Gelirler</div>
+                </div>
+                <div class="stat place-items-center bg-warning/10">
+                    <div class="stat-figure text-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="stat-title">Net Bakiye</div>
+                    <div class="stat-value text-warning">{{ total_balance|floatformat:2|intcomma }}</div>
+                    <div class="stat-desc">Kalan Tutar</div>
+                </div>
+            </div>
         </div>
-        <div class="stat place-items-center bg-success/10">
-            <div class="stat-title">Toplam Ödeme</div>
-            <div class="stat-value text-success">{{ total_payment|floatformat:2|intcomma }}</div>
-        </div>
-        <div class="stat place-items-center bg-warning/10">
-            <div class="stat-title">Bakiye</div>
-            <div class="stat-value text-warning">{{ total_balance|floatformat:2|intcomma }}</div>
+    </div>
 
-        </div>
-    </div>  
+    <!-- Additional Info Alert -->
+    <div class="alert alert-info shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Raporlar günlük olarak güncellenmektedir. Tarih: {{ today|date:"d.m.Y" }}</span>
+    </div>
 
 </div>
 {% endblock content %}

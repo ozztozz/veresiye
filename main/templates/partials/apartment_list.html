@@ -1,12 +1,22 @@
-<div class="grid grid-cols-5  lg:grid-cols-10 my-2 gap-2">
-    {% for number in number_list %}
-    <a href="{% url 'main:apartment_detail' apartment_number=blok|add:number %}" class="w-full">
-    <button class="btn w-full btn-accent hover:btn-primary text-xs sm:text-sm md:text-base min-h-0 h-auto py-2 transition-all duration-150 shadow-sm hover:shadow-md">{{ blok }}{{ number }}</button>
-    </a>
-    {% endfor %}
-    
+<div class="card bg-base-100 shadow-lg border border-base-300 mt-6">
+    <div class="card-body p-4">
+        <h3 class="card-title text-lg mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Blok {{ blok }} - Daireler
+        </h3>
+        <div class="divider my-2"></div>
+        <div class="grid grid-cols-5 lg:grid-cols-10 gap-2">
+            {% for number in number_list %}
+            <a href="{% url 'main:apartment_detail' apartment_number=blok|add:number %}" class="w-full">
+                <button class="btn w-full btn-accent hover:btn-primary text-xs sm:text-sm md:text-base min-h-0 h-auto py-3 transition-all duration-150 shadow-sm hover:shadow-md">
+                    <span class="font-semibold">{{ blok }}{{ number }}</span>
+                </button>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
-<div id="alerts" hx-swap-oob="true">
-    Saved!
-</div>
+<div id="alerts" hx-swap-oob="true"></div>

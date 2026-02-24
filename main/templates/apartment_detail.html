@@ -1,28 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="flex flex-col items-center justify-center mb-4 md:mb-8 w-full">
+<div class="max-w-7xl mx-auto space-y-6">
 
+    <!-- Apartment Stats Card -->
     <div id="total_stat" class="w-full">{% include "partials/total.html" %}</div>
     
-</div>  
-
-<div class="w-full items-end px-2">
-        <h2 class="text-xl md:text-2xl font-semibold mb-4">İşlemler</h2>
-        <div class=" w-full justify-between flex">
-            <button class="btn btn-accent btn-sm md:btn-md mb-4" 
-            hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='debt' %}" 
-            hx-target="body" 
-            hx-swap="beforeend">Yeni Borç</button>
-            <button class="btn btn-primary btn-sm md:btn-md mb-4" 
-            hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='payment' %}" 
-            hx-target="body" 
-            hx-swap="beforeend">Yeni Ödeme</button>
+    <!-- Actions Card -->
+    <div class="card bg-base-100 shadow-xl border border-base-300">
+        <div class="card-body p-4">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <h2 class="card-title text-xl md:text-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    İşlemler
+                </h2>
+                <div class="btn-group">
+                    <button class="btn btn-error gap-2" 
+                        hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='debt' %}" 
+                        hx-target="body" 
+                        hx-swap="beforeend">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Yeni Borç
+                    </button>
+                    <button class="btn btn-success gap-2" 
+                        hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='payment' %}" 
+                        hx-target="body" 
+                        hx-swap="beforeend">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Yeni Ödeme
+                    </button>
+                </div>
+            </div>
         </div>
- </div>       
-<div id="transaction_table">{% include "partials/transaction_table.html" %}</div>
+    </div>
 
+    <!-- Transaction Table -->
+    <div id="transaction_table">{% include "partials/transaction_table.html" %}</div>
 
-
-
+</div>
 
 {% endblock content %}

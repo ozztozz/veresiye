@@ -1,42 +1,76 @@
-<div id="transaction_modal" class="modal modal-open ">
-	<div class="modal-box w-11/12 max-w-2xl">
+<div id="transaction_modal" class="modal modal-open">
+	<div class="modal-box w-11/12 max-w-2xl border border-base-300 shadow-2xl">
+		<!-- Modal Header -->
 		{% if transaction_type == 'debt' %}
-			<div class="card bg-error text-error-content rounded-box grid h-24 place-items-center">
-				<span class="font-bold m-2 p-2 rounded-full bg-warning text-warning-content">{{apartment.number}}</span> Yeni Borç</div>
-	
+			<div class="card bg-error text-error-content rounded-box mb-6">
+				<div class="card-body p-4 flex-row items-center justify-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+					</svg>
+					<div>
+						<span class="badge badge-warning badge-lg font-bold">{{apartment.number}}</span>
+						<p class="text-lg font-semibold mt-1">Yeni Borç Kaydı</p>
+					</div>
+				</div>
+			</div>
 		{% else %}
-			<div class="card bg-success text-success-content rounded-box grid h-24 place-items-center">
-			<span class="font-bold m-2 p-2 rounded-full bg-warning text-warning-content">{{apartment.number}}</span> Yeni Ödeme</div>
-	
+			<div class="card bg-success text-success-content rounded-box mb-6">
+				<div class="card-body p-4 flex-row items-center justify-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+					<div>
+						<span class="badge badge-warning badge-lg font-bold">{{apartment.number}}</span>
+						<p class="text-lg font-semibold mt-1">Yeni Ödeme Kaydı</p>
+					</div>
+				</div>
+			</div>
 		{% endif %}
 		
-		<form  class="space-y-4 lg:mt-4" method="post" action="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type=transaction_type %}">
-            {% csrf_token %}
-            <input type="text" name="apartment_number" value="{{ apartment.number }}" hidden>
-			<input type="text" name="is_debt" value="{% if transaction_type == 'payment' %}False{%else%}True{% endif %}" hidden>
+		<!-- Form -->
+		<form class="space-y-4" method="post" action="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type=transaction_type %}">
+			{% csrf_token %}
+			<input type="text" name="apartment_number" value="{{ apartment.number }}" hidden>
+			<input type="text" name="is_debt" value="{% if transaction_type == 'payment' %}False{% else %}True{% endif %}" hidden>
 
-			
+			<!-- Amount Field -->
 			<div class="form-control w-full">
 				<label class="label">
-					<span class="label-text">Miktar</span>
+					<span class="label-text font-semibold flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+						Miktar
+					</span>
 				</label>
-			<input class="input m-2 focus:input-warning" type="number" autofocus name="amount" step="0.01" 
-			{% if transaction_type == 'payment' %}value='{{apartment.total_balance}}' {% else %} placeholder="0.00" {% endif %}
-			class="input input-bordered w-full" required />
-		</div>
+				<input class="input input-bordered focus:input-primary w-full" type="number" autofocus name="amount" step="0.01" 
+					{% if transaction_type == 'payment' %}value='{{apartment.total_balance}}'{% else %}placeholder="0.00"{% endif %} required />
+			</div>
 		
-		<div class="form-control w-full">
-			<label class="label">
-				<span class="label-text">Açıklama</span>
-			</label>
-			<textarea name="description" class="textarea  textarea-bordered" placeholder="İşlem açıklaması"></textarea>
-					</div>
-					<div class="justify-between flex">	
-						<button type="button" class="btn" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
-						<button type="submit" class="btn btn-primary">Ekle</button>
+			<!-- Description Field -->
+			<div class="form-control w-full">
+				<label class="label">
+					<span class="label-text font-semibold flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+						</svg>
+						Açıklama
+					</span>
+				</label>
+				<textarea name="description" class="textarea textarea-bordered focus:textarea-primary" placeholder="İşlem açıklaması (opsiyonel)"></textarea>
+			</div>
 
-					</div>
-			</form>
+			<!-- Action Buttons -->
+			<div class="modal-action">
+				<button type="button" class="btn btn-ghost" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
+				<button type="submit" class="btn btn-primary">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+					</svg>
+					Kaydet
+				</button>
+			</div>
+		</form>
 	</div>
 	<form method="dialog" class="modal-backdrop">
 		<button onclick="document.getElementById('transaction_modal').remove()">close</button>

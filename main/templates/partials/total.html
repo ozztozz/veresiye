@@ -1,22 +1,51 @@
 {% load humanize %}
-    <div class="stats shadow flex-col sm:flex-row w-full border border-base-300">
-        <div class="stat place-items-center bg-primary/10">
-            
-            <div class="stat-value text-primary">{{ apartment }}</div>
+<div class="card bg-base-100 shadow-xl border border-base-300">
+    <div class="card-body p-4">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="avatar placeholder">
+                <div class="bg-primary text-primary-content rounded-full w-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <h2 class="card-title text-2xl md:text-3xl text-primary">{{ apartment }}</h2>
+                <p class="text-sm text-base-content/60">Daire Özet Bilgileri</p>
+            </div>
+        </div>
         
-        </div>
+        <div class="divider my-2"></div>
+        
+        <div class="stats shadow-sm flex-col sm:flex-row w-full">
+            <div class="stat place-items-center bg-error/10">
+                <div class="stat-figure text-error">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <div class="stat-title">Ödenecek</div>
+                <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-error">{{ apartment.total_balance|floatformat:2|intcomma }}</div>
+                <div class="stat-desc text-error">Toplam Borç</div>
+            </div>
 
-        <div class="stat place-items-center bg-error/10">
-            <div class="stat-title">Odenecek</div>
-            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-error">{{ apartment.total_balance|floatformat:2|intcomma }}</div>
-
-        </div>
-
-        <div class="stat place-items-center bg-info/10">
-            <div class="stat-title">Borc</div>
-            <div class="stat-value text-xl sm:text-2xl text-info">{{ apartment.total_debt|floatformat:2|intcomma }}</div>
-            <div class="stat-title">Ödenen</div>
-            <div class="stat-value text-xl sm:text-2xl text-success">{{ apartment.total_payment|floatformat:2|intcomma }}</div>
-
+            <div class="stat place-items-center bg-info/10">
+                <div class="stat-figure text-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <div class="stat-title">Borç</div>
+                <div class="stat-value text-xl sm:text-2xl text-info">{{ apartment.total_debt|floatformat:2|intcomma }}</div>
+                <div class="divider my-1"></div>
+                <div class="stat-figure text-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="stat-title">Ödenen</div>
+                <div class="stat-value text-xl sm:text-2xl text-success">{{ apartment.total_payment|floatformat:2|intcomma }}</div>
+            </div>
         </div>
     </div>
+</div>

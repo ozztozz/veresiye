@@ -1,63 +1,104 @@
 <div id="transaction_modal" class="modal modal-open">
-	<div class="modal-box w-11/12 max-w-2xl">
+	<div class="modal-box w-11/12 max-w-2xl border border-base-300 shadow-2xl">
 
-			<div class="card bg-primary text-primary-content rounded-box text-2xl h-20 place-items-center">
-			<div class="flex flex-col items-center justify-center">
-				<div class="font-bold text-lg">{{ transaction.apartment.number }} </div>
-				<div class="font-bold text-lg">{{transaction.amount }} </div>
-				<div class="font-bold text-lg">{{ transaction.description }}</div>
-				<div class="font-bold text-lg">{{transaction.updated_at|date:"d.m.Y H:i" }}</div>
-			
+		<!-- Transaction Info Header -->
+		<div class="card bg-primary text-primary-content rounded-box mb-6">
+			<div class="card-body p-4">
+				<div class="flex items-center justify-between flex-wrap gap-2">
+					<div class="flex items-center gap-3">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						</svg>
+						<div>
+							<p class="text-sm opacity-90">Apartman</p>
+							<p class="font-bold text-xl">{{ transaction.apartment.number }}</p>
+						</div>
+					</div>
+					<div class="stats stats-horizontal shadow-lg bg-base-100 text-base-content">
+						<div class="stat place-items-center p-3">
+							<div class="stat-title text-xs">Miktar</div>
+							<div class="stat-value text-lg">{{transaction.amount }}</div>
+						</div>
+					</div>
+				</div>
+				<div class="divider my-1"></div>
+				<div class="flex justify-between text-sm">
+					<span>{{ transaction.description }}</span>
+					<span class="badge badge-ghost">{{transaction.updated_at|date:"d.m.Y H:i" }}</span>
+				</div>
 			</div>
-			</div>
+		</div>
 
+		<!-- Form -->
+		<form class="space-y-4" method="post" action="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type=transaction_type %}">
+			{% csrf_token %}
 			
-	
-
-		
-		<form  class="space-y-4" method="post" action="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type=transaction_type %}">
-            {% csrf_token %}
 			{% if transaction_type == 'delete' %}
 				<input type="text" name="transaction_id" value="{{ transaction.id }}" hidden>
 				<input type="text" name="active" value="False" hidden>
 
-				<div class="card bg-error/10 rounded-box text-2xl text-error grid h-20 place-items-center">
-				Bu işlemi silmek istediğinize emin misiniz?</div>
+				<!-- Delete Confirmation -->
+				<div class="alert alert-error shadow-lg">
+					<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+					<span>Bu işlemi silmek istediğinize emin misiniz? Bu işlem geri alınamaz.</span>
+				</div>
 
-										<div class="justify-between flex">	
-							<button type="button" class="btn" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
-							<button type="submit" class="btn btn-primary">Sil</button>
-
-						</div>
+				<div class="modal-action">
+					<button type="button" class="btn btn-ghost" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
+					<button type="submit" class="btn btn-error">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+						</svg>
+						Sil
+					</button>
+				</div>
 			{% endif %}
-			{% if transaction_type == 'update' %}
-			<input type="text" name="transaction_id" value="{{ transaction.id }}" hidden>
 			
+			{% if transaction_type == 'update' %}
+				<input type="text" name="transaction_id" value="{{ transaction.id }}" hidden>
+				
+				<!-- Amount Field -->
 				<div class="form-control w-full">
-				<label class="label">
-					<span class="label-text">Miktar</span>
-				</label>
-				<input type="number" name="amount" step="0.01" 
-				value='{{transaction.amount}}' 
-				class="input input-bordered w-full" required />
-			</div>
-		
-			<div class="form-control w-full">
-				<label class="label">
-					<span class="label-text">Açıklama</span>
-				</label>
-					<textarea name="description" class="textarea textarea-bordered" placeholder="İşlem açıklaması"></textarea>
-						</div>
-						<div class="justify-between flex">	
-							<button type="button" class="btn" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
-							<button type="submit" class="btn btn-primary">Güncelle</button>
-
-						</div>
+					<label class="label">
+						<span class="label-text font-semibold flex items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							Miktar
+						</span>
+					</label>
+					<input type="number" name="amount" step="0.01" 
+						value='{{transaction.amount}}' 
+						class="input input-bordered input-primary w-full" required />
+				</div>
+			
+				<!-- Description Field -->
+				<div class="form-control w-full">
+					<label class="label">
+						<span class="label-text font-semibold flex items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+							</svg>
+							Açıklama
+						</span>
+					</label>
+					<textarea name="description" class="textarea textarea-bordered textarea-primary" placeholder="İşlem açıklaması">{{ transaction.description }}</textarea>
+				</div>
+				
+				<div class="modal-action">
+					<button type="button" class="btn btn-ghost" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
+					<button type="submit" class="btn btn-primary">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+						</svg>
+						Güncelle
+					</button>
+				</div>
 			{% endif %}
-
-
-				</form>
-			</div>
+		</form>
+	</div>
 
 	<form method="dialog" class="modal-backdrop">
 		<button onclick="document.getElementById('transaction_modal').remove()">close</button>
