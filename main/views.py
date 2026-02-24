@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -8,9 +10,11 @@ from .forms import TransactionForm
 
 def home(request):
     blok_list= ['A', 'B', 'C', 'D', 'E', 'F','G','H','I']
+    aka_blok_list= ['AKA-A','AKA-B','AKA-C','AKA-D','AKA-E','AKA-F','AKA-G','AKA-H','AKA-I']
     number_list = [str(i) for i in range(1, 80)]
     context = {
         'blok_list': blok_list, 
+        'aka_blok_list': aka_blok_list,
         'number_list': number_list,
     }
 
@@ -65,13 +69,37 @@ def payment_waiting(request):
             Value(0, output_field=DecimalField())
         )
     ).filter(calc_balance__gt=0)
+    total_debt = apartments.aggregate(total_debt=Coalesce(Sum('calc_balance'), Value(0, output_field=DecimalField())))['total_debt']
+    total_count = apartments.count()      
     
     context = {
         'apartments': apartments,
+        'total_debt': total_debt,
+        'total_count': total_count,
     }
     
     return render(request, 'payment_waiting.html', context)
 
+def last_transactions(request):
+    transactions = Transaction.objects.filter(active=True).order_by('-updated_at')[:10]
+    context = {
+        'transactions': transactions,
+    }
+    return render(request, 'last_transactions.html', context)
+
+
+def reports(request):
+    # Burada raporlar sayfasını oluşturabilirsiniz
+    total_debt = Transaction.objects.filter(is_debt=True,active=True,date__date=datetime.date.today()).aggregate(total_debt=Coalesce(Sum('amount'), Value(0, output_field=DecimalField())))['total_debt']
+    total_payment = Transaction.objects.filter(is_debt=False,active=True,date__date=datetime.date.today()).aggregate(total_payment=Coalesce(Sum('amount'), Value(0, output_field=DecimalField())))['total_payment']
+    total_balance = total_debt - total_payment
+    context = {
+        'total_debt': total_debt,
+        'total_payment': total_payment,
+        'total_balance': total_balance,
+        'today': datetime.date.today(),
+    }
+    return render(request, 'reports.html', context)
 
 def htmx_apartment_list(request, blok):
     number_list = [str(i) for i in range(1, 80)]

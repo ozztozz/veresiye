@@ -4,6 +4,23 @@
 {% block content %}
 <div class="container mt-5">
     <h1>Ödeme Bekleyenler</h1>
+
+    {% load humanize %}
+    <div class="stats shadow flex-col sm:flex-row w-full">
+        <div class="stat place-items-center bg-blue-100">
+            <div class="stat-title">Toplam Borç</div>
+            <div class="stat-value text-blue-500">{{ total_debt|floatformat:2|intcomma }}</div>
+        
+        </div>
+
+        <div class="stat place-items-center bg-emerald-100">
+            <div class="stat-title">Borclu Sayısı</div>
+            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-emerald-600">{{ total_count }}</div>
+
+        </div>
+
+
+    </div>
     
     <div class="overflow-x-auto w-full">
         <table class="table table-zebra w-full text-xs sm:text-sm md:text-base">
@@ -17,9 +34,9 @@
             <tbody>
                 {% for account in apartments %}
                 
-                <tr>
+                <tr class="cursor-pointer hover:bg-orange-300" onclick="window.location.href='{% url 'main:apartment_detail' account.number %}';">
                     <td>{{ account.number }}</td>
-                    <td class="text-right"><a href="{% url 'main:apartment_detail' account.number %}">{{ account.calc_balance|floatformat:2|intcomma }}</a></td>
+                    <td class="text-right">{{ account.calc_balance|floatformat:2|intcomma }}</td>
                 </tr>
                 {% endfor %}  
             </tbody>

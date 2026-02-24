@@ -15,6 +15,15 @@
    >{{ blok }}</button>
     {% endfor %}
 </div>
+ <div class="grid grid-cols-5 mt-4  gap-2 md:gap-4"> 
+    {% for blok in aka_blok_list %}
+   <button role="button" class="btn btn-info w-full text-sm md:text-base min-h-0 h-auto py-3"
+   hx-get="{% url 'main:htmx_apartment_list' blok=blok %}"
+   hx-target="#apartment_list"
+    hx-swap="innerHTML"
+   >{{ blok }}</button>
+    {% endfor %}
+</div>
 <div id="apartment_list"></div>
 
 {% endblock content %}
