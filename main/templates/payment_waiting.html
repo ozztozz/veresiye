@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Waiting Payments</h1>
+    
+    <div class="overflow-x-auto w-full">
+        <table class="table table-zebra w-full text-xs sm:text-sm md:text-base">
+            <thead>
+                <tr>
+                    <th>Apartman</th>
+                    <th class="text-right">Ödenecek</th>
+
+
+                </tr>            </thead>
+            <tbody>
+                {% for account in apartments %}
+                
+                <tr>
+                    <td>{{ account.number }}</td>
+                    <td class="text-right"><a href="{% url 'main:apartment_detail' account.number %}">{{ account.calc_balance|floatformat:2|intcomma }}</a></td>
+                </tr>
+
+                {% endfor %}           
+</div>
+{% endblock %}

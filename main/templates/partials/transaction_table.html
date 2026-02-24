@@ -4,20 +4,30 @@
             <thead>
                 <tr>
                     <th>Tarih</th>
-                    <th>Miktar</th>
+                    <th class="text-right">Miktar</th>
                     <th>Tür</th>
-                   
-                    <th>Bakiye</th>
+                    <th class="text-right">Açıklama</th>
+                    <th class="text-right">Bakiye</th>
+                    <th class="text-right">İşlem</th>
                 </tr>
             </thead>
             <tbody>
                 {% for transaction in transactions %}
                 <tr class="{% if not transaction.is_debt %}bg-green-100{% endif %}">
                     <td>{{ transaction.updated_at|date:"d.m.Y H:i" }}</td>
-                    <td>{{ transaction.amount|floatformat:2|intcomma }}</td>
+                    <td class="text-right">{{ transaction.amount|floatformat:2|intcomma }}</td>
                     <td>{% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}</td>
-
-                    <td class="font-semibold {% if transaction.running_balance > 0 %}text-red-600{% elif transaction.running_balance < 0 %}text-green-600{% endif %}">{{ transaction.running_balance|floatformat:2|intcomma }}</td>
+                    <td class="text-right">{{ transaction.description }}</td>
+                    <td class="font-semibold text-right {% if transaction.running_balance > 0 %}text-red-600{% elif transaction.running_balance < 0 %}text-green-600{% endif %}">{{ transaction.running_balance|floatformat:2|intcomma }}</td>
+                    <td class="text-right">
+                        <button class="btn btn-sm btn-error" 
+                        hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
+                        hx-target="body" 
+                        hx-swap="beforeend">Düzenle</button>
+                        <button class="btn btn-sm btn-error" 
+                        hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='delete'%}"
+                        hx-target="body" 
+                        hx-swap="beforeend">Sil</button>
                 </tr>
                 {% endfor %}
             </tbody>
