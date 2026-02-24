@@ -1,11 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="coffee">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Oturumu Kapatıldı - Veresiye</title>
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+  <script>
+    const theme = localStorage.getItem('theme') || 'coffee';
+    document.documentElement.setAttribute('data-theme', theme);
+  </script>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-base-200">
   <div class="card w-full max-w-md shadow-xl bg-base-100">

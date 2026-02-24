@@ -6,16 +6,16 @@
     <h1>Ödeme Bekleyenler</h1>
 
     {% load humanize %}
-    <div class="stats shadow flex-col sm:flex-row w-full">
-        <div class="stat place-items-center bg-blue-100">
+    <div class="stats shadow flex-col sm:flex-row w-full border border-base-300">
+        <div class="stat place-items-center bg-error/10">
             <div class="stat-title">Toplam Borç</div>
-            <div class="stat-value text-blue-500">{{ total_debt|floatformat:2|intcomma }}</div>
+            <div class="stat-value text-error">{{ total_debt|floatformat:2|intcomma }}</div>
         
         </div>
 
-        <div class="stat place-items-center bg-emerald-100">
+        <div class="stat place-items-center bg-info/10">
             <div class="stat-title">Borclu Sayısı</div>
-            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-emerald-600">{{ total_count }}</div>
+            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-info">{{ total_count }}</div>
 
         </div>
 
@@ -34,7 +34,7 @@
             <tbody>
                 {% for account in apartments %}
                 
-                <tr class="cursor-pointer hover:bg-orange-300" onclick="window.location.href='{% url 'main:apartment_detail' account.number %}';">
+                <tr class="cursor-pointer hover:bg-warning/20 transition-colors duration-150" onclick="window.location.href='{% url 'main:apartment_detail' account.number %}';">
                     <td>{{ account.number }}</td>
                     <td class="text-right">{{ account.calc_balance|floatformat:2|intcomma }}</td>
                 </tr>

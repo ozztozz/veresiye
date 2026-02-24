@@ -1,22 +1,22 @@
 {% load humanize %}
-    <div class="stats shadow flex-col sm:flex-row w-full">
-        <div class="stat place-items-center bg-blue-100">
+    <div class="stats shadow flex-col sm:flex-row w-full border border-base-300">
+        <div class="stat place-items-center bg-primary/10">
             
-            <div class="stat-value text-blue-500">{{ apartment }}</div>
+            <div class="stat-value text-primary">{{ apartment }}</div>
         
         </div>
 
-        <div class="stat place-items-center bg-emerald-100">
+        <div class="stat place-items-center bg-error/10">
             <div class="stat-title">Odenecek</div>
-            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-emerald-600">{{ apartment.total_balance|floatformat:2|intcomma }}</div>
+            <div class="stat-value text-2xl sm:text-3xl md:text-4xl text-error">{{ apartment.total_balance|floatformat:2|intcomma }}</div>
 
         </div>
 
-        <div class="stat place-items-center bg-amber-100">
+        <div class="stat place-items-center bg-info/10">
             <div class="stat-title">Borc</div>
-            <div class="stat-value text-xl sm:text-2xl text-amber-400">{{ apartment.total_debt|floatformat:2|intcomma }}</div>
+            <div class="stat-value text-xl sm:text-2xl text-info">{{ apartment.total_debt|floatformat:2|intcomma }}</div>
             <div class="stat-title">Ödenen</div>
-            <div class="stat-value text-xl sm:text-2xl text-red-400">{{ apartment.total_payment|floatformat:2|intcomma }}</div>
+            <div class="stat-value text-xl sm:text-2xl text-success">{{ apartment.total_payment|floatformat:2|intcomma }}</div>
 
         </div>
     </div>

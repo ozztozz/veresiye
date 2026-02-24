@@ -18,7 +18,7 @@
             </thead>
             <tbody>
                 {% for transaction in transactions %}
-                <tr class="{% if not transaction.is_debt %}bg-green-100{% endif %} cursor-pointer hover:bg-orange-300" 
+                <tr class="{% if not transaction.is_debt %}bg-success/10{% endif %} cursor-pointer hover:bg-warning/20 transition-colors duration-150" 
                     onclick="window.location.href='{% url 'main:apartment_detail' apartment_number=transaction.apartment.number %}';">
                     <td>{{ transaction.apartment }}</td>
                     <td>{{ transaction.updated_at|date:"d.m.Y H:i" }}</td>

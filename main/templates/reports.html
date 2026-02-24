@@ -5,20 +5,18 @@
 <div class="container mt-5">
     <h1>Günlük Raporlar {{ today|date:"d.m.Y" }}</h1>
 
-    <div class="stats shadow flex-col sm:flex-row w-full">
-        <div class="stat place-items-center bg-blue-100">
+    <div class="stats shadow flex-col sm:flex-row w-full border border-base-300">
+        <div class="stat place-items-center bg-error/10">
             <div class="stat-title">Toplam Borç</div>
-            <div class="stat-value text-blue-500">{{ total_debt|floatformat:2|intcomma }}</div>     
+            <div class="stat-value text-error">{{ total_debt|floatformat:2|intcomma }}</div>     
         </div>
-        <div class="stat place-items-center bg-emerald-100">
+        <div class="stat place-items-center bg-success/10">
             <div class="stat-title">Toplam Ödeme</div>
-            <div class="stat-value
-
-    text-emerald-600">{{ total_payment|floatformat:2|intcomma }}</div>
+            <div class="stat-value text-success">{{ total_payment|floatformat:2|intcomma }}</div>
         </div>
-                <div class="stat place-items-center bg-amber-100">
+        <div class="stat place-items-center bg-warning/10">
             <div class="stat-title">Bakiye</div>
-            <div class="stat-value t text-amber-400">{{ total_balance|floatformat:2|intcomma }}</div>
+            <div class="stat-value text-warning">{{ total_balance|floatformat:2|intcomma }}</div>
 
         </div>
     </div>  

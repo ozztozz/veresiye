@@ -13,12 +13,12 @@
             </thead>
             <tbody>
                 {% for transaction in transactions %}
-                <tr class="{% if not transaction.is_debt %}bg-green-100{% endif %}">
+                <tr class="{% if not transaction.is_debt %}bg-success/10{% endif %}">
                     <td> {{ transaction.date|date:"d.m.Y H:i" }}</td>
                     <td class="text-right">{{ transaction.amount|floatformat:2|intcomma }}</td>
                     <td class="hidden lg:table-cell">{% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}</td>
                     <td class="hidden lg:table-cell text-right">{{ transaction.description }}</td>
-                    <td class="font-semibold text-right {% if transaction.running_balance > 0 %}text-red-600{% elif transaction.running_balance < 0 %}text-green-600{% endif %}">{{ transaction.running_balance|floatformat:2|intcomma }}</td>
+                    <td class="font-semibold text-right {% if transaction.running_balance > 0 %}text-error{% elif transaction.running_balance < 0 %}text-success{% endif %}">{{ transaction.running_balance|floatformat:2|intcomma }}</td>
                     <td class="text-right">
                         <button class="btn btn-sm btn-ghost" 
                         hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
