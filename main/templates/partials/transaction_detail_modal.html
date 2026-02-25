@@ -1,0 +1,163 @@
+{% load humanize %}
+
+<!-- Transaction Detail Modal -->
+<dialog id="transaction-detail-modal" class="modal">
+    <div class="modal-box max-w-lg">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="font-bold text-lg flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                İşlem Detayı
+            </h3>
+            <button onclick="document.getElementById('transaction-detail-modal').remove()" class="btn btn-sm btn-circle btn-ghost">✕</button>
+        </div>
+
+        <div class="divider my-2"></div>
+
+        <!-- Amount & Type badge -->
+        <div class="flex items-center justify-between mb-4">
+            <div class="stat-value text-2xl {% if transaction.is_debt %}text-error{% else %}text-success{% endif %}">
+                {{ transaction.amount|floatformat:2|intcomma }} ₺
+            </div>
+            <div class="badge badge-lg {% if transaction.is_debt %}badge-error{% else %}badge-success{% endif %}">
+                {% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}
+            </div>
+        </div>
+
+        <!-- Details grid -->
+        <div class="grid grid-cols-1 gap-3">
+
+            <!-- Apartment -->
+            <div class="flex items-center gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Daire</div>
+                    <div class="font-semibold">{{ transaction.apartment.number }}
+                        {% if transaction.apartment.name %} — {{ transaction.apartment.name }}{% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            {% if transaction.payment_method %}
+            <div class="flex items-center gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Ödeme Yöntemi</div>
+                    <div class="font-semibold">{{ transaction.payment_method }}</div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Description -->
+            {% if transaction.description %}
+            <div class="flex items-start gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50 mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Açıklama</div>
+                    <div class="font-medium">{{ transaction.description }}</div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Created date & user -->
+            <div class="flex items-center gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Oluşturulma Tarihi</div>
+                    <div class="font-semibold">{{ transaction.date|date:"d.m.Y H:i" }}</div>
+                </div>
+            </div>
+
+            <!-- Created by user -->
+            <div class="flex items-center gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Oluşturan</div>
+                    {% if transaction.created_by_name %}
+                    <div class="font-semibold">{{ transaction.created_by_name.get_full_name|default:transaction.created_by_name.username }}</div>
+                    <div class="text-xs text-base-content/50">@{{ transaction.created_by_name.username }}</div>
+                    {% else %}
+                    <div class="text-base-content/40 text-sm">—</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Updated date & user -->
+            <div class="flex items-center gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Son Güncelleme Tarihi</div>
+                    <div class="font-semibold">{{ transaction.updated_at|date:"d.m.Y H:i" }}</div>
+                </div>
+            </div>
+
+            <!-- Updated by user -->
+            <div class="flex items-center gap-3 bg-base-200 rounded-box p-3">
+                <div class="text-base-content/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-base-content/50">Güncelleyen</div>
+                    {% if transaction.updated_by_name %}
+                    <div class="font-semibold">{{ transaction.updated_by_name.get_full_name|default:transaction.updated_by_name.username }}</div>
+                    <div class="text-xs text-base-content/50">@{{ transaction.updated_by_name.username }}</div>
+                    {% else %}
+                    <div class="text-base-content/40 text-sm">—</div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-action mt-4">
+            <button onclick="document.getElementById('transaction-detail-modal').remove()" class="btn btn-ghost">Kapat</button>
+        </div>
+
+    </div>
+    <!-- Click outside to close -->
+    <div class="modal-backdrop" onclick="document.getElementById('transaction-detail-modal').remove()"></div>
+</dialog>
+<script>
+  (function() {
+    var existing = document.getElementById('transaction-detail-modal');
+    // Remove any previous instance (from a prior click) then re-query the new one
+    // Since we just appended, the last dialog with this id is the new one
+    var modals = document.querySelectorAll('#transaction-detail-modal');
+    modals.forEach(function(m, i) {
+      if (i < modals.length - 1) m.remove();
+    });
+    var modal = document.getElementById('transaction-detail-modal');
+    if (modal) modal.showModal();
+  })();
+</script>

@@ -166,6 +166,13 @@ def htmx_transaction_create(request, apartment_number,transaction_type):
 
 
 @login_required
+def htmx_transaction_detail(request, transaction_id):
+    transaction = get_object_or_404(Transaction, id=transaction_id)
+    context = {'transaction': transaction}
+    return render(request, 'partials/transaction_detail_modal.html', context)
+
+
+@login_required
 def htmx_transaction_update(request, transaction_id,transaction_type):
     transaction = get_object_or_404(Transaction, id=transaction_id)
     if request.method == 'POST':

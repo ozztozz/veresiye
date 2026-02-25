@@ -13,5 +13,6 @@ urlpatterns = [
     path('apartment/<str:apartment_number>/transactions/', views.htmx_transaction_list, name='htmx_transaction_list'),
     path('blok/<str:blok>/apartments/', views.htmx_apartment_list, name='htmx_apartment_list'),
     path('apartment/<str:apartment_number>/add_transaction/<str:transaction_type>/', views.htmx_transaction_create, name='htmx_transaction_create'),
+    path('transaction/<int:transaction_id>/detail/', views.htmx_transaction_detail, name='htmx_transaction_detail'),
     path('transaction/<int:transaction_id>/edit/<str:transaction_type>/', views.htmx_transaction_update, name='htmx_transaction_update'),   
 ]
