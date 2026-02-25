@@ -1,23 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" data-theme="coffee">
+<html lang="tr" data-theme="coffee">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Oturumu Kapatıldı - Veresiye</title>
+  <title>Çıkış Yapıldı - Veresiye</title>
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   <script>
     const theme = localStorage.getItem('theme') || 'coffee';
     document.documentElement.setAttribute('data-theme', theme);
   </script>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-base-200">
-  <div class="card w-full max-w-md shadow-xl bg-base-100">
-    <div class="card-body">
-      <h2 class="card-title text-center text-2xl mb-6">Oturumu Kapatıldı</h2>
-      <p class="text-center mb-6">Oturumunuz başarıyla kapatılmıştır.</p>
-      <a href="{% url 'main:login' %}" class="btn btn-primary w-full">Giriş Sayfasına Dön</a>
+<body class="min-h-screen bg-base-200">
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-sm px-4">
+    <div class="flex-1">
+      <span class="text-xl font-bold text-primary">Veresiye</span>
     </div>
   </div>
+
+  <!-- Hero / Logout Card -->
+  <div class="hero min-h-[calc(100vh-4rem)]">
+    <div class="hero-content flex-col w-full max-w-md text-center">
+
+      <!-- Icon -->
+      <div class="avatar placeholder mb-2">
+        <div class="bg-success text-success-content rounded-full w-16">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="card w-full shadow-2xl bg-base-100 border border-base-300">
+        <div class="card-body items-center gap-4">
+
+          <div class="alert alert-success w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Oturumunuz başarıyla kapatıldı.</span>
+          </div>
+
+          <h2 class="card-title text-2xl">Güle Güle!</h2>
+          <p class="text-base-content/60">Tekrar görüşmek üzere.</p>
+
+          <div class="card-actions w-full flex-col gap-2 mt-2">
+            <a href="{% url 'login' %}" class="btn btn-primary w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              </svg>
+              Tekrar Giriş Yap
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>

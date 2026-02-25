@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ozz1.pythonanywhere.com', 'localhost', '127.0.0.1']
 
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
 
 # Application definition
 

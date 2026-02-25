@@ -2229,6 +2229,9 @@
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -2331,6 +2334,14 @@
       &:has(:nth-child(2)) {
         grid-template-columns: auto minmax(auto, 1fr);
       }
+    }
+  }
+  .card-actions {
+    @layer daisyui.l1.l2.l3 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: calc(0.25rem * 2);
     }
   }
   .card-title {
@@ -2443,6 +2454,9 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
+  .h-9 {
+    height: calc(var(--spacing) * 9);
+  }
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
@@ -2451,6 +2465,9 @@
   }
   .min-h-0 {
     min-height: calc(var(--spacing) * 0);
+  }
+  .min-h-\[calc\(100vh-4rem\)\] {
+    min-height: calc(100vh - 4rem);
   }
   .min-h-full {
     min-height: 100%;
@@ -2474,6 +2491,9 @@
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
@@ -2524,6 +2544,9 @@
     flex-shrink: 0;
   }
   .flex-grow {
+    flex-grow: 1;
+  }
+  .grow {
     flex-grow: 1;
   }
   .border-collapse {
@@ -2850,6 +2873,9 @@
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
+  .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1);
+  }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
   }
@@ -2936,6 +2962,13 @@
       color: var(--color-info-content);
       --alert-border-color: var(--color-info);
       --alert-color: var(--color-info);
+    }
+  }
+  .alert-success {
+    @layer daisyui.l1.l2 {
+      color: var(--color-success-content);
+      --alert-border-color: var(--color-success);
+      --alert-color: var(--color-success);
     }
   }
   .text-accent {

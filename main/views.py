@@ -1,5 +1,5 @@
 import datetime
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -8,6 +8,8 @@ from django.db.models.functions import Coalesce
 from.models import Apartment, Transaction
 from .forms import TransactionForm
 
+
+@login_required
 def home(request):
     blok_list= ['A', 'B', 'C', 'D', 'E', 'F','G','H','I']
     aka_blok_list= ['AKA-A','AKA-B','AKA-C','AKA-D','AKA-E','AKA-F','AKA-G','AKA-H','AKA-I']
@@ -25,7 +27,7 @@ def logout_view(request):
     logout(request)
     return redirect('main:home')
 
-
+@login_required
 def apartment_detail(request, apartment_number):
     # Burada blok ve numara bilgisine göre daire detaylarını çekebilirsiniz
     # Örneğin, Apartment modelinizde blok ve numara alanları varsa:
@@ -57,7 +59,7 @@ def apartment_detail(request, apartment_number):
     
     return render(request, 'apartment_detail.html', context)
 
-
+@login_required
 def payment_waiting(request):
     # Burada ödeme bekleyen daireleri çekebilirsiniz
     apartments = Apartment.objects.annotate(
@@ -80,6 +82,8 @@ def payment_waiting(request):
     
     return render(request, 'payment_waiting.html', context)
 
+
+@login_required
 def last_transactions(request):
     transactions = Transaction.objects.filter(active=True).order_by('-updated_at')[:10]
     context = {
@@ -87,7 +91,7 @@ def last_transactions(request):
     }
     return render(request, 'last_transactions.html', context)
 
-
+@login_required
 def reports(request):
     # Burada raporlar sayfasını oluşturabilirsiniz
     total_debt = Transaction.objects.filter(is_debt=True,active=True,date__date=datetime.date.today()).aggregate(total_debt=Coalesce(Sum('amount'), Value(0, output_field=DecimalField())))['total_debt']
@@ -101,6 +105,7 @@ def reports(request):
     }
     return render(request, 'reports.html', context)
 
+@login_required
 def htmx_apartment_list(request, blok):
     number_list = [str(i) for i in range(1, 80)]
     context = {
@@ -109,7 +114,7 @@ def htmx_apartment_list(request, blok):
     }
     return render(request, 'partials/apartment_list.html', context)
 
-
+@login_required
 def htmx_transaction_list(request, apartment_number):
     apartment = get_object_or_404(Apartment, number=apartment_number)
     transactions = list(Transaction.objects.filter(apartment=apartment,active=True).order_by('-date'))
@@ -136,7 +141,7 @@ def htmx_transaction_list(request, apartment_number):
     return render(request, 'partials/transaction_list_with_total.html', context)
 
 
-
+@login_required
 def htmx_transaction_create(request, apartment_number,transaction_type):
     apartment = get_object_or_404(Apartment, number=apartment_number)
     if request.method == 'POST':
@@ -160,7 +165,7 @@ def htmx_transaction_create(request, apartment_number,transaction_type):
     return render(request, 'partials/modal_transaction.html', context)
 
 
-
+@login_required
 def htmx_transaction_update(request, transaction_id,transaction_type):
     transaction = get_object_or_404(Transaction, id=transaction_id)
     if request.method == 'POST':
