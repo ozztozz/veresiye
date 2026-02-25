@@ -149,6 +149,8 @@ def htmx_transaction_create(request, apartment_number,transaction_type):
         if form.is_valid():
             transaction = form.save(commit=False)
             transaction.apartment = apartment
+            transaction.created_by_name = request.user
+            transaction.updated_by_name = request.user
             transaction.save()
             return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
     else:
@@ -178,11 +180,14 @@ def htmx_transaction_update(request, transaction_id,transaction_type):
     if request.method == 'POST':
         if transaction_type == 'delete':
             transaction.active = False
+            transaction.updated_by_name = request.user
             transaction.save()
             return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
         form = TransactionForm(request.POST, instance=transaction)
         if form.is_valid():
-            form.save()
+            updated_transaction = form.save(commit=False)
+            updated_transaction.updated_by_name = request.user
+            updated_transaction.save()
             return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
     else:
         form = TransactionForm(instance=transaction)
