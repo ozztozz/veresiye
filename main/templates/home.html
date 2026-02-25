@@ -14,30 +14,28 @@
 </div>
 
 <!-- Main Content -->
-<div class="max-w-7xl mx-auto space-y-4">
-    
-    <!-- Primary Blocks -->
-    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-200 border border-base-300">
-        <div class="card-body p-3 md:p-4">
+<div class="max-w-7xl mx-auto">
+
+    <!-- Tabs -->
+    <div role="tablist" class="tabs tabs-lifted tabs-lg">
+
+        <!-- Tab 1: Ana Bloklar -->
+        <input type="radio" name="block_tabs" role="tab" class="tab font-semibold" aria-label="Ana Bloklar" checked />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-4">
             <div class="flex items-center justify-between mb-3">
-                <h2 class="card-title text-base md:text-lg">
+                <h2 class="text-base md:text-lg font-bold flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                     Ana Bloklar
                 </h2>
-                <div class="badge badge-accent gap-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                    </svg>
-                    {{ blok_list|length }} Blok
-                </div>
+                <div class="badge badge-accent gap-1">{{ blok_list|length }} Blok</div>
             </div>
             <div class="divider my-2"></div>
             <div class="grid grid-cols-5 gap-2 md:gap-3">
                 {% for blok in blok_list %}
-                <button role="button" 
-                    class="btn btn-accent hover:btn-primary w-full text-sm md:text-base min-h-0 h-auto py-3 
+                <button role="button"
+                    class="btn btn-accent hover:btn-primary w-full text-sm md:text-base min-h-0 h-auto py-3
                            transform hover:scale-105 transition-all duration-150 shadow-sm hover:shadow-md font-semibold"
                     hx-get="{% url 'main:htmx_apartment_list' blok=blok %}"
                     hx-target="#apartment_list"
@@ -48,31 +46,25 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
 
-    <!-- Secondary Blocks -->
-    {% if aka_blok_list %}
-    <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-200 border border-base-300">
-        <div class="card-body p-3 md:p-4">
+        <!-- Tab 2: Diğer Bloklar -->
+        {% if aka_blok_list %}
+        <input type="radio" name="block_tabs" role="tab" class="tab font-semibold" aria-label="Diğer Bloklar" />
+        <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-4">
             <div class="flex items-center justify-between mb-3">
-                <h2 class="card-title text-base md:text-lg">
+                <h2 class="text-base md:text-lg font-bold flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
                     Diğer Bloklar
                 </h2>
-                <div class="badge badge-info gap-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                    </svg>
-                    {{ aka_blok_list|length }} Blok
-                </div>
+                <div class="badge badge-info gap-1">{{ aka_blok_list|length }} Blok</div>
             </div>
             <div class="divider my-2"></div>
             <div class="grid grid-cols-5 gap-2 md:gap-3">
                 {% for blok in aka_blok_list %}
-                <button role="button" 
-                    class="btn btn-info hover:btn-secondary w-full text-sm md:text-base min-h-0 h-auto py-3 
+                <button role="button"
+                    class="btn btn-info hover:btn-secondary w-full text-sm md:text-base min-h-0 h-auto py-3
                            transform hover:scale-105 transition-all duration-150 shadow-sm hover:shadow-md font-semibold"
                     hx-get="{% url 'main:htmx_apartment_list' blok=blok %}"
                     hx-target="#apartment_list"
@@ -83,20 +75,22 @@
                 {% endfor %}
             </div>
         </div>
+        {% endif %}
+
     </div>
-    {% endif %}
+
+    <!-- Apartment List -->
+    <div id="apartment_list" class="mt-6"></div>
+
 </div>
 
-<!-- Loading Indicator with Alert Style -->
+<!-- Loading Indicator -->
 <div id="loading-indicator" class="htmx-indicator fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
     <div class="alert alert-info shadow-2xl">
         <span class="loading loading-spinner loading-md"></span>
         <span class="font-medium">Yükleniyor...</span>
     </div>
 </div>
-
-<!-- Apartment List Container with Card Style -->
-<div id="apartment_list" class="mt-6"></div>
 
 <!-- Empty State (optional, shown when no selection) -->
 <div class="text-center py-12 opacity-50">
