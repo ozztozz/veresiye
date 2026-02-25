@@ -1,33 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Hero Section with Theme -->
-<div class="hero bg-base-200 rounded-box mb-4 md:mb-6 py-6">
-    <div class="hero-content text-center">
-        <div class="max-w-md">
-            <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Blok ve Numaralar
-            </h1>
-            <p class="text-sm text-base-content/70 mt-2">Daire detaylarına erişmek için blok seçin</p>
-        </div>
-    </div>
-</div>
+
 
 <!-- Main Content -->
 <div class="max-w-7xl mx-auto">
 
     <!-- Tabs -->
-    <div role="tablist" class="tabs tabs-lifted tabs-lg">
+    <div role="tablist" class="tabs tabs-border tabs-lg">
 
         <!-- Tab 1: Ana Bloklar -->
-        <input type="radio" name="block_tabs" role="tab" class="tab font-semibold" aria-label="Ana Bloklar" checked />
+        <input type="radio" name="block_tabs" role="tab" class="tab  font-semibold" aria-label="Can Ata Bilge" checked />
         <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-4">
             <div class="flex items-center justify-between mb-3">
                 <h2 class="text-base md:text-lg font-bold flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
-                    Ana Bloklar
+                    Can Ata Bilge Blokları
                 </h2>
                 <div class="badge badge-accent gap-1">{{ blok_list|length }} Blok</div>
             </div>
@@ -49,14 +39,14 @@
 
         <!-- Tab 2: Diğer Bloklar -->
         {% if aka_blok_list %}
-        <input type="radio" name="block_tabs" role="tab" class="tab font-semibold" aria-label="Diğer Bloklar" />
+        <input type="radio" name="block_tabs" role="tab" class="tab font-semibold" aria-label="AKA Blokları" />
         <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-4">
             <div class="flex items-center justify-between mb-3">
                 <h2 class="text-base md:text-lg font-bold flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
-                    Diğer Bloklar
+                    AKA Blokları
                 </h2>
                 <div class="badge badge-info gap-1">{{ aka_blok_list|length }} Blok</div>
             </div>
