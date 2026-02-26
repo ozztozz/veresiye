@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-zo*a*af9*1jqo1ykt8i56
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['ozz1.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ozz1.pythonanywhere.com', 'bizimbakkal.pythonanywhere.com', '127.0.0.1']
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
