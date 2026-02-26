@@ -30,7 +30,11 @@
 		</div>
 
 		<!-- Form -->
-		<form class="space-y-4" method="post" action="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type=transaction_type %}">
+		<form class="space-y-4" 
+			hx-post="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type=transaction_type %}"
+			hx-target="#transaction_table"
+			hx-swap="outerHTML"
+			hx-on::after-request="if(event.detail.successful) document.getElementById('transaction_modal').remove()">
 			{% csrf_token %}
 			
 			{% if transaction_type == 'delete' %}

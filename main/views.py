@@ -1,11 +1,10 @@
 import datetime
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.db.models import Sum, Q, Value, DecimalField
 from django.db.models.functions import Coalesce
-from.models import Apartment, Transaction
+from .models import Apartment, Transaction
 from .forms import TransactionForm
 
 
@@ -142,7 +141,7 @@ def htmx_transaction_list(request, apartment_number):
 
 
 @login_required
-def htmx_transaction_create(request, apartment_number,transaction_type):
+def htmx_transaction_create(request, apartment_number, transaction_type):
     apartment = get_object_or_404(Apartment, number=apartment_number)
     if request.method == 'POST':
         form = TransactionForm(request.POST)
@@ -152,17 +151,38 @@ def htmx_transaction_create(request, apartment_number,transaction_type):
             transaction.created_by_name = request.user
             transaction.updated_by_name = request.user
             transaction.save()
-            return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
+            
+            # Return updated transaction list with OOB swaps
+            transactions = list(Transaction.objects.filter(
+                apartment=apartment, active=True
+            ).select_related('created_by_name', 'updated_by_name').order_by('-date'))
+            
+            # Calculate running balance
+            running_balance = apartment.total_balance()
+            for trans in transactions:
+                trans.running_balance = running_balance
+                if trans.is_debt:
+                    running_balance -= trans.amount
+                else:
+                    running_balance += trans.amount
+            
+            apartment.total_debt = apartment.total_debt()
+            apartment.total_payment = apartment.total_payment()
+            apartment.total_balance = apartment.total_balance()
+            
+            context = {
+                'apartment': apartment,
+                'transactions': transactions,
+            }
+            return render(request, 'partials/transaction_list_with_total.html', context)
     else:
         form = TransactionForm()
-
         apartment.total_balance = apartment.total_balance()
 
     context = {
         'form': form,
         'apartment': apartment,
         'transaction_type': transaction_type,
-        
     }
     return render(request, 'partials/modal_transaction.html', context)
 
@@ -175,20 +195,44 @@ def htmx_transaction_detail(request, transaction_id):
 
 
 @login_required
-def htmx_transaction_update(request, transaction_id,transaction_type):
+def htmx_transaction_update(request, transaction_id, transaction_type):
     transaction = get_object_or_404(Transaction, id=transaction_id)
     if request.method == 'POST':
         if transaction_type == 'delete':
             transaction.active = False
             transaction.updated_by_name = request.user
             transaction.save()
-            return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
-        form = TransactionForm(request.POST, instance=transaction)
-        if form.is_valid():
-            updated_transaction = form.save(commit=False)
-            updated_transaction.updated_by_name = request.user
-            updated_transaction.save()
-            return redirect('main:apartment_detail', apartment_number=transaction.apartment.number)
+        else:
+            form = TransactionForm(request.POST, instance=transaction)
+            if form.is_valid():
+                updated_transaction = form.save(commit=False)
+                updated_transaction.updated_by_name = request.user
+                updated_transaction.save()
+        
+        # Return updated transaction list with OOB swaps
+        apartment = transaction.apartment
+        transactions = list(Transaction.objects.filter(
+            apartment=apartment, active=True
+        ).select_related('created_by_name', 'updated_by_name').order_by('-date'))
+        
+        # Calculate running balance
+        running_balance = apartment.total_balance()
+        for trans in transactions:
+            trans.running_balance = running_balance
+            if trans.is_debt:
+                running_balance -= trans.amount
+            else:
+                running_balance += trans.amount
+        
+        apartment.total_debt = apartment.total_debt()
+        apartment.total_payment = apartment.total_payment()
+        apartment.total_balance = apartment.total_balance()
+        
+        context = {
+            'apartment': apartment,
+            'transactions': transactions,
+        }
+        return render(request, 'partials/transaction_list_with_total.html', context)
     else:
         form = TransactionForm(instance=transaction)
 
