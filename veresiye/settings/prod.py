@@ -11,7 +11,7 @@ import os
 from .base import *  # noqa: F401, F403
 
 # ── Security ─────────────────────────────────────────────────────────────────
-SECRET_KEY = os.environ['SECRET_KEY']  # raises KeyError if not set – intentional
+SECRET_KEY = 'django-insecure-zo*a*af9*1jqo1ykt8i5683-0h)3+nnu2cb@-w!1x-988*)7yr'
 
 DEBUG = False
 
@@ -21,10 +21,12 @@ ALLOWED_HOSTS = [
 ]
 
 # ── Database ──────────────────────────────────────────────────────────────────
+
+DATABASE_DIR = Path(__file__).resolve().parent.parent.parent.parent / 'database'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_DIR / 'veresiye.sqlite3',
     }
 }
 

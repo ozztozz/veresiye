@@ -1,9 +1,62 @@
-*.pyc
-*.exe
-*.log
-logs/
-__pycache__/
+# ── Python ────────────────────────────────────────────────────────────────────
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+
+# ── Django ────────────────────────────────────────────────────────────────────
+*.log
+local_settings.py
 db.sqlite3
 *.sqlite3
+media/
+staticfiles/
+static_root/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.env
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+my_env/
+venv/
+.venv/
+env/
+ENV/
+
+# ── Distribution / packaging ──────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# ── IDE / editors ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Testing / coverage ────────────────────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# ── Node (if using Tailwind/DaisyUI build tools) ─────────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── Executables ───────────────────────────────────────────────────────────────
+*.exe
