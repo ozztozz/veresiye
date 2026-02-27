@@ -53,9 +53,9 @@ class Transaction(models.Model):
 
     class Meta:
         indexes = [
-            models.Index(fields=['apartment', 'active', '-date']),
-            models.Index(fields=['is_debt', 'active']),
-            models.Index(fields=['-updated_at']),
+            models.Index(fields=['apartment', 'active', '-date'], name='main_transa_apartme_idx'),
+            models.Index(fields=['is_debt', 'active'], name='main_transa_is_debt_idx'),
+            models.Index(fields=['-updated_at'], name='main_transa_updated_idx'),
         ]
 
     def clean(self):
