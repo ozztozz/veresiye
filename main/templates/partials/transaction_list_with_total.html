@@ -1,10 +1,10 @@
 {% load humanize %}
 <!-- Transaction table that will replace the existing table -->
-<div id="transaction_table" class="card bg-base-100 shadow-xl border border-base-300">
+<div id="transaction_table" hx-swap-oob="outerHTML" class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-sm overflow-hidden">
     <div class="card-body p-0">
         <div class="overflow-x-auto">
-            <table class="table table-zebra w-full text-xs sm:text-sm md:text-base">
-                <thead class="bg-base-200">
+            <table class="table w-full text-xs sm:text-sm md:text-base">
+                <thead class="bg-[#cae9ff]/30 font-bold text-xs uppercase text-[#1b4965]/70 border-b border-[#62b6cb]/20">
                     <tr>
                         <th>
                             <div class="flex items-center gap-2">
@@ -35,28 +35,30 @@
                         <th class="text-right">İşlem</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="divide-y divide-[#62b6cb]/10">
                     {% for transaction in transactions %}
-                    <tr class="{% if not transaction.is_debt %}bg-success/10{% endif %} hover:bg-base-200/50 transition-colors duration-150">
+                    <tr class="{% if not transaction.is_debt %}bg-[#bee9e8]/20{% endif %} hover:bg-white/60 transition-colors duration-150">
                         <td>
-                            <div class="flex flex-col">
+                            <div class="flex flex-col text-[#1b4965]">
                                 <span class="font-medium">{{ transaction.date|date:"d.m.Y" }}</span>
                                 <span class="text-xs opacity-60">{{ transaction.date|date:"H:i" }}</span>
                             </div>
                         </td>
-                        <td class="text-right font-bold">{{ transaction.amount|floatformat:2|intcomma }} ₺</td>
+                        <td class="text-right font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">
+                            {{ transaction.amount|floatformat:2|intcomma }} ₺
+                        </td>
                         <td class="hidden lg:table-cell">
-                            <div class="badge {% if transaction.is_debt %}badge-error{% else %}badge-success{% endif %} badge-sm">
+                            <div class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-sm font-bold">
                                 {% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}
                             </div>
                         </td>
-                        <td class="hidden lg:table-cell text-right text-xs opacity-75">{{ transaction.description }}</td>
-                        <td class="font-semibold text-right {% if transaction.running_balance > 0 %}text-error{% elif transaction.running_balance < 0 %}text-success{% endif %}">
+                        <td class="hidden lg:table-cell text-right text-xs text-[#1b4965]/75">{{ transaction.description|default:"-" }}</td>
+                        <td class="font-black text-right {% if transaction.running_balance > 0 %}text-debt{% elif transaction.running_balance < 0 %}text-payment{% else %}text-[#1b4965]{% endif %}">
                             {{ transaction.running_balance|floatformat:2|intcomma }} ₺
                         </td>
                         <td class="text-right">
-                            <div class="btn-group btn-group-horizontal">
-                                <button class="btn btn-xs btn-ghost tooltip"
+                            <div class="flex items-center justify-end gap-1">
+                                <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965] tooltip"
                                     hx-get="{% url 'main:htmx_transaction_detail' transaction_id=transaction.id %}"
                                     hx-target="body"
                                     hx-swap="beforeend"
@@ -65,7 +67,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                     </svg>
                                 </button>
-                                <button class="btn btn-xs btn-ghost tooltip" 
+                                <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965] tooltip" 
                                     hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
                                     hx-target="body" 
                                     hx-swap="beforeend" 
@@ -74,7 +76,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                     </svg>
                                 </button>
-                                <button class="btn btn-xs btn-ghost text-error tooltip" 
+                                <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965] hover:bg-[#1b4965]/10 tooltip" 
                                     hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='delete'%}"
                                     hx-target="body" 
                                     hx-swap="beforeend" 

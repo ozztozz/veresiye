@@ -1,24 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="tr" data-theme="coffee">
+<html lang="tr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Çıkış Yapıldı - Veresiye</title>
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   <script>
-    const theme = localStorage.getItem('theme') || 'coffee';
+    const theme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', theme);
   </script>
 </head>
-<body class="min-h-screen bg-base-200">
+<body class="min-h-screen app-bg-light text-slate-800">
 
   <!-- Navbar -->
-  <div class="navbar bg-base-100 shadow-sm px-4">
+  <header class="navbar glass-panel px-4 border-b border-[#62b6cb]/20 shadow-xs">
     <div class="flex-1">
-      <span class="text-xl font-bold text-primary">Veresiye</span>
+      <span class="text-xl font-black text-[#1b4965]">Veresiye</span>
     </div>
-  </div>
+  </header>
 
   <!-- Hero / Logout Card -->
   <div class="hero min-h-[calc(100vh-4rem)]">
@@ -26,31 +26,28 @@
 
       <!-- Icon -->
       <div class="avatar placeholder mb-2">
-        <div class="bg-success text-success-content rounded-full w-16 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="badge-payment rounded-full w-16 h-16 flex items-center justify-center border border-[#62b6cb]/30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#2d7587]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
       </div>
 
-      <div class="card w-full shadow-2xl bg-base-100 border border-base-300">
-        <div class="card-body items-center gap-4">
+      <div class="glass-card w-full shadow-xl rounded-3xl border border-[#62b6cb]/20">
+        <div class="card-body items-center gap-4 p-6">
 
-          <div class="alert alert-success w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+          <div class="badge-payment w-full p-3 rounded-2xl flex items-center justify-center gap-2 border border-[#62b6cb]/30">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-5 w-5 text-[#2d7587]" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>Oturumunuz başarıyla kapatıldı.</span>
+            <span class="text-sm font-bold text-[#1b4965]">Oturumunuz başarıyla kapatıldı.</span>
           </div>
 
-          <h2 class="card-title text-2xl">Güle Güle!</h2>
-          <p class="text-base-content/60">Tekrar görüşmek üzere.</p>
+          <h2 class="card-title text-2xl font-black text-[#1b4965]">Güle Güle!</h2>
+          <p class="text-[#1b4965]/70 text-sm">Tekrar görüşmek üzere.</p>
 
           <div class="card-actions w-full flex-col gap-2 mt-2">
-            <a href="{% url 'login' %}" class="btn btn-primary w-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-              </svg>
+            <a href="{% url 'login' %}" class="btn btn-debt w-full rounded-2xl h-12 font-bold shadow-xs">
               Tekrar Giriş Yap
             </a>
           </div>

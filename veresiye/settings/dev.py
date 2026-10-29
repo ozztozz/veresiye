@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-zo*a*af9*1jqo1ykt8i5683-0h)3+nnu2cb@-w!1x-988*)7yr
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # ── Database ──────────────────────────────────────────────────────────────────
 DATABASES = {

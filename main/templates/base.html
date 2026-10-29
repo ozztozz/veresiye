@@ -1,135 +1,1126 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden" data-theme="coffee">
+<html lang="tr" class="overflow-x-hidden" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="csrf-token" content="{{ csrf_token }}">
-  <title>{% block title %}Veresiye{% endblock %}</title>
+  <title>{% block title %}Veresiye - Apartman & Borç Takip{% endblock %}</title>
+
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#cae9ff" id="meta-theme-color" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Veresiye" />
+  <link rel="apple-touch-icon" href="{% static 'icons/icon-192.svg' %}" />
+  <link rel="icon" type="image/svg+xml" href="{% static 'icons/icon.svg' %}" />
+
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   
+  <!-- Mobile & PWA Custom Styles -->
+  <style>
+    /* Native App Touch & Feel */
+    html, body {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      overscroll-behavior-y: contain;
+    }
+    
+    button, a, input, select, textarea {
+      touch-action: manipulation;
+    }
+
+    .app-touch-active:active {
+      transform: scale(0.96);
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .pt-safe {
+      padding-top: max(env(safe-area-inset-top), 0.5rem);
+    }
+    .pb-safe {
+      padding-bottom: max(env(safe-area-inset-bottom), 0.75rem);
+    }
+    .mb-safe {
+      margin-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+    }
+
+    .bottom-nav-item.active {
+      color: #1b4965;
+      font-weight: 700;
+    }
+    .bottom-nav-item.active svg {
+      stroke-width: 2.5;
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+
+    .htmx-swapping {
+      opacity: 0;
+      transition: opacity 0.15s ease-out;
+    }
+    .htmx-settling {
+      opacity: 1;
+      transition: opacity 0.15s ease-in;
+    }
+
+    /* Modal Display & Visibility Guarantees (Desktop & Mobile) */
+    .modal[open],
+    .modal.modal-open,
+    dialog.modal[open],
+    div.modal.modal-open {
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      display: grid !important;
+    }
+
+    .modal[open] .modal-box,
+    .modal.modal-open .modal-box,
+    dialog.modal[open] .modal-box,
+    div.modal.modal-open .modal-box {
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      scale: 1 !important;
+      translate: 0 0 !important;
+    }
+
+    @media (max-width: 640px) {
+      .modal[open] .modal-box,
+      .modal.modal-open .modal-box {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-top-left-radius: 1.5rem !important;
+        border-top-right-radius: 1.5rem !important;
+        margin: 0 !important;
+        max-height: 90vh !important;
+        padding-bottom: max(env(safe-area-inset-bottom), 1.5rem) !important;
+        animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      @keyframes slideUp {
+        from { transform: translateY(100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+    }
+  </style>
+
   <!-- Theme Initialization -->
   <script>
-    // Load theme from localStorage before page renders
-    const theme = localStorage.getItem('theme') || 'coffee';
-    document.documentElement.setAttribute('data-theme', theme);
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
 
   {% block extra_head %}{% endblock %}
 </head>
-<body class="w-full min-h-screen bg-base-200 text-base-content overflow-x-hidden">
-  <div class="min-h-screen overflow-x-hidden w-full">
-    <header class="navbar bg-base-100 shadow-sm w-full max-w-full px-2 md:px-4">
-      <div class="flex lg:hidden">
-        <label for="app-drawer" class="btn btn-square btn-ghost" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<body class="w-full min-h-screen app-bg-light text-slate-800 overflow-x-hidden select-none pb-24 md:pb-6 relative" hx-boost="true">
+  
+  <!-- Offline Notification Bar -->
+  <div id="offline-bar" class="hidden fixed top-0 left-0 right-0 z-50 badge-sky px-4 py-2 text-center text-xs sm:text-sm font-semibold shadow-md flex items-center justify-center gap-2 backdrop-blur-md">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 animate-bounce text-[#1b4965]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
+    </svg>
+    <span class="text-[#1b4965]">Çevrimdışı moddasınız. Kayıtlar ağ geldiğinde senkronize edilecektir.</span>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast toast-top toast-end z-50 pointer-events-none p-3 sm:p-4"></div>
+
+  <div class="min-h-screen overflow-x-hidden w-full flex flex-col">
+    
+    <!-- Top Header -->
+    <header class="sticky top-0 z-30 navbar glass-panel w-full max-w-full px-3 md:px-5 pt-safe transition-all border-b border-[#62b6cb]/20 shadow-xs">
+      
+      <!-- Left side: App Logo -->
+      <div class="flex items-center gap-2">
+        <label for="app-drawer" class="btn btn-ghost btn-sm btn-circle hidden lg:flex" aria-label="Menüyü aç">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1b4965]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </label>
+        
+        <a class="flex items-center gap-2.5 font-bold tracking-tight text-lg md:text-xl text-[#1b4965] app-touch-active" href="/">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#1b4965] to-[#5fa8d3] backdrop-blur-md flex items-center justify-center text-white shadow-xs border border-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <span class="font-black text-[#1b4965]">Veresiye</span>
+        </a>
       </div>
-      <div class="flex-1">
-        <a class="btn btn-ghost text-lg md:text-xl" href="/">Veresiye</a>
+
+      <!-- Quick Search Bar (Center) -->
+      <div class="flex-1 max-w-xs mx-auto px-2">
+        <button onclick="openQuickSearch()" 
+                class="btn btn-sm btn-ghost glass-card-subtle hover:bg-white w-full justify-between rounded-xl px-3 border border-[#62b6cb]/25 font-normal text-xs text-[#1b4965]/70 shadow-xs app-touch-active">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#5fa8d3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span class="truncate">Daire Ara...</span>
+          </span>
+          <kbd class="kbd kbd-xs hidden sm:inline-block border border-[#62b6cb]/30 bg-white/70 text-[#1b4965]">⌘K</kbd>
+        </button>
       </div>
-      <div class="flex-none gap-1 md:gap-2">
+
+      <!-- Right Actions: 2 Palette Action Buttons (Desktop) + Theme + User -->
+      <div class="flex-none flex items-center gap-1.5 sm:gap-2">
+        
+        <!-- Desktop Separate Buttons: Borç Ekle (Yale Blue) & Tahsilat Yap (Pacific Blue) -->
+        <div class="hidden sm:flex items-center gap-2">
+          <button onclick="openWizard('debt')" class="btn btn-debt btn-sm rounded-xl font-bold gap-1.5 shadow-xs app-touch-active">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Borç Ekle</span>
+          </button>
+          
+          <button onclick="openWizard('payment')" class="btn btn-payment btn-sm rounded-xl font-bold gap-1.5 shadow-xs app-touch-active">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Tahsilat Yap</span>
+          </button>
+        </div>
+
+        <!-- PWA Install Button -->
+        <button id="pwa-install-btn" class="btn btn-sky btn-xs sm:btn-sm gap-1.5 rounded-full shadow-xs hidden app-touch-active" onclick="installPWA()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span class="hidden xs:inline">Yükle</span>
+        </button>
+
         <!-- Theme Switcher -->
         <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost btn-sm md:btn-md btn-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <label tabindex="0" class="btn btn-ghost btn-sm btn-circle text-[#1b4965]" aria-label="Tema Değiştir">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
           </label>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] w-52 rounded-box bg-base-100 p-2 shadow-lg border border-base-300">
-            <li class="menu-title">
-              <span>Tema Seçin</span>
-            </li>
-            <li><a data-theme-value="light" class="theme-option">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-              Açık
-            </a></li>
-            <li><a data-theme-value="dark" class="theme-option">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
-              Koyu
-            </a></li>
-       </ul>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[100] w-52 rounded-2xl glass-panel p-2 shadow-2xl border border-[#62b6cb]/25 text-[#1b4965]">
+            <li class="menu-title px-3 py-1 text-xs opacity-60"><span>Tema Seçin</span></li>
+            <li><a data-theme-value="light" class="theme-option font-medium">☀️ Açık (Varsayılan)</a></li>
+            <li><a data-theme-value="corporate" class="theme-option font-medium">🏢 Kurumsal</a></li>
+            <li><a data-theme-value="coffee" class="theme-option font-medium">☕ Coffee</a></li>
+            <li><a data-theme-value="dark" class="theme-option font-medium">🌙 Koyu (Dark)</a></li>
+            <li><a data-theme-value="emerald" class="theme-option font-medium">🍃 Zümrüt</a></li>
+          </ul>
         </div>
      
+        <!-- User Menu -->
         <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-
+          <label tabindex="0" class="btn btn-ghost btn-circle btn-sm avatar placeholder">
+            <div class="badge-debt rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs border border-[#1b4965]/25">
+              {{ request.user.username|default:"U"|slice:":1"|upper }}
+            </div>
           </label>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] w-52 rounded-box bg-base-100 p-2 shadow">
-            <li><a href="/profile">Profil</a></li>
-            <li><a href="/settings">Ayarlar</a></li>
-            <li><a href="{% url 'main:logout' %}">Çıkış Yap</a></li>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[100] w-52 rounded-2xl glass-panel p-2 shadow-2xl border border-[#62b6cb]/25 text-[#1b4965]">
+            <li class="menu-title px-3 py-1 text-xs opacity-60"><span>Giriş Yapan</span></li>
+            <li class="px-3 py-1 font-bold text-sm">{{ request.user.username }}</li>
+            <div class="divider my-1 opacity-20"></div>
+            <li>
+              <a href="#" onclick="showPWAHelpModal(); return false;" class="gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#3c9cb5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                Uygulama Olarak Ekle
+              </a>
+            </li>
+            <div class="divider my-1 opacity-20"></div>
+            <li><a href="{% url 'main:logout' %}" class="text-[#1b4965] font-semibold gap-2 hover:bg-[#1b4965]/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#1b4965]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+              </svg>
+              Çıkış Yap
+            </a></li>
           </ul>
         </div>
       </div>
     </header>
 
-    <div class="drawer lg:drawer-open">
+    <!-- Desktop Drawer & Main Layout -->
+    <div class="drawer lg:drawer-open flex-1">
       <input id="app-drawer" type="checkbox" class="drawer-toggle" />
+      
+      <!-- Main Page Content -->
       <div class="drawer-content flex flex-col w-full overflow-x-hidden">
-        <main class="w-full max-w-full p-2 sm:p-4 lg:p-6 overflow-x-hidden">
+        <main id="main-content" class="w-full max-w-7xl mx-auto p-3 sm:p-5 lg:p-6 overflow-x-hidden flex-1">
           {% block content %}{% endblock %}
         </main>
       </div>
-      
 
-      <div class="drawer-side z-40">
+      <!-- Desktop Sidebar -->
+      <div class="drawer-side z-40 hidden lg:block">
         <label for="app-drawer" class="drawer-overlay" aria-label="Close menu"></label>
-        <aside class="w-64 sm:w-72 bg-base-100 min-h-full border-r border-base-300">
-          <div class="p-4">
-          
+        <aside class="w-64 glass-panel min-h-full border-r border-base-content/10 flex flex-col justify-between">
+          <div class="p-4 space-y-4">
+            <div class="px-3 py-3 rounded-2xl glass-card-subtle border border-base-content/10">
+              <p class="text-[11px] font-bold uppercase tracking-wider text-base-content/60">Yönetim Paneli</p>
+              <p class="text-sm font-bold mt-0.5">Apartman & Borç</p>
+            </div>
+
+            <!-- Two Dedicated Buttons in Sidebar -->
+            <div class="space-y-2">
+              <button onclick="openWizard('debt')" class="btn btn-debt w-full rounded-2xl gap-2 font-bold shadow-xs app-touch-active">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Yeni Borç Ekle
+              </button>
+
+              <button onclick="openWizard('payment')" class="btn btn-payment w-full rounded-2xl gap-2 font-bold shadow-xs app-touch-active">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Tahsilat / Ödeme Al
+              </button>
+            </div>
+            
+            <ul class="menu menu-md gap-1 p-0 text-[#1b4965]">
+              <li>
+                <a href="/" class="rounded-xl transition-all {% if request.path == '/' %}bg-[#5fa8d3]/20 text-[#1b4965] font-bold border border-[#5fa8d3]/30{% else %}hover:bg-[#cae9ff]/40{% endif %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#5fa8d3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  Ana Sayfa
+                </a>
+              </li>
+              <li>
+                <a href="/payment_waiting/" class="rounded-xl transition-all {% if 'payment_waiting' in request.path %}bg-[#5fa8d3]/20 text-[#1b4965] font-bold border border-[#5fa8d3]/30{% else %}hover:bg-[#cae9ff]/40{% endif %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#5fa8d3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Ödeme Bekleyenler
+                </a>
+              </li>
+              <li>
+                <a href="/last_transactions/" class="rounded-xl transition-all {% if 'last_transactions' in request.path %}bg-[#5fa8d3]/20 text-[#1b4965] font-bold border border-[#5fa8d3]/30{% else %}hover:bg-[#cae9ff]/40{% endif %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#5fa8d3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Son Kayıtlar
+                </a>
+              </li>
+              <li>
+                <a href="/reports/" class="rounded-xl transition-all {% if 'reports' in request.path %}bg-[#5fa8d3]/20 text-[#1b4965] font-bold border border-[#5fa8d3]/30{% else %}hover:bg-[#cae9ff]/40{% endif %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#5fa8d3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  Günlük Raporlar
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul class="menu px-4 pb-6">
-            <li><a href="/payment_waiting">Ödeme Bekleyenler</a></li>
-            <li><a href="/last_transactions">Son Kayıtlar</a></li>
-            <li><a href="/reports">Raporlar</a></li>
-          </ul>
+
+          <div class="p-4 border-t border-[#62b6cb]/20">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full badge-debt flex items-center justify-center font-bold text-xs">
+                {{ request.user.username|slice:":1"|upper }}
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-semibold truncate text-[#1b4965]">{{ request.user.username }}</p>
+                <p class="text-xs text-[#1b4965]/60">Yönetici</p>
+              </div>
+              <a href="{% url 'main:logout' %}" class="btn btn-ghost btn-xs btn-square text-[#1b4965] hover:bg-[#1b4965]/10" title="Çıkış">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
+
+    <!-- Mobile Bottom Navigation Bar: Dedicated Separate Action Buttons -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-panel border-t border-[#62b6cb]/20 pb-safe shadow-[0_-8px_24px_rgba(27,73,101,0.08)]">
+      <div class="grid grid-cols-5 h-16 items-center px-1">
+        
+        <!-- Tab 1: Ana Sayfa -->
+        <a href="/" class="bottom-nav-item flex flex-col items-center justify-center py-1 text-xs gap-1 transition-all app-touch-active {% if request.path == '/' or '/apartment/' in request.path %}active text-[#1b4965] font-bold{% else %}text-[#1b4965]/70 hover:text-[#1b4965]{% endif %}">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span class="tracking-tight text-[10px]">Ana Sayfa</span>
+        </a>
+
+        <!-- Tab 2: Borçlular -->
+        <a href="/payment_waiting/" class="bottom-nav-item flex flex-col items-center justify-center py-1 text-xs gap-1 transition-all app-touch-active {% if 'payment_waiting' in request.path %}active text-[#1b4965] font-bold{% else %}text-[#1b4965]/70 hover:text-[#1b4965]{% endif %}">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="tracking-tight text-[10px]">Borçlular</span>
+        </a>
+
+        <!-- Tab 3: Dedicated Yale Blue "Borç Ekle" Button -->
+        <button onclick="openWizard('debt')" class="flex flex-col items-center justify-center py-1 text-xs gap-0.5 text-[#1b4965] font-extrabold app-touch-active">
+          <div class="w-10 h-10 rounded-2xl bg-[#1b4965]/10 border border-[#1b4965]/25 flex items-center justify-center shadow-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1b4965]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="tracking-tight text-[10px] text-[#1b4965] font-bold">Borç Yaz</span>
+        </button>
+
+        <!-- Tab 4: Dedicated Pacific Blue "Tahsilat Yap" Button -->
+        <button onclick="openWizard('payment')" class="flex flex-col items-center justify-center py-1 text-xs gap-0.5 text-[#2d7587] font-extrabold app-touch-active">
+          <div class="w-10 h-10 rounded-2xl bg-[#62b6cb]/20 border border-[#62b6cb]/35 flex items-center justify-center shadow-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#2d7587]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <span class="tracking-tight text-[10px] text-[#2d7587] font-bold">Tahsilat</span>
+        </button>
+
+        <!-- Tab 5: Raporlar -->
+        <a href="/reports/" class="bottom-nav-item flex flex-col items-center justify-center py-1 text-xs gap-1 transition-all app-touch-active {% if 'reports' in request.path %}active text-[#1b4965] font-bold{% else %}text-[#1b4965]/70 hover:text-[#1b4965]{% endif %}">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          <span class="tracking-tight text-[10px]">Raporlar</span>
+        </a>
+
+      </div>
+    </nav>
   </div>
+
+  <!-- ========================================================================= -->
+  <!-- STEP-BY-STEP TOUCH WIZARD MODAL (NO MANUAL TYPING NEEDED FOR BLOCKS/APTS) -->
+  <!-- ========================================================================= -->
+  <dialog id="transaction_wizard_modal" class="modal">
+    <div class="modal-box glass-panel w-full max-w-lg p-5 sm:p-6 rounded-3xl border border-base-content/15 shadow-2xl overflow-hidden flex flex-col max-h-[88vh]">
+      
+      <!-- Mobile Drag Handle -->
+      <div class="w-12 h-1.5 bg-base-content/20 rounded-full mx-auto mb-3 block sm:hidden"></div>
+
+      <!-- Header: Dynamic Title and Step Tracker -->
+      <div class="flex items-center justify-between pb-3 border-b border-base-content/10">
+        <div class="flex items-center gap-2.5">
+          <div id="wizard-badge-icon" class="w-9 h-9 rounded-xl flex items-center justify-center font-black">
+            <!-- Icon injected -->
+          </div>
+          <div>
+            <h3 id="wizard-title" class="font-black text-base sm:text-lg leading-tight">İşlem Ekle</h3>
+            <p id="wizard-subtitle" class="text-xs text-base-content/60 font-semibold">1. Adım: Bloğu seçin</p>
+          </div>
+        </div>
+        <button onclick="closeWizard()" class="btn btn-sm btn-circle btn-ghost">✕</button>
+      </div>
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- STEP 1: CHOOSE BLOCK (A, B, C, D, E, F, G, H, I)                    -->
+      <!-- ------------------------------------------------------------------- -->
+      <div id="wizard-step-1" class="py-4 space-y-3 flex-1 overflow-y-auto">
+        <p class="text-xs text-base-content/70 font-bold uppercase tracking-wider">Lütfen Blok Seçiniz:</p>
+        <div class="grid grid-cols-3 gap-2.5">
+          <button type="button" onclick="wizardSelectBlock('A')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">A</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('B')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">B</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('C')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">C</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('D')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">D</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('E')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">E</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('F')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">F</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('G')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">G</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('H')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">H</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+          <button type="button" onclick="wizardSelectBlock('I')" class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-lg rounded-2xl flex flex-col items-center justify-center py-3 h-auto app-touch-active border border-[#62b6cb]/20 text-[#1b4965]">
+            <span class="text-2xl font-black">I</span>
+            <span class="text-[10px] opacity-60">Blok</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- STEP 2: CHOOSE APARTMENT NUMBER (1 - 79)                            -->
+      <!-- ------------------------------------------------------------------- -->
+      <div id="wizard-step-2" class="hidden py-3 space-y-3 flex-1 overflow-y-auto">
+        <div class="flex items-center justify-between">
+          <button type="button" onclick="wizardGoToStep(1)" class="btn btn-ghost btn-xs gap-1 rounded-xl text-[#1b4965] font-bold">
+            ← Blok Değiştir
+          </button>
+          <span id="wizard-selected-block-label" class="badge badge-sky font-black px-2.5 py-1 text-xs">
+            A Blok
+          </span>
+        </div>
+
+        <p class="text-xs text-[#1b4965]/70 font-bold uppercase tracking-wider">Lütfen Daire Numarasını Seçiniz:</p>
+        
+        <!-- Grid of 1 to 79 apartment buttons (5 per row) -->
+        <div id="wizard-apartments-grid" class="grid grid-cols-5 gap-1.5 sm:gap-2 max-h-80 overflow-y-auto p-1">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- STEP 3: ENTER AMOUNT & DESCRIPTION (HTMX SUBMISSION)               -->
+      <!-- ------------------------------------------------------------------- -->
+      <div id="wizard-step-3" class="hidden py-3 space-y-4 flex-1 overflow-y-auto">
+        
+        <!-- Summary Banner for Selected Apartment -->
+        <div class="p-3.5 rounded-2xl glass-card-subtle border border-[#62b6cb]/25 flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div id="wizard-apt-avatar" class="w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm">
+              <!-- Injected -->
+            </div>
+            <div>
+              <p class="text-[11px] text-[#1b4965]/60 font-semibold uppercase">Seçilen Daire</p>
+              <div class="flex items-center gap-2">
+                <h4 id="wizard-apt-title" class="font-black text-base text-[#1b4965]">Daire A12</h4>
+                <span id="wizard-balance-badge" class="badge badge-sm font-bold hidden"></span>
+              </div>
+            </div>
+          </div>
+          <button type="button" onclick="wizardGoToStep(2)" class="btn btn-ghost btn-xs rounded-xl font-bold text-[#1b4965]">
+            Daire Değiştir &rsaquo;
+          </button>
+        </div>
+
+        <!-- HTMX Form -->
+        <form id="wizard-htmx-form"
+              hx-post="{% url 'main:quick_add_transaction' %}"
+              hx-swap="none"
+              hx-indicator="#wizard-spinner"
+              hx-on::after-request="handleWizardSuccess(event)"
+              class="space-y-4">
+          {% csrf_token %}
+          <input type="hidden" name="apartment_number" id="wizard-hidden-apt">
+          <input type="hidden" name="is_debt" id="wizard-hidden-is-debt" value="true">
+
+          <!-- Amount Input -->
+          <div class="form-control w-full">
+            <div class="flex items-center justify-between pb-1">
+              <label id="wizard-amount-label" class="label-text font-black text-xs uppercase text-[#1b4965]">
+                Tutar (₺)
+              </label>
+              <!-- Quick Add Chips -->
+              <div class="flex items-center gap-1">
+                <button type="button" id="wizard-full-debt-btn" class="hidden badge badge-debt cursor-pointer text-[10px] font-black py-2 shadow-xs">Tüm Borç</button>
+                <button type="button" onclick="wizardAddAmount(100)" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[10px] font-semibold py-2 border border-[#62b6cb]/25 text-[#1b4965]">+100</button>
+                <button type="button" onclick="wizardAddAmount(250)" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[10px] font-semibold py-2 border border-[#62b6cb]/25 text-[#1b4965]">+250</button>
+                <button type="button" onclick="wizardAddAmount(500)" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[10px] font-semibold py-2 border border-[#62b6cb]/25 text-[#1b4965]">+500</button>
+                <button type="button" onclick="wizardAddAmount(1000)" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[10px] font-semibold py-2 border border-[#62b6cb]/25 text-[#1b4965]">+1000</button>
+              </div>
+            </div>
+            <input type="number" 
+                   step="0.01" 
+                   inputmode="decimal" 
+                   name="amount" 
+                   id="wizard-amount-input" 
+                   placeholder="0.00" 
+                   onfocus="this.select()"
+                   class="input glass-input rounded-2xl w-full h-13 text-xl font-black border-[#62b6cb]/40 focus:border-[#1b4965] text-[#1b4965]" 
+                   required />
+          </div>
+
+          <!-- Description Input -->
+          <div class="form-control w-full">
+            <div class="flex items-center justify-between pb-1">
+              <label class="label-text font-bold text-xs uppercase text-[#1b4965]/70">Açıklama</label>
+              <span class="text-[10px] text-[#1b4965]/50">Opsiyonel</span>
+            </div>
+            <input type="text" 
+                   name="description" 
+                   id="wizard-desc-input" 
+                   placeholder="İşlem açıklaması..." 
+                   class="input glass-input rounded-2xl w-full text-sm h-11 border-[#62b6cb]/40 focus:border-[#1b4965] text-[#1b4965]" />
+            
+            <!-- Quick Chips -->
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              <span onclick="wizardAppendTag('Aidat')" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[11px] py-2 px-2.5 rounded-lg border border-[#62b6cb]/25 text-[#1b4965] app-touch-active">Aidat</span>
+              <span onclick="wizardAppendTag('Su Bedeli')" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[11px] py-2 px-2.5 rounded-lg border border-[#62b6cb]/25 text-[#1b4965] app-touch-active">Su Bedeli</span>
+              <span onclick="wizardAppendTag('Demirbaş')" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[11px] py-2 px-2.5 rounded-lg border border-[#62b6cb]/25 text-[#1b4965] app-touch-active">Demirbaş</span>
+              <span onclick="wizardAppendTag('Nakit')" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[11px] py-2 px-2.5 rounded-lg border border-[#62b6cb]/25 text-[#1b4965] app-touch-active">Nakit</span>
+              <span onclick="wizardAppendTag('Havale/EFT')" class="badge badge-sky hover:bg-[#5fa8d3]/30 cursor-pointer text-[11px] py-2 px-2.5 rounded-lg border border-[#62b6cb]/25 text-[#1b4965] app-touch-active">Havale</span>
+            </div>
+          </div>
+
+          <!-- Submit Buttons -->
+          <div class="modal-action grid grid-cols-2 gap-2 mt-4 pt-2">
+            <button type="button" onclick="closeWizard()" class="btn btn-ghost rounded-2xl h-12 font-bold">
+              İptal
+            </button>
+            <button type="submit" id="wizard-submit-btn" class="btn rounded-2xl h-12 font-black shadow-md app-touch-active flex items-center justify-center gap-2">
+              <span id="wizard-spinner" class="loading loading-spinner loading-xs htmx-indicator"></span>
+              <span id="wizard-submit-text">Kaydet</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button type="button" onclick="closeWizard()">kapat</button>
+    </form>
+  </dialog>
+
+  <!-- Spotlight Quick Search Modal -->
+  <dialog id="quick_search_modal" class="modal">
+    <div class="modal-box glass-panel w-full max-w-lg p-4 rounded-3xl border border-base-content/15 shadow-2xl">
+      <div class="flex items-center gap-2 border-b border-base-content/10 pb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input id="quick-search-input" 
+               type="text" 
+               placeholder="Daire no girin (Örn: A12, B5, 24)..." 
+               class="input input-ghost w-full focus:outline-none text-base font-bold"
+               autocomplete="off" />
+        <button onclick="document.getElementById('quick_search_modal').close()" class="btn btn-sm btn-circle btn-ghost">✕</button>
+      </div>
+
+      <div id="quick-search-results" class="max-h-72 overflow-y-auto divide-y divide-base-content/10 mt-2">
+        <div class="p-6 text-center text-xs opacity-50">Aramak için blok veya daire no yazmaya başlayın.</div>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>kapat</button>
+    </form>
+  </dialog>
+
+  <!-- PWA Install Guide Modal -->
+  <dialog id="pwa_help_modal" class="modal">
+    <div class="modal-box glass-panel max-w-sm rounded-3xl p-6 text-center border border-base-content/15 shadow-2xl">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center shadow-md border border-white/10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      </div>
+      <h3 class="font-bold text-lg mb-1">Veresiye Uygulamasını Yükleyin</h3>
+      <p class="text-xs text-base-content/70 mb-5">
+        Mobil uygulama gibi tam ekran kullanmak ve çevrimdışı erişebilmek için ana ekranınıza ekleyin.
+      </p>
+
+      <div id="pwa-direct-install" class="hidden mb-4">
+        <button onclick="installPWA()" class="btn btn-soft-primary w-full rounded-xl gap-2 font-bold shadow-xs">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Şimdi Yükle
+        </button>
+      </div>
+
+      <div class="glass-card-subtle p-4 rounded-2xl text-left text-xs space-y-3 border border-base-content/10">
+        <div class="font-semibold text-base-content/90 flex items-center gap-1.5">
+          <span>🍎 iPhone / iPad (Safari) için:</span>
+        </div>
+        <ol class="list-decimal list-inside space-y-1.5 opacity-80 pl-1">
+          <li>Safari alt çubuğundaki <strong>Paylaş</strong> simgesine dokunun.</li>
+          <li>Açılan menüden <strong>"Ana Ekrana Ekle"</strong>yi seçin.</li>
+          <li>Sağ üstten <strong>"Ekle"</strong>ye dokunun.</li>
+        </ol>
+      </div>
+
+      <div class="modal-action justify-center mt-5">
+        <form method="dialog">
+          <button class="btn btn-ghost btn-sm rounded-full px-6">Anladım</button>
+        </form>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>kapat</button>
+    </form>
+  </dialog>
   
-  <!-- Theme Switcher Script -->
+  <!-- JavaScript Initialization -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    // 1. Haptic Vibration
+    function triggerHaptic(duration = 15) {
+      if ('vibrate' in navigator) {
+        try { navigator.vibrate(duration); } catch(e) {}
+      }
+    }
+
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest('button, .app-touch-active, a.btn');
+      if (target) triggerHaptic(12);
+    });
+
+    // 2. Floating Toast Notification
+    function showToast(message, type = 'info') {
+      triggerHaptic(25);
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      const badgeStyle = type === 'success' 
+        ? 'bg-[#bee9e8]/95 border-[#62b6cb] text-[#1b4965]' 
+        : (type === 'error' ? 'bg-[#cae9ff]/95 border-[#5fa8d3] text-[#1b4965]' : 'bg-white/95 border-[#62b6cb]/30 text-[#1b4965]');
+      
+      toast.className = `glass-panel ${badgeStyle} shadow-xl rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-2 pointer-events-auto transition-all transform translate-y-2 opacity-0 duration-200 px-4 py-3 border backdrop-blur-xl`;
+      toast.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => toast.classList.remove('translate-y-2', 'opacity-0'), 10);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        setTimeout(() => toast.remove(), 250);
+      }, 3500);
+    }
+
+    document.body.addEventListener('showToast', function(evt) {
+      if (evt.detail) {
+        showToast(evt.detail.message, evt.detail.type);
+      }
+    });
+
+    // 3. STEP-BY-STEP TOUCH WIZARD LOGIC
+    let wizardCurrentType = 'debt'; // 'debt' or 'payment'
+    let wizardSelectedBlock = null;
+    let wizardSelectedApartment = null;
+
+    function openWizard(type = 'debt') {
+      triggerHaptic(20);
+      wizardCurrentType = type;
+      const isDebt = (type === 'debt');
+
+      // Update Wizard Style (Yale Blue for Debt, Pacific Blue for Payment)
+      const badgeIcon = document.getElementById('wizard-badge-icon');
+      const title = document.getElementById('wizard-title');
+      const submitBtn = document.getElementById('wizard-submit-btn');
+      const isDebtInput = document.getElementById('wizard-hidden-is-debt');
+      const amountLabel = document.getElementById('wizard-amount-label');
+
+      if (isDebtInput) isDebtInput.value = isDebt ? 'true' : 'false';
+
+      if (isDebt) {
+        badgeIcon.className = 'w-9 h-9 rounded-xl badge-debt flex items-center justify-center font-black';
+        badgeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+        title.innerText = 'Yeni Borç Kaydı Ekle';
+        title.className = 'font-black text-base sm:text-lg leading-tight text-debt';
+        submitBtn.className = 'btn btn-debt rounded-2xl h-12 font-black shadow-xs app-touch-active flex items-center justify-center gap-2';
+        amountLabel.innerText = 'Borç Tutarı (₺)';
+      } else {
+        badgeIcon.className = 'w-9 h-9 rounded-xl badge-payment flex items-center justify-center font-black';
+        badgeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+        title.innerText = 'Tahsilat / Ödeme Kaydı';
+        title.className = 'font-black text-base sm:text-lg leading-tight text-payment';
+        submitBtn.className = 'btn btn-payment rounded-2xl h-12 font-black shadow-xs app-touch-active flex items-center justify-center gap-2';
+        amountLabel.innerText = 'Tahsilat Tutarı (₺)';
+      }
+
+      // Check if user is currently on an apartment page (e.g. /apartment/B12/)
+      const match = window.location.pathname.match(/\/apartment\/([A-I])(\d+)/i);
+      if (match && match[1] && match[2]) {
+        // Skip block & apartment selection! Go straight to Step 3
+        wizardSelectedBlock = match[1].toUpperCase();
+        wizardSelectedApartment = `${wizardSelectedBlock}${match[2]}`;
+        wizardSetupStep3(wizardSelectedApartment);
+        wizardGoToStep(3);
+      } else {
+        // Start from Step 1: Block Selection
+        wizardGoToStep(1);
+      }
+
+      const modal = document.getElementById('transaction_wizard_modal');
+      if (modal) {
+        modal.classList.add('modal-open');
+        if (typeof modal.showModal === 'function') modal.showModal();
+      }
+    }
+
+    function closeWizard() {
+      const modal = document.getElementById('transaction_wizard_modal');
+      if (modal) {
+        modal.classList.remove('modal-open');
+        if (typeof modal.close === 'function') modal.close();
+      }
+    }
+
+    function wizardGoToStep(stepNumber) {
+      triggerHaptic(12);
+      const step1 = document.getElementById('wizard-step-1');
+      const step2 = document.getElementById('wizard-step-2');
+      const step3 = document.getElementById('wizard-step-3');
+      const subtitle = document.getElementById('wizard-subtitle');
+
+      step1.classList.add('hidden');
+      step2.classList.add('hidden');
+      step3.classList.add('hidden');
+
+      if (stepNumber === 1) {
+        step1.classList.remove('hidden');
+        subtitle.innerText = '1. Adım: Bloğu seçiniz';
+      } else if (stepNumber === 2) {
+        step2.classList.remove('hidden');
+        subtitle.innerText = `2. Adım: ${wizardSelectedBlock} Bloğundan Daire Seçiniz`;
+      } else if (stepNumber === 3) {
+        step3.classList.remove('hidden');
+        subtitle.innerText = `3. Adım: ${wizardSelectedApartment} Tutarı Giriniz`;
+        setTimeout(() => {
+          document.getElementById('wizard-amount-input')?.focus();
+        }, 150);
+      }
+    }
+
+    function wizardSelectBlock(block) {
+      triggerHaptic(15);
+      wizardSelectedBlock = block;
+      document.getElementById('wizard-selected-block-label').innerText = `${block} Blok`;
+
+      // Render 1 to 79 apartment buttons for this block
+      const grid = document.getElementById('wizard-apartments-grid');
+      let html = '';
+      for (let i = 1; i <= 79; i++) {
+        const fullApt = `${block}${i}`;
+        html += `
+          <button type="button" 
+                  onclick="wizardSelectApartment('${fullApt}')" 
+                  class="btn glass-card-subtle hover:bg-[#cae9ff]/50 hover:border-[#62b6cb]/50 btn-sm h-11 rounded-xl font-bold text-xs app-touch-active transition-transform border border-[#62b6cb]/20 text-[#1b4965]">
+            ${fullApt}
+          </button>
+        `;
+      }
+      grid.innerHTML = html;
+
+      // Go to Step 2
+      wizardGoToStep(2);
+    }
+
+    function wizardSelectApartment(fullApt) {
+      triggerHaptic(20);
+      wizardSelectedApartment = fullApt;
+      wizardSetupStep3(fullApt);
+      wizardGoToStep(3);
+    }
+
+    let wizardCurrentApartmentBalance = 0;
+
+    function wizardSetupStep3(fullApt) {
+      document.getElementById('wizard-hidden-apt').value = fullApt;
+      document.getElementById('wizard-apt-title').innerText = `Daire ${fullApt}`;
+      
+      const avatar = document.getElementById('wizard-apt-avatar');
+      if (avatar) {
+        avatar.className = `w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center ${wizardCurrentType === 'debt' ? 'badge-debt' : 'badge-payment'}`;
+        avatar.innerText = fullApt;
+      }
+
+      // Reset form fields & badges
+      const amountInput = document.getElementById('wizard-amount-input');
+      const descInput = document.getElementById('wizard-desc-input');
+      const balanceBadge = document.getElementById('wizard-balance-badge');
+      const fullDebtBtn = document.getElementById('wizard-full-debt-btn');
+
+      if (amountInput) amountInput.value = '';
+      if (descInput) descInput.value = '';
+      if (balanceBadge) {
+        balanceBadge.className = 'badge badge-sm font-bold hidden';
+        balanceBadge.innerText = '';
+      }
+      if (fullDebtBtn) {
+        fullDebtBtn.classList.add('hidden');
+      }
+
+      // Fetch current debt balance of this apartment
+      fetch(`/apartment/${fullApt}/balance/`)
+        .then(response => {
+          if (!response.ok) throw new Error('Balance API error');
+          return response.json();
+        })
+        .then(data => {
+          const balance = parseFloat(data.total_balance) || 0;
+          wizardCurrentApartmentBalance = balance;
+
+          if (balanceBadge) {
+            if (balance > 0) {
+              balanceBadge.className = 'badge badge-debt font-black text-[11px] px-2.5 py-1';
+              balanceBadge.innerText = `Borç: ${balance.toFixed(2)} ₺`;
+            } else if (balance < 0) {
+              balanceBadge.className = 'badge badge-payment font-black text-[11px] px-2.5 py-1';
+              balanceBadge.innerText = `Alacak: ${Math.abs(balance).toFixed(2)} ₺`;
+            } else {
+              balanceBadge.className = 'badge glass-card-subtle font-bold text-[11px] text-[#1b4965]/70 px-2 py-0.5 border border-[#62b6cb]/20';
+              balanceBadge.innerText = 'Borcu Yok';
+            }
+            balanceBadge.classList.remove('hidden');
+          }
+
+          // Tahsilat (payment) ise ve güncel borç > 0 ise tutar alanına otomatik yaz!
+          if (wizardCurrentType === 'payment' && balance > 0) {
+            if (amountInput) {
+              amountInput.value = balance.toFixed(2);
+              setTimeout(() => {
+                amountInput.focus();
+                amountInput.select();
+              }, 160);
+            }
+
+            if (fullDebtBtn) {
+              fullDebtBtn.innerText = `Tüm Borç (${balance.toFixed(2)} ₺)`;
+              fullDebtBtn.onclick = function() {
+                triggerHaptic(10);
+                if (amountInput) {
+                  amountInput.value = balance.toFixed(2);
+                  amountInput.focus();
+                  amountInput.select();
+                }
+              };
+              fullDebtBtn.classList.remove('hidden');
+            }
+          }
+        })
+        .catch(err => {
+          console.warn('Balance fetch failed:', err);
+        });
+    }
+
+    function wizardAddAmount(addVal) {
+      triggerHaptic(10);
+      const input = document.getElementById('wizard-amount-input');
+      const current = parseFloat(input.value) || 0;
+      input.value = (current + addVal).toFixed(2);
+    }
+
+    function wizardAppendTag(tag) {
+      triggerHaptic(10);
+      const input = document.getElementById('wizard-desc-input');
+      if (!input.value) {
+        input.value = tag;
+      } else if (!input.value.includes(tag)) {
+        input.value += ` - ${tag}`;
+      }
+    }
+
+    function handleWizardSuccess(event) {
+      if (event.detail && event.detail.successful) {
+        closeWizard();
+        const amt = document.getElementById('wizard-amount-input');
+        const desc = document.getElementById('wizard-desc-input');
+        if (amt) amt.value = '';
+        if (desc) desc.value = '';
+        wizardGoToStep(1);
+
+        // If on payment_waiting, reports, or last_transactions, reload so new data shows!
+        const path = window.location.pathname;
+        if (path.includes('payment_waiting') || path.includes('reports') || path.includes('last_transactions')) {
+          setTimeout(() => {
+            window.location.reload();
+          }, 800);
+        }
+      }
+    }
+
+    // Attach to window for global access
+    window.openWizard = openWizard;
+    window.closeWizard = closeWizard;
+    window.wizardGoToStep = wizardGoToStep;
+    window.wizardSelectBlock = wizardSelectBlock;
+    window.wizardSelectApartment = wizardSelectApartment;
+    window.wizardAddAmount = wizardAddAmount;
+    window.wizardAppendTag = wizardAppendTag;
+    window.handleWizardSuccess = handleWizardSuccess;
+
+    // 4. Quick Spotlight Search Logic
+    const allKnownBlocks = ['A','B','C','D','E','F','G','H','I'];
+
+    function openQuickSearch() {
+      const modal = document.getElementById('quick_search_modal');
+      const input = document.getElementById('quick-search-input');
+      if (modal) {
+        modal.classList.add('modal-open');
+        if (typeof modal.showModal === 'function') modal.showModal();
+        setTimeout(() => input?.focus(), 100);
+      }
+    }
+    function closeQuickSearch() {
+      const modal = document.getElementById('quick_search_modal');
+      if (modal) {
+        modal.classList.remove('modal-open');
+        if (typeof modal.close === 'function') modal.close();
+      }
+    }
+    window.openQuickSearch = openQuickSearch;
+    window.closeQuickSearch = closeQuickSearch;
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openQuickSearch();
+      }
+    });
+
+    document.getElementById('quick-search-input')?.addEventListener('input', function(e) {
+      const query = this.value.trim().toUpperCase();
+      const resultsContainer = document.getElementById('quick-search-results');
+      if (!resultsContainer) return;
+
+      if (!query) {
+        resultsContainer.innerHTML = '<div class="p-6 text-center text-xs opacity-50">Aramak için blok veya daire no yazmaya başlayın.</div>';
+        return;
+      }
+
+      const matches = [];
+      allKnownBlocks.forEach(blk => {
+        for (let i = 1; i <= 79; i++) {
+          const fullNum = `${blk}${i}`;
+          if (fullNum.includes(query) || (query.match(/^\d+$/) && `${i}` === query)) {
+            matches.push(fullNum);
+            if (matches.length >= 25) break;
+          }
+        }
+      });
+
+      if (matches.length === 0) {
+        resultsContainer.innerHTML = `<div class="p-4 text-center text-xs opacity-60">"${query}" ile eşleşen daire bulunamadı.</div>`;
+        return;
+      }
+
+      let html = '';
+      matches.forEach(apt => {
+        html += `
+          <a href="/apartment/${apt}/" class="flex items-center justify-between p-3 hover:bg-[#cae9ff]/30 active:bg-[#cae9ff]/50 rounded-xl transition-colors cursor-pointer app-touch-active">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg badge-debt font-black flex items-center justify-center text-xs">
+                ${apt}
+              </span>
+              <span class="font-bold text-sm text-[#1b4965]">Daire ${apt}</span>
+            </div>
+            <span class="text-xs text-[#2b74a1] font-bold">Detay &rsaquo;</span>
+          </a>
+        `;
+      });
+      resultsContainer.innerHTML = html;
+    });
+
+    // 5. Theme Management
+    function initThemes() {
       const themeOptions = document.querySelectorAll('.theme-option');
       const htmlElement = document.documentElement;
+      const metaThemeColor = document.getElementById('meta-theme-color');
       
-      // Set active state for current theme
+      const themeColorMap = {
+        'coffee': '#20161F',
+        'dark': '#1d232a',
+        'light': '#ffffff',
+        'corporate': '#ffffff',
+        'emerald': '#ffffff'
+      };
+
+      const updateMetaTheme = (themeName) => {
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', themeColorMap[themeName] || '#1d232a');
+        }
+      };
+
       const currentTheme = localStorage.getItem('theme') || 'coffee';
+      updateMetaTheme(currentTheme);
+
       themeOptions.forEach(option => {
         if (option.getAttribute('data-theme-value') === currentTheme) {
           option.classList.add('active');
         }
-      });
-      
-      // Handle theme changes
-      themeOptions.forEach(option => {
         option.addEventListener('click', function(e) {
           e.preventDefault();
           const newTheme = this.getAttribute('data-theme-value');
-          
-          // Update theme
           htmlElement.setAttribute('data-theme', newTheme);
           localStorage.setItem('theme', newTheme);
+          updateMetaTheme(newTheme);
           
-          // Update active state
           themeOptions.forEach(opt => opt.classList.remove('active'));
           this.classList.add('active');
-          
-          // Close dropdown
+
           const dropdown = document.activeElement;
           if (dropdown) dropdown.blur();
         });
       });
+    }
+
+    document.addEventListener('DOMContentLoaded', initThemes);
+    document.body.addEventListener('htmx:afterSwap', initThemes);
+
+    // 6. Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+
+    // 7. Online / Offline Status Detection
+    const offlineBar = document.getElementById('offline-bar');
+    const updateOnlineStatus = () => {
+      if (!navigator.onLine) {
+        offlineBar.classList.remove('hidden');
+      } else {
+        offlineBar.classList.add('hidden');
+      }
+    };
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    // 8. PWA Install Prompt Handler
+    let deferredPrompt = null;
+    const pwaInstallBtn = document.getElementById('pwa-install-btn');
+    const directInstallDiv = document.getElementById('pwa-direct-install');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (pwaInstallBtn) pwaInstallBtn.classList.remove('hidden');
+      if (directInstallDiv) directInstallDiv.classList.remove('hidden');
     });
+
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      if (pwaInstallBtn) pwaInstallBtn.classList.add('hidden');
+      showToast('Veresiye başarıyla yüklendi!', 'success');
+    });
+
+    function installPWA() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          deferredPrompt = null;
+          if (pwaInstallBtn) pwaInstallBtn.classList.add('hidden');
+        });
+      } else {
+        showPWAHelpModal();
+      }
+    }
+
+    function showPWAHelpModal() {
+      const modal = document.getElementById('pwa_help_modal');
+      if (modal) modal.showModal();
+    }
   </script>
 </body>
 </html>

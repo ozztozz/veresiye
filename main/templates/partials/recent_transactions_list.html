@@ -1,0 +1,177 @@
+{% load humanize %}
+
+<!-- Recent Transactions Header -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-[#62b6cb]/20">
+    <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl badge-sky flex items-center justify-center font-bold text-[#1b4965]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <div>
+            <div class="flex items-center gap-2">
+                <h3 class="font-black text-base sm:text-lg leading-tight text-[#1b4965]">Son İşlemler</h3>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold badge-payment">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#62b6cb] animate-pulse"></span> Canlı
+                </span>
+            </div>
+            <p class="text-xs text-[#1b4965]/60 font-medium">En son eklenen borç ve tahsilat hareketleri</p>
+        </div>
+    </div>
+    
+    <a href="/last_transactions/" class="btn btn-ghost btn-xs rounded-xl font-bold text-[#1b4965] gap-1 hover:bg-[#cae9ff]/50">
+        <span>Tümü</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+        </svg>
+    </a>
+</div>
+
+<!-- Mobile Card Feed (< md) -->
+<div class="block md:hidden space-y-2.5">
+    {% for transaction in transactions %}
+    <div class="glass-card-subtle hover:bg-white/80 border border-[#62b6cb]/20 rounded-2xl overflow-hidden transition-all duration-200">
+        <div class="p-3.5 flex items-center justify-between gap-3">
+            
+            <!-- Left: Apartment Avatar & Info -->
+            <a href="{% url 'main:apartment_detail' apartment_number=transaction.apartment.number %}" 
+               class="flex items-center gap-3 min-w-0 flex-1 app-touch-active">
+                <div class="w-11 h-11 rounded-xl shrink-0 {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} flex flex-col items-center justify-center font-black">
+                    <span class="text-xs font-black leading-tight">{{ transaction.apartment.number }}</span>
+                    <span class="text-[8px] uppercase opacity-75 font-semibold">Daire</span>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-extrabold text-sm text-[#1b4965]">Daire {{ transaction.apartment.number }}</span>
+                        <span class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-xs font-bold text-[9px] px-1.5 py-0.5">
+                            {% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}
+                        </span>
+                    </div>
+                    <div class="text-[11px] text-[#1b4965]/60 truncate mt-0.5">
+                        {{ transaction.date|date:"d.m.Y H:i" }}
+                        {% if transaction.description %}
+                            • <span class="text-[#1b4965]/80 font-medium">{{ transaction.description }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+
+            <!-- Right: Amount & Quick Actions -->
+            <div class="flex items-center gap-2 shrink-0">
+                <div class="text-right">
+                    <div class="text-sm font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %} whitespace-nowrap">
+                        {% if transaction.is_debt %}+{% else %}-{% endif %}{{ transaction.amount|floatformat:2|intcomma }} ₺
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-0.5">
+                    <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965]/70 hover:text-[#1b4965]" 
+                            hx-get="{% url 'main:htmx_transaction_detail' transaction_id=transaction.id %}"
+                            hx-target="body" 
+                            hx-swap="beforeend"
+                            title="Detay">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </button>
+                    <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965]/70 hover:text-[#1b4965]" 
+                            hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
+                            hx-target="body" 
+                            hx-swap="beforeend"
+                            title="Düzenle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% empty %}
+    <div class="glass-card-subtle border border-dashed border-[#62b6cb]/30 rounded-2xl p-8 text-center">
+        <p class="text-sm font-semibold text-[#1b4965]/60">Henüz kayıtlı bir işlem bulunmuyor.</p>
+        <p class="text-xs text-[#1b4965]/40 mt-1">Yukarıdaki butonları kullanarak hemen borç veya tahsilat ekleyebilirsiniz.</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Desktop Table View (>= md) -->
+<div class="hidden md:block overflow-x-auto rounded-2xl border border-[#62b6cb]/20">
+    <table class="table w-full text-xs sm:text-sm">
+        <thead class="bg-[#cae9ff]/30 font-bold text-xs uppercase text-[#1b4965]/70 border-b border-[#62b6cb]/20">
+            <tr>
+                <th>Daire</th>
+                <th>Tarih</th>
+                <th>Tür</th>
+                <th>Açıklama</th>
+                <th class="text-right">Tutar</th>
+                <th class="text-right">İşlem</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-[#62b6cb]/10">
+            {% for transaction in transactions %}
+            <tr class="hover:bg-white/60 transition-colors">
+                <td>
+                    <a href="{% url 'main:apartment_detail' apartment_number=transaction.apartment.number %}" class="flex items-center gap-2 font-black text-[#1b4965] hover:underline">
+                        <span class="w-7 h-7 rounded-lg {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} flex items-center justify-center text-xs font-black">
+                            {{ transaction.apartment.number }}
+                        </span>
+                        <span>Daire {{ transaction.apartment.number }}</span>
+                    </a>
+                </td>
+                <td class="font-medium text-[#1b4965]/70">
+                    {{ transaction.date|date:"d.m.Y H:i" }}
+                </td>
+                <td>
+                    <span class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-sm font-bold">
+                        {% if transaction.is_debt %}Borç{% else %}Tahsilat{% endif %}
+                    </span>
+                </td>
+                <td class="text-[#1b4965]/80 text-xs max-w-xs truncate">
+                    {{ transaction.description|default:"-" }}
+                </td>
+                <td class="text-right font-black text-sm {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %} whitespace-nowrap">
+                    {% if transaction.is_debt %}+{% else %}-{% endif %}{{ transaction.amount|floatformat:2|intcomma }} ₺
+                </td>
+                <td class="text-right">
+                    <div class="flex items-center justify-end gap-1">
+                        <button class="btn btn-ghost btn-xs btn-square text-[#1b4965]" 
+                                hx-get="{% url 'main:htmx_transaction_detail' transaction_id=transaction.id %}"
+                                hx-target="body" 
+                                hx-swap="beforeend"
+                                title="Detay">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-ghost btn-xs btn-square text-[#1b4965]" 
+                                hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
+                                hx-target="body" 
+                                hx-swap="beforeend"
+                                title="Düzenle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-ghost btn-xs btn-square text-[#1b4965] hover:bg-[#1b4965]/10" 
+                                hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='delete'%}"
+                                hx-target="body" 
+                                hx-swap="beforeend"
+                                title="Sil">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center py-6 text-sm text-[#1b4965]/60">Henüz kayıtlı bir işlem bulunmuyor.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+

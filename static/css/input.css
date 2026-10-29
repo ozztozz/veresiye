@@ -6,45 +6,203 @@
 
 @plugin "./daisyui.mjs";
 
+@theme {
+  --color-frozen-water: #bee9e8;
+  --color-frozen-water-100: #163f3e;
+  --color-frozen-water-200: #2b7e7d;
+  --color-frozen-water-300: #41bdbb;
+  --color-frozen-water-400: #7fd3d2;
+  --color-frozen-water-500: #bee9e8;
+  --color-frozen-water-600: #cbeded;
+  --color-frozen-water-700: #d8f2f1;
+  --color-frozen-water-800: #e5f6f6;
+  --color-frozen-water-900: #f2fbfa;
 
+  --color-pacific-blue: #62b6cb;
+  --color-pacific-blue-100: #0f272d;
+  --color-pacific-blue-200: #1e4e5a;
+  --color-pacific-blue-300: #2d7587;
+  --color-pacific-blue-400: #3c9cb5;
+  --color-pacific-blue-500: #62b6cb;
+  --color-pacific-blue-600: #82c4d5;
+  --color-pacific-blue-700: #a1d3e0;
+  --color-pacific-blue-800: #c0e2ea;
+  --color-pacific-blue-900: #e0f0f5;
 
-/* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
-@plugin "./daisyui-theme.mjs"{
-  /* custom theme here */
-  
+  --color-yale-blue: #1b4965;
+  --color-yale-blue-100: #050e14;
+  --color-yale-blue-200: #0b1d28;
+  --color-yale-blue-300: #102b3c;
+  --color-yale-blue-400: #153a51;
+  --color-yale-blue-500: #1b4965;
+  --color-yale-blue-600: #2b74a1;
+  --color-yale-blue-700: #4a9ccf;
+  --color-yale-blue-800: #86bddf;
+  --color-yale-blue-900: #c3deef;
 
+  --color-pale-sky: #cae9ff;
+  --color-pale-sky-100: #00365c;
+  --color-pale-sky-200: #006bb8;
+  --color-pale-sky-300: #149dff;
+  --color-pale-sky-400: #70c3ff;
+  --color-pale-sky-500: #cae9ff;
+  --color-pale-sky-600: #d6eeff;
+  --color-pale-sky-700: #e0f2ff;
+  --color-pale-sky-800: #ebf7ff;
+  --color-pale-sky-900: #f5fbff;
 
-  name: "business";
-  default: false;
-  prefersdark: false;
-  color-scheme: "dark";
-  --color-base-100: oklch(24.353% 0 0);
-  --color-base-200: oklch(22.648% 0 0);
-  --color-base-300: oklch(20.944% 0 0);
-  --color-base-content: oklch(84.87% 0 0);
-  --color-primary: oklch(41.703% 0.099 251.473);
-  --color-primary-content: oklch(88.34% 0.019 251.473);
-  --color-secondary: oklch(64.092% 0.027 229.389);
-  --color-secondary-content: oklch(12.818% 0.005 229.389);
-  --color-accent: oklch(67.271% 0.167 35.791);
-  --color-accent-content: oklch(13.454% 0.033 35.791);
-  --color-neutral: oklch(27.441% 0.013 253.041);
-  --color-neutral-content: oklch(85.488% 0.002 253.041);
-  --color-info: oklch(62.616% 0.143 240.033);
-  --color-info-content: oklch(12.523% 0.028 240.033);
-  --color-success: oklch(70.226% 0.094 156.596);
-  --color-success-content: oklch(14.045% 0.018 156.596);
-  --color-warning: oklch(77.482% 0.115 81.519);
-  --color-warning-content: oklch(15.496% 0.023 81.519);
-  --color-error: oklch(51.61% 0.146 29.674);
-  --color-error-content: oklch(90.322% 0.029 29.674);
-  --radius-selector: 0rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.25rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 0;
-  --noise: 0;
+  --color-fresh-sky: #5fa8d3;
+  --color-fresh-sky-100: #0d2330;
+  --color-fresh-sky-200: #1a4760;
+  --color-fresh-sky-300: #276a90;
+  --color-fresh-sky-400: #358dc0;
+  --color-fresh-sky-500: #5fa8d3;
+  --color-fresh-sky-600: #7fbadc;
+  --color-fresh-sky-700: #9fcbe5;
+  --color-fresh-sky-800: #bfdced;
+  --color-fresh-sky-900: #dfeef6;
 }
 
+/* Glassmorphism & Sky/Blue Palette Theme Utilities */
+@layer utilities {
+  .app-bg-light {
+    background-color: #f7fafc;
+    background-image: 
+      radial-gradient(at 10% 15%, rgba(202, 233, 255, 0.45) 0px, transparent 40%),
+      radial-gradient(at 90% 85%, rgba(190, 233, 232, 0.40) 0px, transparent 40%),
+      radial-gradient(at 50% 50%, rgba(95, 168, 211, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  .glass-panel {
+    background-color: rgba(255, 255, 255, 0.78) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(98, 182, 203, 0.18) !important;
+    box-shadow: 0 10px 30px 0 rgba(27, 73, 101, 0.05);
+  }
+
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(98, 182, 203, 0.16) !important;
+    box-shadow: 0 6px 20px -2px rgba(27, 73, 101, 0.05);
+  }
+
+  .glass-card-subtle {
+    background-color: rgba(245, 251, 255, 0.75) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(98, 182, 203, 0.14) !important;
+  }
+
+  .glass-input {
+    background-color: rgba(245, 251, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(98, 182, 203, 0.25) !important;
+    color: #1b4965 !important;
+  }
+  
+  .glass-input:focus {
+    background-color: #ffffff !important;
+    border-color: #3c9cb5 !important;
+    box-shadow: 0 0 0 3px rgba(98, 182, 203, 0.2) !important;
+  }
+
+  /* Palette Badges (NO RED, NO GREEN) */
+  .badge-debt, .badge-soft-error {
+    background-color: rgba(27, 73, 101, 0.10) !important;
+    color: #1b4965 !important;
+    border: 1px solid rgba(27, 73, 101, 0.22) !important;
+  }
+
+  .badge-payment, .badge-soft-success {
+    background-color: rgba(98, 182, 203, 0.18) !important;
+    color: #1e4e5a !important;
+    border: 1px solid rgba(98, 182, 203, 0.32) !important;
+  }
+
+  .badge-soft-warning, .badge-sky {
+    background-color: rgba(202, 233, 255, 0.65) !important;
+    color: #102b3c !important;
+    border: 1px solid rgba(95, 168, 211, 0.30) !important;
+  }
+
+  .badge-soft-primary {
+    background-color: rgba(95, 168, 211, 0.16) !important;
+    color: #1b4965 !important;
+    border: 1px solid rgba(95, 168, 211, 0.30) !important;
+  }
+
+  /* Palette Buttons (NO RED, NO GREEN) */
+  .btn-debt, .btn-soft-error {
+    background-color: #1b4965 !important;
+    color: #ffffff !important;
+    border: 1px solid #102b3c !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 14px 0 rgba(27, 73, 101, 0.25);
+  }
+  .btn-debt:hover, .btn-soft-error:hover {
+    background-color: #153a51 !important;
+    border-color: #0b1d28 !important;
+  }
+
+  .btn-payment, .btn-soft-success {
+    background-color: #3c9cb5 !important;
+    color: #ffffff !important;
+    border: 1px solid #2d7587 !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 14px 0 rgba(60, 156, 181, 0.25);
+  }
+  .btn-payment:hover, .btn-soft-success:hover {
+    background-color: #2d7587 !important;
+    border-color: #1e4e5a !important;
+  }
+
+  .btn-soft-primary, .btn-sky {
+    background-color: rgba(95, 168, 211, 0.18) !important;
+    color: #1b4965 !important;
+    border: 1px solid rgba(95, 168, 211, 0.32) !important;
+    backdrop-filter: blur(10px);
+  }
+  .btn-soft-primary:hover, .btn-sky:hover {
+    background-color: rgba(95, 168, 211, 0.30) !important;
+    border-color: rgba(95, 168, 211, 0.50) !important;
+  }
+
+  /* Palette Typography Helpers */
+  .text-debt {
+    color: #1b4965 !important;
+  }
+  .text-payment {
+    color: #2b7e7d !important;
+  }
+  .text-sky {
+    color: #358dc0 !important;
+  }
+
+  /* Ensure DaisyUI Modal Box is visible when modal is open */
+  .modal[open],
+  .modal.modal-open,
+  dialog.modal[open],
+  div.modal.modal-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: grid !important;
+  }
+
+  .modal[open] > .modal-box,
+  .modal.modal-open > .modal-box,
+  :is(.modal[open], .modal-open, .modal:target) > .modal-box {
+    opacity: 1 !important;
+    scale: 1 !important;
+    translate: 0 0 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}

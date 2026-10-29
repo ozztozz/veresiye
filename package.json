@@ -1,0 +1,13 @@
+{
+  "name": "veresiye",
+  "version": "1.0.0",
+  "description": "Veresiye & Apartman Takip Sistemi PWA",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./static/css/input.css -o ./static/css/output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./static/css/input.css -o ./static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

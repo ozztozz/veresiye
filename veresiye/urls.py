@@ -17,8 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from main import views as main_views
 
 urlpatterns = [
+    path('sw.js', main_views.service_worker, name='service_worker'),
+    path('manifest.webmanifest', main_views.manifest, name='manifest_webmanifest'),
+    path('manifest.json', main_views.manifest, name='manifest_json'),
+    path('offline/', main_views.offline_view, name='offline'),
     path('admin/', admin.site.urls),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),

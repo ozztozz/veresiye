@@ -1,38 +1,59 @@
 {% extends "base.html" %}
+{% block title %}Daire {{ apartment.number }} - Veresiye{% endblock %}
+
 {% block content %}
-<div class="max-w-7xl mx-auto space-y-6">
+<div class="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+
+    <!-- Mobile-First Navigation & Title Bar -->
+    <div class="flex items-center justify-between gap-2">
+        <button onclick="window.history.length > 1 ? window.history.back() : window.location.href='/'" 
+                class="btn btn-ghost btn-sm sm:btn-md gap-1.5 px-3 rounded-2xl app-touch-active text-[#1b4965]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span class="font-bold text-sm">Geri</span>
+        </button>
+
+        <div class="flex items-center gap-2">
+            <span class="badge badge-debt font-black px-3.5 py-3 text-sm rounded-xl">
+                Daire {{ apartment.number }}
+            </span>
+        </div>
+    </div>
 
     <!-- Apartment Stats Card -->
     <div id="total_stat" class="w-full">{% include "partials/total.html" %}</div>
     
-    <!-- Actions Card -->
-    <div class="card bg-base-100 shadow-xl border border-base-300">
-        <div class="card-body p-4">
-            <div class="flex items-center justify-between flex-wrap gap-4">
-                <h2 class="card-title text-xl md:text-2xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+    <!-- Fast Action Buttons (Thumb-friendly for Mobile) -->
+    <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs">
+        <div class="card-body p-3.5 sm:p-4">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <h2 class="card-title text-base sm:text-lg font-bold flex items-center gap-2 text-[#1b4965]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#3c9cb5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
-                    İşlemler
+                    Hızlı İşlem Ekle
                 </h2>
-                <div class="btn-group">
-                    <button class="btn btn-error gap-2" 
+                
+                <div class="grid grid-cols-2 gap-2.5 sm:flex sm:items-center">
+                    <button class="btn btn-debt btn-sm sm:btn-md gap-1.5 rounded-xl shadow-xs app-touch-active flex-1 sm:flex-initial" 
                         hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='debt' %}" 
                         hx-target="body" 
                         hx-swap="beforeend">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        Yeni Borç
+                        <span>Yeni Borç</span>
                     </button>
-                    <button class="btn btn-success gap-2" 
+                    
+                    <button class="btn btn-payment btn-sm sm:btn-md gap-1.5 rounded-xl shadow-xs app-touch-active flex-1 sm:flex-initial" 
                         hx-get="{% url 'main:htmx_transaction_create' apartment_number=apartment.number transaction_type='payment' %}" 
                         hx-target="body" 
                         hx-swap="beforeend">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        Yeni Ödeme
+                        <span>Yeni Ödeme</span>
                     </button>
                 </div>
             </div>
@@ -43,5 +64,4 @@
     <div id="transaction_table">{% include "partials/transaction_table.html" %}</div>
 
 </div>
-
 {% endblock content %}

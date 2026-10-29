@@ -1,0 +1,78 @@
+{
+  "name": "Veresiye - Apartman & Borç Takip",
+  "short_name": "Veresiye",
+  "description": "Apartman ve veresiye aidat, borç ve ödeme takip sistemi",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#1d232a",
+  "theme_color": "#1d232a",
+  "lang": "tr",
+  "dir": "ltr",
+  "categories": ["finance", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ödeme Bekleyenler",
+      "short_name": "Borçlular",
+      "description": "Ödeme bekleyen daireler listesi",
+      "url": "/payment_waiting/",
+      "icons": [
+        {
+          "src": "/static/icons/icon-192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Son Kayıtlar",
+      "short_name": "Son Kayıtlar",
+      "description": "Son yapılan veresiye işlemleri",
+      "url": "/last_transactions/",
+      "icons": [
+        {
+          "src": "/static/icons/icon-192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Günlük Rapor",
+      "short_name": "Raporlar",
+      "description": "Bugünkü finansal özet",
+      "url": "/reports/",
+      "icons": [
+        {
+          "src": "/static/icons/icon-192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}
+
