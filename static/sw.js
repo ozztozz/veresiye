@@ -1,4 +1,4 @@
-const CACHE_NAME = 'veresiye-pwa-v2';
+const CACHE_NAME = 'veresiye-pwa-v3';
 const OFFLINE_URL = '/offline/';
 
 const PRECACHE_ASSETS = [
@@ -122,4 +122,3 @@ self.addEventListener('fetch', (event) => {
     fetch(request).catch(() => caches.match(request))
   );
 });
-

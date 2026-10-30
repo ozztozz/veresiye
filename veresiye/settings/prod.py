@@ -16,10 +16,17 @@ SECRET_KEY = 'django-insecure-zo*a*af9*1jqo1ykt8i5683-0h)3+nnu2cb@-w!1x-988*)7yr
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'ozz1.pythonanywhere.com',
-    'bizimbakkal.pythonanywhere.com',
+    'bizimbakkal.duckdns.org',
+    'bizimbakkal.130-61-177-72.sslip.io',
+    '130.61.177.72',
+    '127.0.0.1',
+    'localhost',
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://bizimbakkal.duckdns.org',
+    'https://bizimbakkal.130-61-177-72.sslip.io',
+]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # ── Database ──────────────────────────────────────────────────────────────────
 
 DATABASE_DIR = Path(__file__).resolve().parent.parent.parent.parent / 'database'
