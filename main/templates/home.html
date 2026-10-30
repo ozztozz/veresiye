@@ -3,11 +3,11 @@
 {% block title %}Son İşlemler - Veresiye{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto space-y-4">
+<div class="ui-max-w-7xl ui-mx-auto ui-space-y-4">
 
     <!-- Recent Transactions Live Feed (HTMX Real-Time Auto-Updating) -->
-    <div class="glass-card rounded-3xl overflow-hidden border border-[#62b6cb]/20 shadow-xs">
-        <div class="card-body p-3.5 sm:p-5">
+    <div class="glass-card ui-rounded-3xl ui-overflow-hidden ui-border ui-border-62b6cb-20 ui-shadow-xs">
+        <div class="card-body ui-p-3-5 ui-sm-p-5">
             <div id="recent_transactions_container"
                  hx-get="{% url 'main:htmx_recent_transactions' %}"
                  hx-trigger="transactionAdded from:body"

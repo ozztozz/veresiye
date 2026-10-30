@@ -4,83 +4,83 @@
 {% block title %}Raporlar - Veresiye{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+<div class="ui-max-w-7xl ui-mx-auto ui-space-y-4 ui-sm-space-y-6">
     
     <!-- Mobile-First Header -->
-    <div class="flex items-center justify-between gap-3">
-        <div class="flex items-center gap-2.5">
+    <div class="ui-flex ui-items-center ui-justify-between ui-gap-3">
+        <div class="ui-flex ui-items-center ui-gap-2-5">
             <button onclick="window.history.length > 1 ? window.history.back() : window.location.href='/'" 
-                    class="btn btn-ghost btn-sm sm:btn-md gap-1.5 px-3 rounded-2xl app-touch-active text-[#1b4965]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="btn btn-ghost btn-sm ui-sm-btn-md ui-gap-1-5 ui-px-3 ui-rounded-2xl app-touch-active ui-text-1b4965">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
                 </svg>
-                <span class="font-bold text-sm">Geri</span>
+                <span class="ui-font-bold ui-text-sm">Geri</span>
             </button>
-            <h1 class="text-xl sm:text-2xl font-black tracking-tight text-[#1b4965]">Günlük Rapor</h1>
+            <h1 class="ui-text-xl ui-sm-text-2xl ui-font-black ui-tracking-tight ui-text-1b4965">Günlük Rapor</h1>
         </div>
-        <div class="badge badge-sky text-[#1b4965] font-black px-3.5 py-1.5 rounded-xl text-xs sm:text-sm border border-[#62b6cb]/30">
+        <div class="badge badge-sky ui-text-1b4965 ui-font-black ui-px-3-5 ui-py-1-5 ui-rounded-xl ui-text-xs ui-sm-text-sm ui-border ui-border-62b6cb-30">
             {{ today|date:"d.m.Y" }}
         </div>
     </div>
 
     <!-- Financial Summary Cards (Mobile Responsive 1-col on mobile, 3-col on sm) -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+    <div class="ui-grid ui-grid-cols-1 ui-sm-grid-cols-3 ui-gap-3 ui-sm-gap-4">
         
         <!-- Total Debt (Expenses / Borçlar) -->
-        <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs">
-            <div class="card-body p-4 sm:p-5 flex flex-row sm:flex-col items-center sm:items-start justify-between sm:justify-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl badge-debt flex items-center justify-center font-bold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#1b4965]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs">
+            <div class="card-body ui-p-4 ui-sm-p-5 ui-flex ui-flex-row ui-sm-flex-col ui-items-center ui-sm-items-start ui-justify-between ui-sm-justify-center">
+                <div class="ui-flex ui-items-center ui-gap-3">
+                    <div class="ui-w-12 ui-h-12 ui-rounded-2xl badge-debt ui-flex ui-items-center ui-justify-center ui-font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-6 ui-w-6 ui-text-1b4965" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
                         </svg>
                     </div>
                     <div>
-                        <div class="text-xs uppercase font-bold text-[#1b4965]/60">Bugünkü Borç</div>
-                        <div class="text-xs text-debt font-bold">Yeni Yazılan</div>
+                        <div class="ui-text-xs ui-uppercase ui-font-bold ui-text-1b4965-60">Bugünkü Borç</div>
+                        <div class="ui-text-xs text-debt ui-font-bold">Yeni Yazılan</div>
                     </div>
                 </div>
-                <div class="text-xl sm:text-2xl font-black text-debt sm:mt-3">
+                <div class="ui-text-xl ui-sm-text-2xl ui-font-black text-debt ui-sm-mt-3">
                     {{ total_debt|floatformat:2|intcomma }} ₺
                 </div>
             </div>
         </div>
 
         <!-- Total Payment (Tahsilat / Ödemeler) -->
-        <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs">
-            <div class="card-body p-4 sm:p-5 flex flex-row sm:flex-col items-center sm:items-start justify-between sm:justify-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl badge-payment flex items-center justify-center font-bold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#2d7587]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs">
+            <div class="card-body ui-p-4 ui-sm-p-5 ui-flex ui-flex-row ui-sm-flex-col ui-items-center ui-sm-items-start ui-justify-between ui-sm-justify-center">
+                <div class="ui-flex ui-items-center ui-gap-3">
+                    <div class="ui-w-12 ui-h-12 ui-rounded-2xl badge-payment ui-flex ui-items-center ui-justify-center ui-font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-6 ui-w-6 ui-text-2d7587" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
                         </svg>
                     </div>
                     <div>
-                        <div class="text-xs uppercase font-bold text-[#1b4965]/60">Bugünkü Tahsilat</div>
-                        <div class="text-xs text-payment font-bold">Alınan Ödeme</div>
+                        <div class="ui-text-xs ui-uppercase ui-font-bold ui-text-1b4965-60">Bugünkü Tahsilat</div>
+                        <div class="ui-text-xs text-payment ui-font-bold">Alınan Ödeme</div>
                     </div>
                 </div>
-                <div class="text-xl sm:text-2xl font-black text-payment sm:mt-3">
+                <div class="ui-text-xl ui-sm-text-2xl ui-font-black text-payment ui-sm-mt-3">
                     {{ total_payment|floatformat:2|intcomma }} ₺
                 </div>
             </div>
         </div>
 
         <!-- Net Balance -->
-        <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs">
-            <div class="card-body p-4 sm:p-5 flex flex-row sm:flex-col items-center sm:items-start justify-between sm:justify-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl badge-sky text-[#1b4965] flex items-center justify-center font-bold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#1b4965]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs">
+            <div class="card-body ui-p-4 ui-sm-p-5 ui-flex ui-flex-row ui-sm-flex-col ui-items-center ui-sm-items-start ui-justify-between ui-sm-justify-center">
+                <div class="ui-flex ui-items-center ui-gap-3">
+                    <div class="ui-w-12 ui-h-12 ui-rounded-2xl badge-sky ui-text-1b4965 ui-flex ui-items-center ui-justify-center ui-font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-6 ui-w-6 ui-text-1b4965" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                     <div>
-                        <div class="text-xs uppercase font-bold text-[#1b4965]/60">Net Fark</div>
-                        <div class="text-xs text-[#1b4965] font-bold">Gün Sonu</div>
+                        <div class="ui-text-xs ui-uppercase ui-font-bold ui-text-1b4965-60">Net Fark</div>
+                        <div class="ui-text-xs ui-text-1b4965 ui-font-bold">Gün Sonu</div>
                     </div>
                 </div>
-                <div class="text-xl sm:text-2xl font-black text-[#1b4965] sm:mt-3">
+                <div class="ui-text-xl ui-sm-text-2xl ui-font-black ui-text-1b4965 ui-sm-mt-3">
                     {{ total_balance|floatformat:2|intcomma }} ₺
                 </div>
             </div>
@@ -89,11 +89,11 @@
     </div>
 
     <!-- Info Banner -->
-    <div class="glass-panel p-4 border border-[#62b6cb]/20 rounded-2xl text-xs sm:text-sm flex items-center gap-3 text-[#1b4965]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#3c9cb5] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="glass-panel ui-p-4 ui-border ui-border-62b6cb-20 ui-rounded-2xl ui-text-xs ui-sm-text-sm ui-flex ui-items-center ui-gap-3 ui-text-1b4965">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5 ui-text-3c9cb5 ui-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span class="text-[#1b4965]/85">Bu rapor bugünün ({{ today|date:"d.m.Y" }}) yapılan tüm borç ve tahsilat işlemlerinin anlık özetidir.</span>
+        <span class="ui-text-1b4965-85">Bu rapor bugünün ({{ today|date:"d.m.Y" }}) yapılan tüm borç ve tahsilat işlemlerinin anlık özetidir.</span>
     </div>
 
 </div>

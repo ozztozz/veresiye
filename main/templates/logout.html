@@ -7,47 +7,47 @@
   <title>Çıkış Yapıldı - Veresiye</title>
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   <script>
-    const theme = localStorage.getItem('theme') || 'light';
+    const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', theme);
   </script>
 </head>
-<body class="min-h-screen app-bg-light text-slate-800">
+<body class="ui-min-h-screen app-bg-light ui-text-slate-800">
 
   <!-- Navbar -->
-  <header class="navbar glass-panel px-4 border-b border-[#62b6cb]/20 shadow-xs">
-    <div class="flex-1">
-      <span class="text-xl font-black text-[#1b4965]">Veresiye</span>
+  <header class="navbar glass-panel ui-px-4 ui-border-b ui-border-62b6cb-20 ui-shadow-xs">
+    <div class="ui-flex-1">
+      <span class="ui-text-xl ui-font-black ui-text-1b4965">Veresiye</span>
     </div>
   </header>
 
   <!-- Hero / Logout Card -->
-  <div class="hero min-h-[calc(100vh-4rem)]">
-    <div class="hero-content flex-col w-full max-w-md text-center">
+  <div class="hero ui-min-h-screen">
+    <div class="hero-content ui-flex-col ui-w-full ui-max-w-md ui-text-center">
 
       <!-- Icon -->
-      <div class="avatar placeholder mb-2">
-        <div class="badge-payment rounded-full w-16 h-16 flex items-center justify-center border border-[#62b6cb]/30">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#2d7587]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="avatar placeholder ui-mb-2">
+        <div class="badge-payment ui-rounded-full ui-w-16 ui-h-16 ui-flex ui-items-center ui-justify-center ui-border ui-border-62b6cb-30">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-8 ui-w-8 ui-text-2d7587" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
       </div>
 
-      <div class="glass-card w-full shadow-xl rounded-3xl border border-[#62b6cb]/20">
-        <div class="card-body items-center gap-4 p-6">
+      <div class="glass-card ui-w-full ui-shadow-xl ui-rounded-3xl ui-border ui-border-62b6cb-20">
+        <div class="card-body ui-items-center ui-gap-4 ui-p-6">
 
-          <div class="badge-payment w-full p-3 rounded-2xl flex items-center justify-center gap-2 border border-[#62b6cb]/30">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-5 w-5 text-[#2d7587]" fill="none" viewBox="0 0 24 24">
+          <div class="badge-payment ui-w-full ui-p-3 ui-rounded-2xl ui-flex ui-items-center ui-justify-center ui-gap-2 ui-border ui-border-62b6cb-30">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ui-stroke-current ui-shrink-0 ui-h-5 ui-w-5 ui-text-2d7587" fill="none" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span class="text-sm font-bold text-[#1b4965]">Oturumunuz başarıyla kapatıldı.</span>
+            <span class="ui-text-sm ui-font-bold ui-text-1b4965">Oturumunuz başarıyla kapatıldı.</span>
           </div>
 
-          <h2 class="card-title text-2xl font-black text-[#1b4965]">Güle Güle!</h2>
-          <p class="text-[#1b4965]/70 text-sm">Tekrar görüşmek üzere.</p>
+          <h2 class="card-title ui-text-2xl ui-font-black ui-text-1b4965">Güle Güle!</h2>
+          <p class="ui-text-1b4965-70 ui-text-sm">Tekrar görüşmek üzere.</p>
 
-          <div class="card-actions w-full flex-col gap-2 mt-2">
-            <a href="{% url 'login' %}" class="btn btn-debt w-full rounded-2xl h-12 font-bold shadow-xs">
+          <div class="card-actions ui-w-full ui-flex-col ui-gap-2 ui-mt-2">
+            <a href="{% url 'login' %}" class="btn btn-debt ui-w-full ui-rounded-2xl ui-h-12 ui-font-bold ui-shadow-xs">
               Tekrar Giriş Yap
             </a>
           </div>

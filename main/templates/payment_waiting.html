@@ -4,40 +4,40 @@
 {% block title %}Ödeme Bekleyenler - Veresiye{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+<div class="ui-max-w-7xl ui-mx-auto ui-space-y-4 ui-sm-space-y-6">
 
     <!-- Mobile-First Page Navigation Header -->
-    <div class="flex items-center justify-between gap-3">
-        <div class="flex items-center gap-2.5">
+    <div class="ui-flex ui-items-center ui-justify-between ui-gap-3">
+        <div class="ui-flex ui-items-center ui-gap-2-5">
             <button onclick="window.history.length > 1 ? window.history.back() : window.location.href='/'" 
-                    class="btn btn-ghost btn-sm sm:btn-md gap-1.5 px-3 rounded-2xl app-touch-active text-[#1b4965]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="btn btn-ghost btn-sm ui-sm-btn-md ui-gap-1-5 ui-px-3 ui-rounded-2xl app-touch-active ui-text-1b4965">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
                 </svg>
-                <span class="font-bold text-sm">Geri</span>
+                <span class="ui-font-bold ui-text-sm">Geri</span>
             </button>
-            <h1 class="text-xl sm:text-2xl font-black tracking-tight text-[#1b4965]">Ödeme Bekleyenler</h1>
+            <h1 class="ui-text-xl ui-sm-text-2xl ui-font-black ui-tracking-tight ui-text-1b4965">Ödeme Bekleyenler</h1>
         </div>
-        <div class="badge badge-debt font-black px-3 py-1.5 rounded-xl">
+        <div class="badge badge-debt ui-font-black ui-px-3 ui-py-1-5 ui-rounded-xl">
             {{ total_count }} Daire
         </div>
     </div>
 
     <!-- Summary Stats Card (Mobile Optimized) -->
-    <div class="grid grid-cols-2 gap-3">
-        <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs">
-            <div class="card-body p-3.5 sm:p-5 text-center">
-                <div class="text-xs uppercase font-bold text-[#1b4965]/70 tracking-wider">Toplam Alacak</div>
-                <div class="text-lg sm:text-2xl md:text-3xl font-black text-debt mt-1">
+    <div class="ui-grid ui-grid-cols-2 ui-gap-3">
+        <div class="glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs">
+            <div class="card-body ui-p-3-5 ui-sm-p-5 ui-text-center">
+                <div class="ui-text-xs ui-uppercase ui-font-bold ui-text-1b4965-70 ui-tracking-wider">Toplam Alacak</div>
+                <div class="ui-text-lg ui-sm-text-2xl ui-md-text-3xl ui-font-black text-debt ui-mt-1">
                     {{ total_debt|floatformat:2|intcomma }} ₺
                 </div>
             </div>
         </div>
 
-        <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs">
-            <div class="card-body p-3.5 sm:p-5 text-center">
-                <div class="text-xs uppercase font-bold text-[#1b4965]/70 tracking-wider">Borçlu Daire</div>
-                <div class="text-lg sm:text-2xl md:text-3xl font-black text-[#2d7587] mt-1">
+        <div class="glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs">
+            <div class="card-body ui-p-3-5 ui-sm-p-5 ui-text-center">
+                <div class="ui-text-xs ui-uppercase ui-font-bold ui-text-1b4965-70 ui-tracking-wider">Borçlu Daire</div>
+                <div class="ui-text-lg ui-sm-text-2xl ui-md-text-3xl ui-font-black ui-text-2d7587 ui-mt-1">
                     {{ total_count }}
                 </div>
             </div>
@@ -45,37 +45,37 @@
     </div>
 
     <!-- Debtors List (Touch-Friendly Native List) -->
-    <div class="glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs overflow-hidden">
-        <div class="card-body p-0">
-            <div class="divide-y divide-[#62b6cb]/15">
+    <div class="glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs ui-overflow-hidden">
+        <div class="card-body ui-p-0">
+            <div class="ui-divide-y ui-divide-62b6cb-15">
                 {% for account in apartments %}
-                <div class="flex items-center justify-between p-3.5 sm:p-4 hover:bg-white/70 active:bg-white/90 cursor-pointer transition-colors app-touch-active"
+                <div class="ui-flex ui-items-center ui-justify-between ui-p-3-5 ui-sm-p-4 ui-hover-bg-white-70 ui-active-bg-white-90 ui-cursor-pointer ui-transition-colors app-touch-active"
                      onclick="window.location.href='{% url 'main:apartment_detail' account.number %}';">
                     
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl badge-sky text-[#1b4965] flex items-center justify-center font-black text-sm">
+                    <div class="ui-flex ui-items-center ui-gap-3">
+                        <div class="ui-w-10 ui-h-10 ui-rounded-xl badge-sky ui-text-1b4965 ui-flex ui-items-center ui-justify-center ui-font-black ui-text-sm">
                             {{ account.number }}
                         </div>
                         <div>
-                            <div class="font-bold text-sm sm:text-base text-[#1b4965]">Daire {{ account.number }}</div>
-                            <div class="text-xs text-[#1b4965]/60">Detayları gör &rsaquo;</div>
+                            <div class="ui-font-bold ui-text-sm ui-sm-text-base ui-text-1b4965">Daire {{ account.number }}</div>
+                            <div class="ui-text-xs ui-text-1b4965-60">Detayları gör &rsaquo;</div>
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-2">
-                        <div class="text-right">
-                            <span class="text-sm sm:text-base font-black text-debt">
+                    <div class="ui-flex ui-items-center ui-gap-2">
+                        <div class="ui-text-right">
+                            <span class="ui-text-sm ui-sm-text-base ui-font-black text-debt">
                                 {{ account.calc_balance|floatformat:2|intcomma }} ₺
                             </span>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#1b4965]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-4 ui-w-4 ui-text-1b4965-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </div>
                 </div>
                 {% empty %}
-                <div class="p-8 text-center text-[#1b4965]/60">
-                    <p class="font-medium text-sm">Ödeme bekleyen daire bulunmamaktadır.</p>
+                <div class="ui-p-8 ui-text-center ui-text-1b4965-60">
+                    <p class="ui-font-medium ui-text-sm">Ödeme bekleyen daire bulunmamaktadır.</p>
                 </div>
                 {% endfor %}
             </div>

@@ -4,69 +4,69 @@
 {% block title %}Son İşlemler - Veresiye{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+<div class="ui-max-w-7xl ui-mx-auto ui-space-y-4 ui-sm-space-y-6">
     
     <!-- Mobile-First Header -->
-    <div class="flex items-center justify-between gap-3">
-        <div class="flex items-center gap-2.5">
+    <div class="ui-flex ui-items-center ui-justify-between ui-gap-3">
+        <div class="ui-flex ui-items-center ui-gap-2-5">
             <button onclick="window.history.length > 1 ? window.history.back() : window.location.href='/'" 
-                    class="btn btn-ghost btn-sm sm:btn-md gap-1.5 px-3 rounded-2xl app-touch-active text-[#1b4965]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="btn btn-ghost btn-sm ui-sm-btn-md ui-gap-1-5 ui-px-3 ui-rounded-2xl app-touch-active ui-text-1b4965">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
                 </svg>
-                <span class="font-bold text-sm">Geri</span>
+                <span class="ui-font-bold ui-text-sm">Geri</span>
             </button>
-            <h1 class="text-xl sm:text-2xl font-black tracking-tight text-[#1b4965]">Son İşlemler</h1>
+            <h1 class="ui-text-xl ui-sm-text-2xl ui-font-black ui-tracking-tight ui-text-1b4965">Son İşlemler</h1>
         </div>
-        <span class="badge badge-sky text-[#1b4965] text-xs font-bold px-3 py-1 rounded-xl border border-[#62b6cb]/30">Son 10 Kayıt</span>
+        <span class="badge badge-sky ui-text-1b4965 ui-text-xs ui-font-bold ui-px-3 ui-py-1 ui-rounded-xl ui-border ui-border-62b6cb-30">Son 10 Kayıt</span>
     </div>
 
     <!-- Mobile View: Native Card List (Visible on sm & down) -->
-    <div class="block md:hidden space-y-2.5">
+    <div class="ui-block ui-md-hidden ui-space-y-2-5">
         {% for transaction in transactions %}
-        <div class="glass-card-subtle hover:bg-white/70 border border-[#62b6cb]/20 rounded-2xl overflow-hidden app-touch-active"
+        <div class="glass-card-subtle ui-hover-bg-white-70 ui-border ui-border-62b6cb-20 ui-rounded-2xl ui-overflow-hidden app-touch-active"
              onclick="window.location.href='{% url 'main:apartment_detail' apartment_number=transaction.apartment.number %}';">
-            <div class="p-3.5 flex items-center justify-between">
+            <div class="ui-p-3-5 ui-flex ui-items-center ui-justify-between">
                 
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} flex items-center justify-center font-bold text-sm">
+                <div class="ui-flex ui-items-center ui-gap-3">
+                    <div class="ui-w-10 ui-h-10 ui-rounded-xl {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} ui-flex ui-items-center ui-justify-center ui-font-bold ui-text-sm">
                         {% if transaction.is_debt %}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                             </svg>
                         {% else %}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
                             </svg>
                         {% endif %}
                     </div>
                     <div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-bold text-sm text-[#1b4965]">Daire {{ transaction.apartment.number }}</span>
-                            <span class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-xs font-bold">
+                        <div class="ui-flex ui-items-center ui-gap-2">
+                            <span class="ui-font-bold ui-text-sm ui-text-1b4965">Daire {{ transaction.apartment.number }}</span>
+                            <span class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-xs ui-font-bold">
                                 {% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}
                             </span>
                         </div>
-                        <div class="text-[11px] text-[#1b4965]/60 mt-0.5">
+                        <div class="ui-text-11px ui-text-1b4965-60 ui-mt-0-5">
                             {{ transaction.updated_at|date:"d.m.Y H:i" }}
                             {% if transaction.description %} • {{ transaction.description|truncatechars:18 }}{% endif %}
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-2" onclick="event.stopPropagation();">
-                    <div class="text-right">
-                        <div class="text-sm font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">
+                <div class="ui-flex ui-items-center ui-gap-2" onclick="event.stopPropagation();">
+                    <div class="ui-text-right">
+                        <div class="ui-text-sm ui-font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">
                             {% if transaction.is_debt %}+{% else %}-{% endif %}{{ transaction.amount|floatformat:2|intcomma }} ₺
                         </div>
                     </div>
 
-                    <div class="flex items-center">
-                        <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965]" 
+                    <div class="ui-flex ui-items-center">
+                        <button class="btn btn-ghost btn-xs btn-circle ui-text-1b4965" 
                             hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
                             hx-target="body" 
                             hx-swap="beforeend">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-4 h-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="ui-w-4 ui-h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
                             </svg>
                         </button>
@@ -76,57 +76,57 @@
             </div>
         </div>
         {% empty %}
-        <div class="glass-card-subtle p-8 text-center text-sm text-[#1b4965]/60 rounded-2xl border border-[#62b6cb]/20">Henüz kayıt yok.</div>
+        <div class="glass-card-subtle ui-p-8 ui-text-center ui-text-sm ui-text-1b4965-60 ui-rounded-2xl ui-border ui-border-62b6cb-20">Henüz kayıt yok.</div>
         {% endfor %}
     </div>
 
     <!-- Desktop View: Table (Visible on md & up) -->
-    <div class="hidden md:block glass-card rounded-3xl border border-[#62b6cb]/20 shadow-xs overflow-hidden">
-        <div class="card-body p-0">
-            <div class="overflow-x-auto">
-                <table class="table w-full text-sm">
-                    <thead class="bg-[#cae9ff]/30 font-bold text-xs uppercase text-[#1b4965]/70 border-b border-[#62b6cb]/20">
+    <div class="ui-hidden ui-md-block glass-card ui-rounded-3xl ui-border ui-border-62b6cb-20 ui-shadow-xs ui-overflow-hidden">
+        <div class="card-body ui-p-0">
+            <div class="ui-overflow-x-auto">
+                <table class="table ui-w-full ui-text-sm">
+                    <thead class="ui-bg-cae9ff-30 ui-font-bold ui-text-xs ui-uppercase ui-text-1b4965-70 ui-border-b ui-border-62b6cb-20">
                         <tr>
                             <th>Apartman</th>
                             <th>Tarih</th>
-                            <th class="text-right">Miktar</th>
+                            <th class="ui-text-right">Miktar</th>
                             <th>Tür</th>
-                            <th class="text-right">Açıklama</th>
-                            <th class="text-right">İşlem</th>
+                            <th class="ui-text-right">Açıklama</th>
+                            <th class="ui-text-right">İşlem</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-[#62b6cb]/10">
+                    <tbody class="ui-divide-y ui-divide-62b6cb-10">
                         {% for transaction in transactions %}
-                        <tr class="{% if not transaction.is_debt %}bg-[#bee9e8]/20{% endif %} cursor-pointer hover:bg-white/60 transition-colors" 
+                        <tr class="{% if not transaction.is_debt %}ui-bg-bee9e8-20{% endif %} ui-cursor-pointer ui-hover-bg-white-60 ui-transition-colors" 
                             onclick="window.location.href='{% url 'main:apartment_detail' apartment_number=transaction.apartment.number %}';">
-                            <td class="font-bold text-[#1b4965]">Daire {{ transaction.apartment.number }}</td>
-                            <td class="text-[#1b4965]/75">{{ transaction.updated_at|date:"d.m.Y H:i" }}</td>
-                            <td class="text-right font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">
+                            <td class="ui-font-bold ui-text-1b4965">Daire {{ transaction.apartment.number }}</td>
+                            <td class="ui-text-1b4965-75">{{ transaction.updated_at|date:"d.m.Y H:i" }}</td>
+                            <td class="ui-text-right ui-font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">
                                 {{ transaction.amount|floatformat:2|intcomma }} ₺
                             </td>
                             <td>
-                                <div class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-sm font-bold">
+                                <div class="badge {% if transaction.is_debt %}badge-debt{% else %}badge-payment{% endif %} badge-sm ui-font-bold">
                                     {% if transaction.is_debt %}Borç{% else %}Ödeme{% endif %}
                                 </div>
                             </td>
-                            <td class="text-right text-xs text-[#1b4965]/75">{{ transaction.description|default:"-" }}</td>
-                            <td class="text-right" onclick="event.stopPropagation();">
-                                <div class="flex items-center justify-end gap-1">
-                                    <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965]" 
+                            <td class="ui-text-right ui-text-xs ui-text-1b4965-75">{{ transaction.description|default:"-" }}</td>
+                            <td class="ui-text-right" onclick="event.stopPropagation();">
+                                <div class="ui-flex ui-items-center ui-justify-end ui-gap-1">
+                                    <button class="btn btn-ghost btn-xs btn-circle ui-text-1b4965" 
                                         hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='update'%}"
                                         hx-target="body" 
                                         hx-swap="beforeend" 
                                         title="Düzenle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ui-w-4 ui-h-4">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
                                         </svg>
                                     </button>
-                                    <button class="btn btn-ghost btn-xs btn-circle text-[#1b4965] hover:bg-[#1b4965]/10" 
+                                    <button class="btn btn-ghost btn-xs btn-circle ui-text-1b4965 ui-hover-bg-1b4965-10" 
                                         hx-get="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type='delete'%}"
                                         hx-target="body" 
                                         hx-swap="beforeend" 
                                         title="Sil">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ui-w-4 ui-h-4">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79" />
                                         </svg>
                                     </button>

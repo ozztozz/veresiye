@@ -1,59 +1,60 @@
 {% load l10n %}
 <div id="transaction_modal" class="modal modal-open">
-	<div class="modal-box glass-panel w-full max-w-lg border border-[#62b6cb]/30 shadow-2xl rounded-3xl p-5 sm:p-6">
+	<div class="modal-box glass-panel ui-w-full ui-max-w-lg ui-border ui-border-62b6cb-30 ui-shadow-2xl ui-rounded-3xl ui-p-5 ui-sm-p-6">
 
 		<!-- Mobile Handle -->
-		<div class="w-12 h-1.5 bg-[#1b4965]/20 rounded-full mx-auto mb-4 block sm:hidden"></div>
+		<div class="ui-w-12 ui-h-1-5 ui-bg-1b4965-20 ui-rounded-full ui-mx-auto ui-mb-4 ui-block ui-sm-hidden"></div>
 
 		<!-- Transaction Info Header -->
-		<div class="glass-card-subtle border border-[#62b6cb]/20 rounded-2xl p-4 mb-5">
-			<div class="flex items-center justify-between">
-				<div class="flex items-center gap-3">
-					<div class="w-10 h-10 rounded-xl badge-sky text-[#1b4965] flex items-center justify-center font-bold">
+		<div class="glass-card-subtle ui-border ui-border-62b6cb-20 ui-rounded-2xl ui-p-4 ui-mb-5">
+			<div class="ui-flex ui-items-center ui-justify-between">
+				<div class="ui-flex ui-items-center ui-gap-3">
+					<div class="ui-w-10 ui-h-10 ui-rounded-xl badge-sky ui-text-1b4965 ui-flex ui-items-center ui-justify-center ui-font-bold">
 						{{ transaction.apartment.number }}
 					</div>
 					<div>
-						<p class="text-xs text-[#1b4965]/60 font-semibold">Daire {{ transaction.apartment.number }}</p>
-						<p class="font-extrabold text-base text-[#1b4965]">
+						<p class="ui-text-xs ui-text-1b4965-60 ui-font-semibold">Daire {{ transaction.apartment.number }}</p>
+						<p class="ui-font-extrabold ui-text-base ui-text-1b4965">
 							{% if transaction_type == 'delete' %}İşlemi Sil{% else %}İşlemi Düzenle{% endif %}
 						</p>
 					</div>
 				</div>
-				<div class="text-right">
-					<div class="text-xs text-[#1b4965]/60 font-medium">Kayıt Tutarı</div>
-					<div class="text-lg font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">{{ transaction.amount }} ₺</div>
+				<div class="ui-text-right">
+					<div class="ui-text-xs ui-text-1b4965-60 ui-font-medium">Kayıt Tutarı</div>
+					<div class="ui-text-lg ui-font-black {% if transaction.is_debt %}text-debt{% else %}text-payment{% endif %}">{{ transaction.amount }} ₺</div>
 				</div>
 			</div>
 			{% if transaction.description %}
-			<div class="divider my-2 opacity-20"></div>
-			<p class="text-xs text-[#1b4965]/80 italic">"{{ transaction.description }}"</p>
+			<div class="divider ui-my-2 ui-opacity-20"></div>
+			<p class="ui-text-xs ui-text-1b4965-80 ui-italic">"{{ transaction.description }}"</p>
 			{% endif %}
 		</div>
 
 		<!-- Form -->
-		<form class="space-y-4" 
+		<form class="ui-space-y-4" 
 			hx-post="{% url 'main:htmx_transaction_update' transaction_id=transaction.id transaction_type=transaction_type %}"
 			hx-target="#transaction_table"
 			hx-swap="outerHTML"
+			onsubmit="return {% if transaction_type == 'update' %}syncFormattedAmount('update-amount-input', 'update-amount-value'){% else %}true{% endif %}"
 			hx-on::after-request="if(event.detail.successful) document.getElementById('transaction_modal').remove()">
 			{% csrf_token %}
 			
 			{% if transaction_type == 'delete' %}
-				<input type="text" name="transaction_id" value="{{ transaction.id }}" hidden>
-				<input type="text" name="active" value="False" hidden>
+				<input type="hidden" name="transaction_id" value="{{ transaction.id }}">
+				<input type="hidden" name="active" value="False">
 
 				<!-- Delete Confirmation -->
-				<div class="p-4 badge-debt rounded-2xl flex items-center gap-3 border border-[#1b4965]/25">
-					<svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-5 w-5 text-[#1b4965]" fill="none" viewBox="0 0 24 24">
+				<div class="ui-p-4 badge-debt ui-rounded-2xl ui-flex ui-items-center ui-gap-3 ui-border ui-border-1b4965-25">
+					<svg xmlns="http://www.w3.org/2000/svg" class="ui-stroke-current ui-shrink-0 ui-h-5 ui-w-5 ui-text-1b4965" fill="none" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
 					</svg>
-					<span class="text-xs sm:text-sm font-semibold text-[#1b4965]">Bu işlemi silmek istediğinize emin misiniz?</span>
+					<span class="ui-text-xs ui-sm-text-sm ui-font-semibold ui-text-1b4965">Bu işlemi silmek istediğinize emin misiniz?</span>
 				</div>
 
-				<div class="modal-action grid grid-cols-2 gap-2 mt-6">
-					<button type="button" class="btn btn-ghost rounded-2xl h-12 font-bold text-[#1b4965]" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
-					<button type="submit" class="btn btn-debt rounded-2xl h-12 font-bold shadow-xs app-touch-active">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<div class="modal-action ui-grid ui-grid-cols-2 ui-gap-2 ui-mt-6">
+					<button type="button" class="btn btn-ghost ui-rounded-2xl ui-h-12 ui-font-bold ui-text-1b4965" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
+					<button type="submit" class="btn btn-debt ui-rounded-2xl ui-h-12 ui-font-bold ui-shadow-xs app-touch-active">
+						<svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
 						</svg>
 						Sil
@@ -62,41 +63,44 @@
 			{% endif %}
 			
 			{% if transaction_type == 'update' %}
-				<input type="text" name="transaction_id" value="{{ transaction.id }}" hidden>
+				<input type="hidden" name="transaction_id" value="{{ transaction.id }}">
 				<input type="hidden" name="is_debt" value="{% if form.is_bound %}{{ form.is_debt.value }}{% else %}{{ transaction.is_debt }}{% endif %}">
+				<input type="hidden" name="amount" id="update-amount-value">
 				
 				<!-- Amount Field with Numeric Mobile Keyboard -->
-				<div class="form-control w-full">
-					<label class="label pb-1">
-						<span class="label-text font-bold text-xs uppercase text-[#1b4965]/70">Miktar (₺)</span>
+				<div class="form-control ui-w-full">
+					<label class="label ui-pb-1">
+						<span class="label-text ui-font-bold ui-text-xs ui-uppercase ui-text-1b4965-70">Miktar (₺)</span>
 					</label>
-					<input type="number" name="amount" step="0.01" lang="en" inputmode="decimal"
+					<input type="text" name="display_amount" id="update-amount-input" inputmode="decimal"
 						value="{% if form.is_bound %}{{ form.amount.value }}{% else %}{{ transaction.amount|unlocalize }}{% endif %}" 
-						class="input glass-input rounded-2xl w-full h-12 text-lg font-bold border-[#62b6cb]/40 focus:border-[#1b4965] text-[#1b4965]" required />
+						onblur="if (this.value) this.value=formatAmountValue(this.value)"
+						data-format-amount
+						class="input glass-input ui-rounded-2xl ui-w-full ui-h-12 ui-text-lg ui-font-bold ui-border-62b6cb-40 ui-focus-border-1b4965 ui-text-1b4965" required />
 					{% if form.amount.errors %}
 						<label class="label">
-							<span class="label-text-alt text-[#1b4965] font-semibold">{{ form.amount.errors.0 }}</span>
+							<span class="label-text-alt ui-text-1b4965 ui-font-semibold">{{ form.amount.errors.0 }}</span>
 						</label>
 					{% endif %}
 				</div>
 			
 				<!-- Description Field -->
-				<div class="form-control w-full">
-					<label class="label pb-1">
-						<span class="label-text font-bold text-xs uppercase text-[#1b4965]/70">Açıklama</span>
+				<div class="form-control ui-w-full">
+					<label class="label ui-pb-1">
+						<span class="label-text ui-font-bold ui-text-xs ui-uppercase ui-text-1b4965-70">Açıklama</span>
 					</label>
-					<textarea name="description" class="textarea glass-input rounded-2xl text-sm border-[#62b6cb]/40 focus:border-[#1b4965] text-[#1b4965]" rows="3" placeholder="İşlem açıklaması">{% if form.is_bound %}{{ form.description.value }}{% else %}{{ transaction.description }}{% endif %}</textarea>
+					<textarea name="description" class="textarea glass-input ui-rounded-2xl ui-text-sm ui-border-62b6cb-40 ui-focus-border-1b4965 ui-text-1b4965" rows="3" placeholder="İşlem açıklaması">{% if form.is_bound %}{{ form.description.value }}{% else %}{{ transaction.description }}{% endif %}</textarea>
 					{% if form.description.errors %}
 						<label class="label">
-							<span class="label-text-alt text-[#1b4965] font-semibold">{{ form.description.errors.0 }}</span>
+							<span class="label-text-alt ui-text-1b4965 ui-font-semibold">{{ form.description.errors.0 }}</span>
 						</label>
 					{% endif %}
 				</div>
 				
-				<div class="modal-action grid grid-cols-2 gap-2 mt-6">
-					<button type="button" class="btn btn-ghost rounded-2xl h-12 font-bold text-[#1b4965]" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
-					<button type="submit" class="btn btn-payment rounded-2xl h-12 font-bold shadow-xs app-touch-active">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<div class="modal-action ui-grid ui-grid-cols-2 ui-gap-2 ui-mt-6">
+					<button type="button" class="btn btn-ghost ui-rounded-2xl ui-h-12 ui-font-bold ui-text-1b4965" onclick="document.getElementById('transaction_modal').remove()">İptal</button>
+					<button type="submit" class="btn btn-payment ui-rounded-2xl ui-h-12 ui-font-bold ui-shadow-xs app-touch-active">
+						<svg xmlns="http://www.w3.org/2000/svg" class="ui-h-5 ui-w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						</svg>
 						Güncelle
@@ -106,7 +110,7 @@
 		</form>
 	</div>
 
-	<form method="dialog" class="modal-backdrop">
+	<form method="dialog" class="modal-backdrop" hx-boost="false">
 		<button onclick="document.getElementById('transaction_modal').remove()">kapat</button>
 	</form>
 </div>
